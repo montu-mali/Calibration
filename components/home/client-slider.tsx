@@ -7,8 +7,8 @@ export default function ClientSlider() {
   const duplicatedLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 border-y border-slate-50 overflow-hidden">
-      <div className="container mx-auto px-6 mb-16 text-center">
+    <section className="py-12 bg-white dark:bg-slate-950 border-y border-slate-50 overflow-hidden">
+      <div className="container mx-auto px-6 mb-10 text-center">
         <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-xs">
           Powering World-Class Enterprises
         </p>

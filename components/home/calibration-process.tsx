@@ -24,7 +24,7 @@ const STEPS = [
 
 export default function CalibrationProcess() {
   return (
-    <section className="py-32 bg-secondary relative overflow-hidden">
+    <section className="py-20 bg-secondary relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none"
            style={{ backgroundImage: "radial-gradient(#0057D9 1px, transparent 1px)", backgroundSize: "40px 40px" }} />

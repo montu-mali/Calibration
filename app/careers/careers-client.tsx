@@ -18,7 +18,7 @@ export default function CareersClient() {
 
   return (
     <div className="pt-20">
-      <section className="py-24 md:py-48 bg-secondary text-white relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-secondary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#0057D9_0%,transparent_50%)] opacity-30" />
 
@@ -50,9 +50,9 @@ export default function CareersClient() {
         </div>
       </section>
 
-      <section className="py-32 bg-white dark:bg-slate-950">
+      <section className="py-20 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
             {perks.map((perk, idx) => (
               <motion.div
                 key={perk.title}

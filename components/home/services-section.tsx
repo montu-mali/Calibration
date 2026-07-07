@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, ICON_MAP } from "@/lib/constants";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "./section-heading";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Activity } from "lucide-react";
 
 export default function ServicesSection() {
   return (
-    <section className="py-32 bg-gray-50 dark:bg-slate-900/50">
+    <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Industry-Leading Services"
@@ -30,7 +30,10 @@ export default function ServicesSection() {
               <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-white dark:bg-slate-950 rounded-[2.5rem] overflow-hidden flex flex-col p-4">
                 <CardHeader className="relative p-8 pb-4">
                   <div className="w-20 h-20 rounded-2xl bg-gray-50 dark:bg-slate-900/50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
-                    <service.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
+                    {(() => {
+                      const Icon = ICON_MAP[service.iconId] || Activity;
+                      return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
+                    })()}
                   </div>
                   <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors leading-tight">
                     {service.title}

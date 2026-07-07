@@ -33,7 +33,7 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="The Calibration Advantage"

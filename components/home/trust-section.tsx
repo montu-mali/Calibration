@@ -14,7 +14,7 @@ const BADGES = [
 
 export default function TrustSection() {
   return (
-    <section className="py-16 bg-white dark:bg-slate-950 overflow-hidden">
+    <section className="py-12 bg-white dark:bg-slate-950 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="bg-gray-50 dark:bg-slate-900/50 rounded-[2.5rem] p-10 md:p-12 border border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />

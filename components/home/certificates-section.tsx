@@ -9,7 +9,7 @@ import { Download, ExternalLink } from "lucide-react";
 
 export default function CertificatesSection() {
   return (
-    <section className="py-32 bg-gray-50 dark:bg-slate-900/50/30">
+    <section className="py-20 bg-gray-50 dark:bg-slate-900/50/30">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Global Accreditation"

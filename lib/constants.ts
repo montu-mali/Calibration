@@ -18,8 +18,33 @@ import {
   Fuel,
   Beaker,
   Cpu,
-  Shirt
+  Shirt,
+  LucideIcon
 } from "lucide-react";
+import { Service, Industry } from "@/types";
+
+export const ICON_MAP: Record<string, LucideIcon> = {
+  zap: Zap,
+  settings: Settings,
+  thermometer: Thermometer,
+  gauge: Gauge,
+  scale: Scale,
+  ruler: Ruler,
+  activity: Activity,
+  truck: Truck,
+  factory: Factory,
+  car: Car,
+  stethoscope: Stethoscope,
+  flask: FlaskConical,
+  utensils: Utensils,
+  zapoff: ZapOff,
+  droplets: Droplets,
+  microscope: Microscope,
+  fuel: Fuel,
+  beaker: Beaker,
+  cpu: Cpu,
+  shirt: Shirt,
+};
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -47,121 +72,481 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const SERVICES = [
+export const SERVICES: Service[] = [
   {
     id: "electrical",
     title: "Electrical Calibration",
     slug: "electrical-calibration",
     description: "Precise calibration for multimeters, oscilloscopes, and power supplies with traceable standards.",
-    icon: Zap,
+    iconId: "zap",
     longDescription: "Our electrical calibration services cover a wide range of instruments, ensuring they meet strict accuracy requirements. We utilize high-precision calibrators and standards traceable to national and international bodies.",
-    equipment: ["Digital Multimeters", "Oscilloscopes", "Power Supplies", "Clamp Meters", "LCR Meters"],
-    standards: ["ISO/IEC 17025", "NIST Traceable", "NABL"],
-    applications: ["Electronics Manufacturing", "Power Plants", "Research Labs"],
+    benefits: [
+      "Minimize measurement uncertainty",
+      "Ensure compliance with international standards",
+      "Extend equipment lifespan",
+      "Prevent costly production errors"
+    ],
+    process: [
+      { step: "Reception", description: "Equipment is logged and inspected for physical damage." },
+      { step: "Stabilization", description: "Instruments are acclimated to controlled laboratory conditions." },
+      { step: "Calibration", description: "Comparison against high-precision master standards." },
+      { step: "Documentation", description: "Generation of traceable calibration certificates." }
+    ],
+    equipment: [
+      "Digital Multimeters (up to 8.5 digits)",
+      "Digital Storage Oscilloscopes (up to 2GHz)",
+      "DC Power Supplies & Electronic Loads",
+      "Clamp Meters & Current Transformers",
+      "LCR Meters & Impedance Analyzers"
+    ],
+    standards: [
+      "ISO/IEC 17025:2017 Accredited",
+      "NIST (USA) Traceable",
+      "NABL (India) Accredited"
+    ],
+    applications: [
+      "Electronics Manufacturing",
+      "Power Generation & Distribution",
+      "Research & Development Laboratories"
+    ],
+    faqs: [
+      {
+        question: "What parameters are covered under electrical calibration?",
+        answer: "We cover Voltage (AC/DC), Current (AC/DC), Resistance, Capacitance, Inductance, Frequency, and Phase."
+      },
+      {
+        question: "Can you calibrate high-precision 8.5 digit multimeters?",
+        answer: "Yes, our lab is equipped with Fluke 5720A/5730A calibrators capable of supporting ultra-high precision instruments."
+      }
+    ]
   },
   {
     id: "mechanical",
     title: "Mechanical Calibration",
     slug: "mechanical-calibration",
     description: "Accurate measurement for torque wrenches, force gauges, and weighing scales.",
-    icon: Settings,
+    iconId: "settings",
     longDescription: "Mechanical calibration is critical for maintaining the integrity of physical measurements. We provide services for force, torque, and mass instruments with exceptional precision.",
-    equipment: ["Torque Wrenches", "Force Gauges", "Load Cells", "Weighing Scales", "Pressure Gauges"],
-    standards: ["ISO/IEC 17025", "NIST Traceable"],
-    applications: ["Automotive", "Aerospace", "Construction"],
+    benefits: [
+      "Ensure structural integrity",
+      "Optimized assembly performance",
+      "Regulatory compliance",
+      "Reduced equipment downtime"
+    ],
+    process: [
+      { step: "Initial Test", description: "Pre-calibration verification to determine 'as-found' data." },
+      { step: "Adjustment", description: "Fine-tuning of the instrument if found out of tolerance." },
+      { step: "Final Verification", description: "Post-adjustment testing to confirm accuracy." },
+      { step: "Certification", description: "Detailed reporting of all measurements and uncertainties." }
+    ],
+    equipment: [
+      "Torque Wrenches & Drivers (up to 2000 Nm)",
+      "Digital Force Gauges (Tension & Compression)",
+      "Hydraulic & Pneumatic Load Cells",
+      "Analytical & Industrial Weighing Scales"
+    ],
+    standards: [
+      "ISO 6789 (Torque Tools)",
+      "ASTM E4 (Force Verification)",
+      "ISO/IEC 17025"
+    ],
+    applications: [
+      "Automotive Assembly Lines",
+      "Aerospace Component Testing",
+      "Construction Material Testing"
+    ],
+    faqs: [
+      {
+        question: "How often should torque wrenches be calibrated?",
+        answer: "As per ISO 6789, it is recommended every 12 months or every 5,000 cycles, whichever comes first."
+      }
+    ]
   },
   {
     id: "temperature",
     title: "Temperature Calibration",
     slug: "temperature-calibration",
     description: "Calibration for RTDs, thermocouples, and infrared thermometers across broad ranges.",
-    icon: Thermometer,
+    iconId: "thermometer",
     longDescription: "Ensuring accurate temperature readings is vital in many industries. Our lab provides high-stability temperature sources and reference probes for precise calibration.",
-    equipment: ["RTDs", "Thermocouples", "IR Thermometers", "Data Loggers", "Ovens/Furnaces"],
-    standards: ["ITS-90", "ISO/IEC 17025"],
-    applications: ["Pharmaceutical", "Food Processing", "Healthcare"],
+    benefits: [
+      "Ensured product quality in pharma/food",
+      "Process safety optimization",
+      "Energy efficiency",
+      "Regulatory audit readiness"
+    ],
+    process: [
+      { step: "Thermal Loading", description: "Placement of sensors in high-stability baths or dry blocks." },
+      { step: "Equilibrium", description: "Waiting for temperature stabilization at various setpoints." },
+      { step: "Comparison", description: "Readings against primary SPRTs or thermocouples." },
+      { step: "Reporting", description: "Complete data set with correction factors provided." }
+    ],
+    equipment: [
+      "Platinum Resistance Thermometers (RTDs)",
+      "Thermocouples (Type J, K, T, E, R, S, B, N)",
+      "Infrared Pyrometers & Thermal Imagers",
+      "Digital Thermometers & Data Loggers"
+    ],
+    standards: [
+      "ITS-90 Temperature Scale",
+      "ASTM E220 (Thermocouples)",
+      "ISO/IEC 17025"
+    ],
+    applications: [
+      "Pharmaceutical Storage & Production",
+      "Food Safety & Processing",
+      "Healthcare & Cold Chain Logistics"
+    ],
+    faqs: [
+      {
+        question: "What is the temperature range of your calibration services?",
+        answer: "Our capabilities span from -196°C (Liquid Nitrogen) to +1200°C (Furnace)."
+      }
+    ]
   },
   {
     id: "pressure",
     title: "Pressure Calibration",
     slug: "pressure-calibration",
     description: "High-precision pressure calibration for gauges, transducers, and transmitters.",
-    icon: Gauge,
+    iconId: "gauge",
     longDescription: "Our pressure calibration capabilities range from vacuum to high pressure, utilizing deadweight testers and high-accuracy digital controllers.",
-    equipment: ["Digital Pressure Gauges", "Transmitters", "Deadweight Testers", "Barometers"],
-    standards: ["ISO/IEC 17025", "NIST Traceable"],
-    applications: ["Oil & Gas", "Chemical Plants", "Hydraulic Systems"],
+    benefits: [
+      "Enhanced process safety",
+      "Improved system reliability",
+      "Cost reduction through accuracy",
+      "Extended sensor life"
+    ],
+    process: [
+      { step: "System Cleanse", description: "Ensuring no contamination in pressure lines." },
+      { step: "Pressure Cycling", description: "Exercising the sensor to eliminate hysteresis." },
+      { step: "Point-to-Point Test", description: "Multiple pressure levels checked for linearity." },
+      { step: "Analysis", description: "Calculated error vs. manufacturer specifications." }
+    ],
+    equipment: [
+      "Digital & Analog Pressure Gauges",
+      "Pressure Transmitters & Transducers",
+      "Deadweight Testers (Hydraulic & Pneumatic)",
+      "Barometers & Manometers"
+    ],
+    standards: [
+      "EURAMET cg-17 (Pressure Gauges)",
+      "ISO/IEC 17025",
+      "NIST Traceable"
+    ],
+    applications: [
+      "Oil & Gas Pipeline Monitoring",
+      "Chemical Process Control",
+      "Hydraulic System Maintenance"
+    ],
+    faqs: [
+      {
+        question: "What is the maximum pressure you can calibrate?",
+        answer: "We can calibrate up to 40,000 psi (approx. 2800 bar) using our primary deadweight testers."
+      }
+    ]
   },
   {
     id: "mass",
     title: "Mass Calibration",
     slug: "mass-calibration",
     description: "Standard weight and balance calibration ensuring high measurement integrity.",
-    icon: Scale,
+    iconId: "scale",
     longDescription: "We offer mass calibration services for weights and balances ranging from laboratory micro-balances to high-capacity industrial scales.",
-    equipment: ["Analytical Balances", "Standard Weights (E1, E2, F1)", "Industrial Scales"],
-    standards: ["OIML R111", "ISO/IEC 17025"],
-    applications: ["Laboratories", "Jewelry", "Manufacturing"],
+    benefits: [
+      "Legal metrology compliance",
+      "Material savings through precision",
+      "Audit-proof documentation",
+      "High sensitivity verification"
+    ],
+    process: [
+      { step: "Cleaning", description: "Removal of dust and surface contaminants." },
+      { step: "Environmental Compensation", description: "Buoyancy correction based on air density." },
+      { step: "Comparison", description: "Substitution weighing against class E2 weights." },
+      { step: "Calibration Report", description: "Individual weight values and uncertainties." }
+    ],
+    equipment: [
+      "E1, E2, F1, F2, M1 Class Weights",
+      "Analytical Micro-Balances",
+      "Industrial Floor & Bench Scales"
+    ],
+    standards: [
+      "OIML R111 (Weights)",
+      "ISO/IEC 17025",
+      "NABL Accredited"
+    ],
+    applications: [
+      "Analytical Laboratories",
+      "Jewelry & Precious Metals",
+      "Pharmaceutical Compounding"
+    ],
+    faqs: [
+      {
+        question: "What mass classes do you support?",
+        answer: "We are accredited to calibrate weights from Class E2 through M1."
+      }
+    ]
   },
   {
     id: "torque",
     title: "Torque Calibration",
     slug: "torque-calibration",
     description: "Precision torque tool calibration for consistent and reliable fastening.",
-    icon: Activity,
+    iconId: "activity",
     longDescription: "Accuracy in torque is essential for safety and quality in assembly. We calibrate all types of torque tools including manual and electric drivers.",
-    equipment: ["Click Torque Wrenches", "Digital Torque Meters", "Pneumatic Tools"],
-    standards: ["ISO 6789", "ISO/IEC 17025"],
-    applications: ["Automotive Assembly", "Aeronautics", "Maintenance"],
+    benefits: [
+      "Joint integrity assurance",
+      "Operator safety",
+      "Warranty cost reduction",
+      "Process repeatability"
+    ],
+    process: [
+      { step: "Visual Check", description: "Inspection of drive, mechanism, and scales." },
+      { step: "Functional Test", description: "Checking the clicking or releasing mechanism." },
+      { step: "Torque Application", description: "Multiple hits at 20%, 60%, and 100% of range." },
+      { step: "Data Recording", description: "Average error and standard deviation calculated." }
+    ],
+    equipment: [
+      "Click-Type Torque Wrenches",
+      "Dial Torque Wrenches",
+      "Digital Torque Testers"
+    ],
+    standards: [
+      "ISO 6789:2017",
+      "ASME B107.300",
+      "ISO/IEC 17025"
+    ],
+    applications: [
+      "Automotive Powertrain Assembly",
+      "Aerospace Structural Fastening",
+      "Oil & Gas Flange Bolting"
+    ],
+    faqs: [
+      {
+        question: "Do you provide adjustment services for torque wrenches?",
+        answer: "Yes, we provide minor adjustments and repair services if the tool is found out of tolerance."
+      }
+    ]
   },
   {
     id: "flow",
     title: "Flow Calibration",
     slug: "flow-calibration",
     description: "Liquid and gas flow meter calibration for optimized process control.",
-    icon: Droplets,
+    iconId: "droplets",
     longDescription: "Our flow calibration services ensure your meters provide accurate data for process efficiency and billing accuracy.",
-    equipment: ["Liquid Flow Meters", "Gas Flow Meters", "Rotameters"],
-    standards: ["ISO/IEC 17025", "Traceable to NABL"],
-    applications: ["Water Management", "Chemical Processing", "Petroleum"],
+    benefits: [
+      "Billing accuracy",
+      "Improved process efficiency",
+      "Leak detection support",
+      "Environmental compliance"
+    ],
+    process: [
+      { step: "Installation", description: "Meter mounted in a stable test loop." },
+      { step: "Priming", description: "Removal of air bubbles and establishing flow." },
+      { step: "Multi-point Verification", description: "Testing at 25%, 50%, 75%, and 100% flow rates." },
+      { step: "Final Check", description: "Pressure drop and signal integrity check." }
+    ],
+    equipment: [
+      "Liquid Flow Meters (Electromagnetic, Ultrasonic)",
+      "Gas Flow Meters (Vortex, Turbine)",
+      "Mass Flow Controllers (MFCs)"
+    ],
+    standards: [
+      "ISO 17025 Accredited",
+      "NIST Traceable Standards"
+    ],
+    applications: [
+      "Municipal Water Management",
+      "Chemical Processing",
+      "Energy Metering"
+    ],
+    faqs: [
+      {
+        question: "Can you calibrate flow meters on-site?",
+        answer: "Yes, we use portable ultrasonic flow meters for non-invasive on-site verification."
+      }
+    ]
   },
   {
     id: "dimensional",
     title: "Dimensional Calibration",
     slug: "dimensional-calibration",
     description: "Micrometer, caliper, and dial gauge calibration with micron-level precision.",
-    icon: Ruler,
+    iconId: "ruler",
     longDescription: "Dimensional accuracy is the foundation of quality manufacturing. We provide high-precision measurements for all standard hand tools.",
-    equipment: ["Vernier Calipers", "Micrometers", "Dial Gauges", "Height Gauges"],
-    standards: ["ISO/IEC 17025", "NIST Traceable"],
-    applications: ["Precision Engineering", "Machining", "Quality Control"],
+    benefits: [
+      "Product fit and finish",
+      "Interchangeability of parts",
+      "Scrap reduction",
+      "Quality control assurance"
+    ],
+    process: [
+      { step: "De-magnetization", description: "Ensuring no magnetic pull affects measurements." },
+      { step: "Zeroing", description: "Establishment of the reference point." },
+      { step: "Point Verification", description: "Testing across the full range using gauge blocks." },
+      { step: "Certification", description: "Measurement results with uncertainty budget." }
+    ],
+    equipment: [
+      "Vernier, Dial & Digital Calipers",
+      "Outside & Inside Micrometers",
+      "Plunger & Lever Type Dial Gauges"
+    ],
+    standards: [
+      "ISO 3650 (Gauge Blocks)",
+      "ISO/IEC 17025"
+    ],
+    applications: [
+      "Precision Machining & Tooling",
+      "Automotive Component Quality",
+      "Aerospace Manufacturing"
+    ],
+    faqs: [
+      {
+        question: "What is your measurement uncertainty for gauge blocks?",
+        answer: "We offer ultra-low uncertainty levels suitable for Grade 0 slip gauges."
+      }
+    ]
   },
   {
     id: "onsite",
     title: "On-Site Calibration",
     slug: "on-site-calibration",
     description: "Expert calibration services delivered directly to your facility for convenience.",
-    icon: Truck,
+    iconId: "truck",
     longDescription: "Minimize downtime with our on-site calibration services. Our mobile lab brings the same level of precision and expertise to your doorstep.",
-    equipment: ["Process Instruments", "Fixed Gauges", "Large Machinery"],
-    standards: ["Same as Lab Standards"],
-    applications: ["Large Factories", "Remote Sites", "Critical Infrastructure"],
+    benefits: [
+      "Minimized production downtime",
+      "Zero transport risk for fragile equipment",
+      "Immediate results and adjustments",
+      "Reduced logistical costs"
+    ],
+    process: [
+      { step: "Site Survey", description: "Reviewing environment and safety requirements." },
+      { step: "Setup", description: "Mobile standards deployment at the work area." },
+      { step: "Execution", description: "Calibration of fixed instruments and machinery." },
+      { step: "Instant Reporting", description: "Initial data provided before the team leaves." }
+    ],
+    equipment: [
+      "Fixed Industrial Process Instruments",
+      "Large Weighing Systems (Silos & Bridges)",
+      "Environmental Chambers & Ovens"
+    ],
+    standards: [
+      "Accredited Mobile Lab Procedures",
+      "ISO/IEC 17025 Compliance"
+    ],
+    applications: [
+      "Large Scale Manufacturing Plants",
+      "Continuous Process Industries",
+      "Remote Industrial Sites"
+    ],
+    faqs: [
+      {
+        question: "How do you ensure lab-grade accuracy on-site?",
+        answer: "Our mobile teams use ruggedized master standards with superior environmental compensation."
+      }
+    ]
   },
 ];
 
-export const INDUSTRIES = [
-  { id: "manufacturing", name: "Manufacturing", icon: Factory },
-  { id: "automobile", name: "Automobile", icon: Car },
-  { id: "healthcare", name: "Healthcare", icon: Stethoscope },
-  { id: "pharmaceutical", name: "Pharmaceutical", icon: FlaskConical },
-  { id: "food", name: "Food Processing", icon: Utensils },
-  { id: "power", name: "Power Plant", icon: ZapOff },
-  { id: "laboratories", name: "Laboratories", icon: Microscope },
-  { id: "research", name: "Research Institutes", icon: Beaker },
-  { id: "oilgas", name: "Oil & Gas", icon: Fuel },
-  { id: "chemical", name: "Chemical", icon: Droplets },
-  { id: "electronics", name: "Electronics", icon: Cpu },
-  { id: "textile", name: "Textile", icon: Shirt },
+export const INDUSTRIES: Industry[] = [
+  {
+    id: "manufacturing",
+    name: "Manufacturing",
+    iconId: "factory",
+    description: "Supporting heavy and light industries with comprehensive tool calibration.",
+    keyServices: ["Dimensional", "Torque", "Pressure"],
+    compliance: "ISO 9001, ISO 17025"
+  },
+  {
+    id: "automobile",
+    name: "Automobile",
+    iconId: "car",
+    description: "Precision for assembly lines, powertrain testing, and component manufacturing.",
+    keyServices: ["Torque", "Mechanical", "Electrical"],
+    compliance: "IATF 16949, ISO 17025"
+  },
+  {
+    id: "healthcare",
+    name: "Healthcare",
+    iconId: "stethoscope",
+    description: "Ensuring patient safety through accurate medical device calibration.",
+    keyServices: ["Temperature", "Mass", "Pressure"],
+    compliance: "ISO 13485, NABH"
+  },
+  {
+    id: "pharmaceutical",
+    name: "Pharmaceutical",
+    iconId: "flask",
+    description: "Compliance with FDA/GMP standards for temperature and mass measurements.",
+    keyServices: ["Temperature", "Mass", "Humidity"],
+    compliance: "FDA 21 CFR Part 11, GMP"
+  },
+  {
+    id: "food",
+    name: "Food Processing",
+    iconId: "utensils",
+    description: "Quality control for temperature, flow, and weighing in food production.",
+    keyServices: ["Temperature", "Flow", "Mass"],
+    compliance: "HACCP, ISO 22000"
+  },
+  {
+    id: "power",
+    name: "Power Plant",
+    iconId: "zapoff",
+    description: "Critical measurement for grid stability and plant efficiency.",
+    keyServices: ["Electrical", "Pressure", "Flow"],
+    compliance: "IEEE, ISO 17025"
+  },
+  {
+    id: "laboratories",
+    name: "Laboratories",
+    iconId: "microscope",
+    description: "High-precision standards for diagnostic and analytical labs.",
+    keyServices: ["Electrical", "Mass", "Temperature"],
+    compliance: "ISO 15189, ISO 17025"
+  },
+  {
+    id: "research",
+    name: "Research Institutes",
+    iconId: "beaker",
+    description: "Custom metrology solutions for cutting-edge scientific research.",
+    keyServices: ["All Parameters", "Custom Prototypes"],
+    compliance: "NIST, NABL Traceable"
+  },
+  {
+    id: "oilgas",
+    name: "Oil & Gas",
+    iconId: "fuel",
+    description: "Explosion-proof pressure and flow calibration for refineries.",
+    keyServices: ["Pressure", "Flow", "Temperature"],
+    compliance: "ATEX, SIL 2/3"
+  },
+  {
+    id: "chemical",
+    name: "Chemical",
+    iconId: "droplets",
+    description: "Corrosion-resistant measurement tools and process control calibration.",
+    keyServices: ["Flow", "Pressure", "Temperature"],
+    compliance: "Responsible Care, ISO 14001"
+  },
+  {
+    id: "electronics",
+    name: "Electronics",
+    iconId: "cpu",
+    description: "Sub-micron dimensional and high-frequency electrical calibration.",
+    keyServices: ["Electrical", "Dimensional", "Mass"],
+    compliance: "IPC, ISO 17025"
+  },
+  {
+    id: "textile",
+    name: "Textile",
+    iconId: "shirt",
+    description: "Tension, speed, and color measurement calibration for textile mills.",
+    keyServices: ["Mechanical", "Temperature", "Electrical"],
+    compliance: "OEKO-TEX, ISO 9001"
+  },
 ];
 
 export const TESTIMONIALS = [
@@ -316,8 +701,13 @@ export const JOBS = [
 ];
 
 export const CONTACT_INFO = {
-  address: "123 Precision Way, Industrial Area, Phase II, Mumbai - 400001",
-  email: "info@calibration.com",
-  phone: "+91 22 1234 5678",
+  address: process.env.NEXT_PUBLIC_CONTACT_ADDRESS || "123 Precision Way, Industrial Area, Phase II, Mumbai - 400001",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@calibration.com",
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 22 1234 5678",
   workingHours: "Mon - Sat: 9:00 AM - 6:00 PM",
+};
+
+export const SITE_CONFIG = {
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "Calibration",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://calibration.com",
 };

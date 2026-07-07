@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative py-32 md:py-48 bg-secondary overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,#0057D9_0%,transparent_50%)] opacity-30" />
 
@@ -55,7 +55,7 @@ export default function AboutPage() {
       </section>
 
       {/* Legacy Section */}
-      <section className="py-32 bg-white dark:bg-slate-950 relative">
+      <section className="py-20 bg-white dark:bg-slate-950 relative">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Vision Values */}
-      <section className="py-32 bg-gray-50 dark:bg-slate-900/50">
+      <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {values.map((val, idx) => (
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* Modern Timeline */}
-      <section className="py-32 bg-white dark:bg-slate-950 overflow-hidden">
+      <section className="py-20 bg-white dark:bg-slate-950 overflow-hidden">
         <div className="container mx-auto px-6">
           <SectionHeading title="Our Evolution" centered subtitle="A journey of technical milestones and continuous innovation." />
 

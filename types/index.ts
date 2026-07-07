@@ -1,21 +1,31 @@
-import { LucideIcon } from "lucide-react";
-
 export interface Service {
   id: string;
   title: string;
-  description: string;
-  icon: LucideIcon;
   slug: string;
-  longDescription?: string;
-  equipment?: string[];
-  standards?: string[];
-  applications?: string[];
+  description: string;
+  iconId: string;
+  longDescription: string;
+  benefits: string[];
+  process: {
+    step: string;
+    description: string;
+  }[];
+  equipment: string[];
+  standards: string[];
+  applications: string[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export interface Industry {
   id: string;
   name: string;
-  icon: LucideIcon;
+  iconId: string;
+  description: string;
+  keyServices: string[];
+  compliance: string;
 }
 
 export interface Certificate {

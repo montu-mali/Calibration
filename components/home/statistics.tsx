@@ -40,7 +40,7 @@ function Counter({ value, target }: { value: string, target: number }) {
 
 export default function Statistics() {
   return (
-    <section className="py-24 bg-primary overflow-hidden relative">
+    <section className="py-16 bg-primary overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
            style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 

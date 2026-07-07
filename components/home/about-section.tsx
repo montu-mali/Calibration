@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 overflow-hidden relative">
+    <section className="py-20 bg-white dark:bg-slate-950 overflow-hidden relative">
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2" />
 
       <div className="container mx-auto px-6">
@@ -62,7 +62,7 @@ export default function AboutSection() {
               <span>Who We Are</span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold text-secondary dark:text-white mb-10 leading-[1.1] tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-secondary dark:text-white mb-8 leading-[1.1] tracking-tight">
               Driving Accuracy <br />
               Since <span className="text-primary">2004</span>
             </h2>

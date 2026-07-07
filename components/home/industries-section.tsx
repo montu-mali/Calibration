@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { INDUSTRIES } from "@/lib/constants";
+import { INDUSTRIES, ICON_MAP } from "@/lib/constants";
 import SectionHeading from "./section-heading";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function IndustriesSection() {
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
           <SectionHeading
@@ -37,7 +37,10 @@ export default function IndustriesSection() {
               <Link href="/industries">
                 <div className="h-full flex flex-col items-center p-10 rounded-[2.5rem] bg-gray-50 dark:bg-slate-900/50 border border-transparent transition-all duration-500 group-hover:bg-white dark:bg-slate-950 group-hover:border-primary group-hover:shadow-[0_30px_60px_-15px_rgba(0,87,217,0.1)]">
                   <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-slate-950 flex items-center justify-center mb-6 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <industry.icon className="h-9 w-9 text-primary group-hover:text-white transition-colors" />
+                    {(() => {
+                      const Icon = ICON_MAP[industry.iconId] || Activity;
+                      return <Icon className="h-9 w-9 text-primary group-hover:text-white transition-colors" />;
+                    })()}
                   </div>
                   <span className="font-bold text-secondary dark:text-white text-lg group-hover:text-primary transition-colors text-center leading-tight">
                     {industry.name}

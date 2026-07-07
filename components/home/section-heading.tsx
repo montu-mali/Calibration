@@ -21,7 +21,7 @@ export default function SectionHeading({
   return (
     <div
       className={cn(
-        "mb-16 md:mb-24",
+        "mb-12 md:mb-16",
         centered ? "text-center mx-auto max-w-4xl" : "text-left",
         className
       )}
@@ -57,7 +57,7 @@ export default function SectionHeading({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className={cn(
-            "text-xl md:text-2xl leading-relaxed max-w-3xl",
+            "text-lg md:text-xl leading-relaxed max-w-3xl font-medium",
             light ? "text-slate-400" : "text-slate-500 dark:text-slate-400",
             centered ? "mx-auto" : ""
           )}

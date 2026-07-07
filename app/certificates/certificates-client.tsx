@@ -10,9 +10,9 @@ import CTA from "@/components/home/cta";
 export default function CertificatesPage() {
   return (
     <div className="pt-20">
-      <section className="py-24 md:py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-24">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

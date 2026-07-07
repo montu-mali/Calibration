@@ -10,12 +10,12 @@ import { Textarea } from "@/components/ui/textarea";
 export default function ContactPage() {
   return (
     <div className="pt-20">
-      <section className="py-24 md:py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-accent/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-20">
+          <div className="max-w-4xl mx-auto text-center mb-12">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

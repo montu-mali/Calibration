@@ -13,7 +13,7 @@ import { Plus } from "lucide-react";
 
 export default function FAQSection() {
   return (
-    <section className="py-32 bg-gray-50 dark:bg-slate-900/50">
+    <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
           title="Technical FAQ"

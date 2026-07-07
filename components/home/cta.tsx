@@ -8,14 +8,14 @@ import { CONTACT_INFO } from "@/lib/constants";
 
 export default function CTA() {
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 overflow-hidden">
+    <section className="py-20 bg-white dark:bg-slate-950 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-secondary rounded-[4rem] p-12 md:p-32 text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(15,23,42,0.3)]"
+          className="bg-secondary rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(15,23,42,0.3)]"
         >
           {/* Futuristic background patterns */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0057D9_0%,transparent_50%)] opacity-20" />

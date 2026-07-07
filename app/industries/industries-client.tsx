@@ -1,17 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { INDUSTRIES } from "@/lib/constants";
+import { INDUSTRIES, ICON_MAP } from "@/lib/constants";
 import CTA from "@/components/home/cta";
-import { Factory, CheckCircle2, ShieldCheck, Globe, Zap } from "lucide-react";
+import { Factory, CheckCircle2, ShieldCheck, Globe, Zap, Activity } from "lucide-react";
 import Image from "next/image";
 
 export default function IndustriesPage() {
   return (
     <div className="pt-20">
-      <section className="py-24 md:py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-24">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -50,14 +50,28 @@ export default function IndustriesPage() {
               >
                 <div className="h-full flex flex-col p-10 rounded-[3rem] bg-gray-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.2)] transition-all duration-500">
                   <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-slate-950 flex items-center justify-center mb-10 shadow-sm border border-slate-100 dark:border-slate-800 group-hover:bg-white dark:bg-slate-950/20 group-hover:border-white/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <industry.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
+                    {(() => {
+                      const Icon = ICON_MAP[industry.iconId] || Activity;
+                      return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
+                    })()}
                   </div>
                   <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 group-hover:text-white transition-colors">
                     {industry.name}
                   </h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-lg group-hover:text-white/80 transition-colors leading-relaxed mb-8 flex-grow">
+                  <p className="text-slate-500 dark:text-slate-400 text-base group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-grow">
                     Specialized metrology services designed for the unique regulatory landscape of {industry.name.toLowerCase()} engineering.
                   </p>
+                  <div className="space-y-4 mb-8">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-white/60">Compliance</div>
+                    <div className="text-sm font-bold text-secondary dark:text-white group-hover:text-white">{industry.compliance}</div>
+                    <div className="flex flex-wrap gap-2">
+                      {industry.keyServices.map(s => (
+                        <span key={s} className="px-2 py-1 bg-primary/5 group-hover:bg-white/10 rounded-md text-[10px] font-bold text-primary group-hover:text-white border border-primary/10 group-hover:border-white/20">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   <div className="flex items-center text-primary group-hover:text-white font-bold text-sm uppercase tracking-widest transition-colors">
                     <span>View Protocol</span>
                     <CheckCircle2 className="ml-2 h-4 w-4" />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, ICON_MAP } from "@/lib/constants";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -11,9 +11,9 @@ import CTA from "@/components/home/cta";
 export default function ServicesPage() {
   return (
     <div className="pt-20">
-      <section className="py-24 md:py-32 bg-gray-50 dark:bg-slate-900/50">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-slate-900/50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-24">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +52,10 @@ export default function ServicesPage() {
                 <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-white dark:bg-slate-950 rounded-[3rem] overflow-hidden flex flex-col p-6">
                   <CardHeader className="p-8 pb-4">
                     <div className="w-20 h-20 rounded-[2rem] bg-gray-50 dark:bg-slate-900/50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
-                      <service.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
+                      {(() => {
+                        const Icon = ICON_MAP[service.iconId] || Activity;
+                        return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
+                      })()}
                     </div>
                     <CardTitle className="text-3xl font-bold group-hover:text-primary transition-colors leading-tight">
                       {service.title}

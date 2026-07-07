@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white pt-24 pb-12 overflow-hidden relative">
+    <footer className="bg-secondary text-white pt-16 pb-12 overflow-hidden relative">
       {/* Decorative gradient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
 
