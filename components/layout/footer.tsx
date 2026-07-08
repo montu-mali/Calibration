@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import { CONTACT_INFO, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { CONTACT_INFO, NAV_LINKS, SERVICES, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -16,23 +16,28 @@ export default function Footer() {
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                <span className="text-white font-bold text-2xl">C</span>
+                <span className="text-white font-bold text-2xl">{SITE_CONFIG.name.charAt(0)}</span>
               </div>
-              <span className="text-3xl font-bold tracking-tight">Calibration</span>
+              <span className="text-3xl font-bold tracking-tight">{SITE_CONFIG.name}</span>
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-xs">
               Precision Beyond Measurement. India's leading ISO Certified Calibration Laboratory.
             </p>
             <div className="flex space-x-4">
-              {[Linkedin, Twitter, Facebook, Instagram].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-primary transition-all duration-300 hover:-translate-y-1 border border-white/10"
-                >
-                  <Icon className="h-5 w-5" />
-                </Link>
-              ))}
+              {SOCIAL_LINKS.map((link) => {
+                const Icon = link.name === "Facebook" ? Facebook : link.name === "Twitter" ? Twitter : Linkedin;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-primary transition-all duration-300 hover:-translate-y-1 border border-white/10"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -113,7 +118,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-          <p>© {new Date().getFullYear()} Calibration. Designed for the future of precision.</p>
+          <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. Designed for the future of precision.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
               <Link key={item} href="#" className="hover:text-white transition-colors">{item}</Link>

@@ -52,7 +52,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-xl leading-relaxed">
-              ISO Certified Calibration Laboratory delivering world-class accuracy and reliability for mission-critical engineering.
+              ISO Certified Calibration Laboratory delivering world-class accuracy and reliability for mission-critical engineering across India.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6">

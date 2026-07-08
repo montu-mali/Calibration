@@ -5,6 +5,7 @@ import Image from "next/image";
 import SectionHeading from "@/components/home/section-heading";
 import CTA from "@/components/home/cta";
 import { Award, Target, Eye, Heart, ShieldCheck, Users } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function AboutPage() {
   const values = [
@@ -14,7 +15,7 @@ export default function AboutPage() {
   ];
 
   const timeline = [
-    { year: "2004", event: "Calibration Lab Founded", desc: "Started as a specialized electrical calibration facility." },
+    { year: "2014", event: "Calibration Lab Founded", desc: "Started as a specialized electrical calibration facility." },
     { year: "2008", event: "Achieved NABL Accreditation", desc: "First major milestone towards global technical competence." },
     { year: "2015", event: "Multi-Domain Expansion", desc: "Added Mechanical, Pressure, and Temperature capabilities." },
     { year: "2020", event: "Digital Transformation", desc: "Implemented cloud-based traceable reporting systems." },
@@ -34,7 +35,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
           >
-            <span>Since 2004</span>
+            <span>Since 2014</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +90,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-8 text-xl text-slate-500 dark:text-slate-400 leading-relaxed">
                 <p>
-                  Calibration began with a singular focus: to redefine the standards of measurement in the industrial world. What started as a specialized lab in 2004 has evolved into a national leader in metrology.
+                  {SITE_CONFIG.name} began with a singular focus: to redefine the standards of measurement in the industrial world. What started as a specialized lab in 2014 has evolved into a national leader in metrology.
                 </p>
                 <p>
                   Today, we serve the most critical sectors—from Aerospace to Pharmaceuticals—ensuring that every measurement is traceable, every tool is accurate, and every client is compliant.

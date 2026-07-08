@@ -96,8 +96,9 @@ export const SERVICES: Service[] = [
       "Digital Multimeters (up to 8.5 digits)",
       "Digital Storage Oscilloscopes (up to 2GHz)",
       "DC Power Supplies & Electronic Loads",
-      "Clamp Meters & Current Transformers",
-      "LCR Meters & Impedance Analyzers"
+      "Power Clamp Meter & Current Transformers",
+      "LCR Meters & Impedance Analyzers",
+      "Insulation Testers & Earth Testers"
     ],
     standards: [
       "ISO/IEC 17025:2017 Accredited",
@@ -140,6 +141,7 @@ export const SERVICES: Service[] = [
       { step: "Certification", description: "Detailed reporting of all measurements and uncertainties." }
     ],
     equipment: [
+      "Dial Calibration Tester (High Precision)",
       "Torque Wrenches & Drivers (up to 2000 Nm)",
       "Digital Force Gauges (Tension & Compression)",
       "Hydraulic & Pneumatic Load Cells",
@@ -388,9 +390,11 @@ export const SERVICES: Service[] = [
       { step: "Certification", description: "Measurement results with uncertainty budget." }
     ],
     equipment: [
+      "Slip Gauge Set (Grade 0, 1, 2)",
       "Vernier, Dial & Digital Calipers",
       "Outside & Inside Micrometers",
-      "Plunger & Lever Type Dial Gauges"
+      "Plunger & Lever Type Dial Gauges",
+      "Height Gauges & Depth Gauges"
     ],
     standards: [
       "ISO 3650 (Gauge Blocks)",
@@ -630,7 +634,7 @@ export const CERTIFICATES = [
   {
     id: "iso-9001",
     title: "ISO 9001:2015",
-    description: "Quality Management Systems certification ensuring consistent excellence.",
+    description: "Quality Management Systems certification ensuring consistent excellence. Includes complete ISO 9001 Documentation Kits.",
     image: "https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?auto=format&fit=crop&q=80&w=400",
   },
   {
@@ -695,19 +699,37 @@ export const BLOG_POSTS = [
 ];
 
 export const JOBS = [
-  { id: "1", title: "Calibration Engineer", department: "Operations", location: "Mumbai", type: "Full-time" },
-  { id: "2", title: "Quality Manager", department: "Quality", location: "Bangalore", type: "Full-time" },
-  { id: "3", title: "Technical Sales Executive", department: "Sales", location: "Pune", type: "Full-time" },
+  { id: "1", title: "Calibration Engineer", department: "Operations", location: "Ahmedabad", type: "Full-time" },
+  { id: "2", title: "Quality Manager", department: "Quality", location: "Ahmedabad", type: "Full-time" },
+  { id: "3", title: "Technical Sales Executive", department: "Sales", location: "Ahmedabad", type: "Full-time" },
 ];
 
 export const CONTACT_INFO = {
-  address: process.env.NEXT_PUBLIC_CONTACT_ADDRESS || "123 Precision Way, Industrial Area, Phase II, Mumbai - 400001",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@calibration.com",
-  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 22 1234 5678",
-  workingHours: "Mon - Sat: 9:00 AM - 6:00 PM",
+  address: process.env.NEXT_PUBLIC_CONTACT_ADDRESS || "Plot No. 45, GIDC Estate, Phase III, Vatva, Ahmedabad, Gujarat - 382445",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@mechatronics-cal.com",
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 79 2583 1234",
+  workingHours: "Mon - Sat: 9:00 AM - 6:30 PM",
 };
 
 export const SITE_CONFIG = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "Calibration",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://calibration.com",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "Mechatronics Calibration",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mechatronics-cal.com",
 };
+
+export const SOCIAL_LINKS = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.indiamart.com%2Fmechatronics-calibration-services%2F",
+    icon: "Facebook",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/share?url=https%3A%2F%2Fwww.indiamart.com%2Fmechatronics-calibration-services%2F",
+    icon: "Twitter",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/cws/share?url=https%3A%2F%2Fwww.indiamart.com%2Fmechatronics-calibration-services%2F",
+    icon: "LinkedIn",
+  },
+];

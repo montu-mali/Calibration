@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Award } from "lucide-react";
 import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function AboutSection() {
   return (
@@ -64,11 +65,11 @@ export default function AboutSection() {
 
             <h2 className="text-4xl md:text-6xl font-bold text-secondary dark:text-white mb-8 leading-[1.1] tracking-tight">
               Driving Accuracy <br />
-              Since <span className="text-primary">2004</span>
+              Since <span className="text-primary">2014</span>
             </h2>
 
             <p className="text-xl text-slate-500 dark:text-slate-400 mb-12 leading-relaxed">
-              For over two decades, Calibration has been at the forefront of measurement science. We combine cutting-edge technology with deep technical expertise to ensure your instruments perform with ultimate precision.
+              For years, {SITE_CONFIG.name} has been at the forefront of measurement science. We combine cutting-edge technology with deep technical expertise to ensure your instruments perform with ultimate precision.
             </p>
 
             <div className="grid gap-10 mb-12">

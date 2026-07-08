@@ -53,7 +53,7 @@ export default function ContactPage() {
                 {[
                   { icon: Phone, label: "Call Us", value: CONTACT_INFO.phone, sub: "Mon-Sat, 9am-6pm" },
                   { icon: Mail, label: "Email Us", value: CONTACT_INFO.email, sub: "24/7 Response Time" },
-                  { icon: MapPin, label: "Visit Lab", value: "Industrial Area, Mumbai", sub: "View on Maps" },
+                  { icon: MapPin, label: "Visit Lab", value: "Vatva GIDC, Ahmedabad", sub: "View on Maps" },
                   { icon: Globe, label: "Global Presence", value: "Across India", sub: "12+ Service Centers" },
                 ].map((item) => (
                   <div key={item.label} className="p-8 rounded-[2.5rem] bg-gray-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:bg-white dark:bg-slate-950 hover:border-primary transition-all duration-300 group">
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   <div className="bg-white dark:bg-slate-950/90 backdrop-blur-md p-6 rounded-3xl shadow-xl text-center border border-white/50">
                     <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                     <h3 className="text-lg font-bold text-secondary dark:text-white mb-1">Main Laboratory</h3>
-                    <p className="text-slate-500 dark:text-slate-400 max-w-[200px] mx-auto text-xs font-medium">Industrial Area, Mumbai, MH 400001</p>
+                    <p className="text-slate-500 dark:text-slate-400 max-w-[200px] mx-auto text-xs font-medium">Plot No. 45, GIDC Estate, Ahmedabad, GJ 382445</p>
                     <Button variant="link" size="sm" className="mt-2 text-primary font-bold" asChild>
                       <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
                         Get Directions

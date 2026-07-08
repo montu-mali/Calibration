@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -65,7 +65,7 @@ export default function Navbar() {
             "text-2xl font-bold tracking-tight transition-colors duration-300",
             isTransparent ? "text-white" : "text-secondary"
           )}>
-            Calibration
+            {SITE_CONFIG.name}
           </span>
         </Link>
 
@@ -149,9 +149,9 @@ export default function Navbar() {
                 <SheetHeader className="p-6 border-b border-slate-100">
                   <SheetTitle className="text-left flex items-center space-x-3">
                     <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">C</span>
+                      <span className="text-white font-bold text-xl">{SITE_CONFIG.name.charAt(0)}</span>
                     </div>
-                    <span className="text-xl font-bold">Calibration</span>
+                    <span className="text-xl font-bold">{SITE_CONFIG.name}</span>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex-grow overflow-y-auto p-6">

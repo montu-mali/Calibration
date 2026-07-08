@@ -23,34 +23,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Calibration | Precision Beyond Measurement",
-    template: "%s | Calibration"
+    default: "Mechatronics Calibration | Precision Beyond Measurement",
+    template: "%s | Mechatronics Calibration"
   },
   description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services across India. NABL Accredited.",
   keywords: ["calibration services", "NABL laboratory", "ISO 17025", "electrical calibration", "mechanical calibration", "precision measurement"],
-  authors: [{ name: "Calibration India" }],
-  creator: "Calibration",
+  authors: [{ name: "Mechatronics Calibration India" }],
+  creator: "Mechatronics Calibration",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://calibration.com",
-    siteName: "Calibration",
-    title: "Calibration | Precision Beyond Measurement",
+    url: "https://mechatronics-cal.com",
+    siteName: "Mechatronics Calibration",
+    title: "Mechatronics Calibration | Precision Beyond Measurement",
     description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services across India.",
     images: [
       {
-        url: "https://calibration.com/og-image.jpg",
+        url: "https://mechatronics-cal.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Calibration - Precision Beyond Measurement",
+        alt: "Mechatronics Calibration - Precision Beyond Measurement",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calibration | Precision Beyond Measurement",
+    title: "Mechatronics Calibration | Precision Beyond Measurement",
     description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services.",
-    images: ["https://calibration.com/twitter-image.jpg"],
+    images: ["https://mechatronics-cal.com/twitter-image.jpg"],
   },
   robots: {
     index: true,
