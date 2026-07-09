@@ -1,14 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SERVICES, ICON_MAP } from "@/lib/constants";
+import { SERVICES } from "@/lib/constants";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, ShieldCheck, Zap, Activity } from "lucide-react";
+import { ArrowUpRight, Zap } from "lucide-react";
 import CTA from "@/components/home/cta";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
 
-export default function ServicesPage() {
+function ServicesContent() {
+  const searchParams = useSearchParams();
+  const categoryFilter = searchParams.get("category");
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (categoryFilter === "instruments") setActiveCategory("Calibration Instruments");
+    else if (categoryFilter === "services") setActiveCategory("Calibration Services");
+    else if (categoryFilter === "iso") setActiveCategory("ISO Services");
+    else if (categoryFilter === "support") setActiveCategory("Support Service");
+    else setActiveCategory(null);
+  }, [categoryFilter]);
+
+  const categories = ["Calibration Instruments", "Calibration Services", "ISO Services", "Support Service"];
+
+  const filteredServices = activeCategory
+    ? SERVICES.filter(s => s.category === activeCategory)
+    : SERVICES;
+
+  const groupedServices = categories.reduce((acc, cat) => {
+    const services = SERVICES.filter(s => s.category === cat);
+    if (services.length > 0) acc[cat] = services;
+    return acc;
+  }, {} as Record<string, typeof SERVICES>);
+
   return (
     <div className="pt-20">
       <section className="py-16 md:py-20 bg-muted dark:bg-muted/50">
@@ -36,54 +63,100 @@ export default function ServicesPage() {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
             >
-              NABL accredited calibration services across 10+ domains, delivering traceable results that define industry benchmarks.
+              Industry-leading calibration for precision instruments, ISO compliance, and specialized laboratory services.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-32">
-            {SERVICES.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-20">
+            <Button
+              variant={activeCategory === null ? "default" : "outline"}
+              onClick={() => setActiveCategory(null)}
+              className="rounded-full px-8 h-12 font-bold"
+            >
+              All Services
+            </Button>
+            {categories.map(cat => (
+              <Button
+                key={cat}
+                variant={activeCategory === cat ? "default" : "outline"}
+                onClick={() => setActiveCategory(cat)}
+                className="rounded-full px-8 h-12 font-bold"
               >
-                <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background dark:bg-card rounded-[3rem] overflow-hidden flex flex-col p-6">
-                  <CardHeader className="p-8 pb-4">
-                    <div className="w-20 h-20 rounded-[2rem] bg-muted flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
-                      {(() => {
-                        const Icon = ICON_MAP[service.iconId] || Activity;
-                        return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
-                      })()}
-                    </div>
-                    <CardTitle className="text-3xl font-bold group-hover:text-primary transition-colors leading-tight">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="px-8 pt-0 flex-grow">
-                    <CardDescription className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed mb-8">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter className="p-8 pt-4">
-                    <Button className="w-full h-16 rounded-2xl group/btn font-bold text-xl relative overflow-hidden" asChild>
-                      <Link href={`/services/${service.slug}`}>
-                        <span className="relative z-10 flex items-center justify-center">
-                          Explore Capability
-                          <ArrowUpRight className="ml-2 h-6 w-6 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                        </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </motion.div>
+                {cat}
+              </Button>
             ))}
+          </div>
+
+          <div className="space-y-32 mb-32">
+            {(activeCategory ? [activeCategory] : categories).map((cat) => {
+              const categoryServices = SERVICES.filter(s => s.category === cat);
+              if (categoryServices.length === 0) return null;
+
+              return (
+                <div key={cat} className="space-y-12">
+                  <div className="flex items-center space-x-6">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight">{cat}</h2>
+                    <div className="h-px bg-border flex-grow" />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {categoryServices.map((service, index) => (
+                      <motion.div
+                        key={service.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.05 }}
+                      >
+                        <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background dark:bg-card rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
+                          <div className="relative h-64 w-full overflow-hidden">
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              fill
+                              className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </div>
+                          <CardHeader className="p-10 pb-4">
+                            <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors leading-tight min-h-[4rem] flex items-center">
+                              {service.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="px-10 pt-0 flex-grow">
+                            <CardDescription className="text-base text-muted-foreground dark:text-muted-foreground leading-relaxed mb-6">
+                              {service.description}
+                            </CardDescription>
+                          </CardContent>
+                          <CardFooter className="p-10 pt-4">
+                            <Button className="w-full h-14 rounded-2xl group/btn font-bold text-lg relative overflow-hidden" asChild>
+                              <Link href={`/services/${service.slug}`}>
+                                <span className="relative z-10 flex items-center justify-center">
+                                  View Details
+                                  <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                              </Link>
+                            </Button>
+                          </CardFooter>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
       <CTA />
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div className="pt-40 text-center">Loading capabilities...</div>}>
+      <ServicesContent />
+    </Suspense>
   );
 }

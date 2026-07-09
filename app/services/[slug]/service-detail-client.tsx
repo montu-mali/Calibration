@@ -75,7 +75,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-border"
             >
               <Image
-                src={`https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200`}
+                src={service.image}
                 alt={service.title}
                 fill
                 className="object-cover"

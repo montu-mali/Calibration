@@ -19,6 +19,10 @@ import {
   Beaker,
   Cpu,
   Shirt,
+  ShieldCheck,
+  FileText,
+  Boxes,
+  CircleCheck,
   LucideIcon
 } from "lucide-react";
 import { Service, Industry } from "@/types";
@@ -44,6 +48,10 @@ export const ICON_MAP: Record<string, LucideIcon> = {
   beaker: Beaker,
   cpu: Cpu,
   shirt: Shirt,
+  shield: ShieldCheck,
+  file: FileText,
+  boxes: Boxes,
+  check: CircleCheck,
 };
 
 export const NAV_LINKS = [
@@ -53,15 +61,10 @@ export const NAV_LINKS = [
     label: "Services",
     href: "/services",
     dropdown: [
-      { label: "Electrical Calibration", href: "/services/electrical-calibration" },
-      { label: "Mechanical Calibration", href: "/services/mechanical-calibration" },
-      { label: "Temperature Calibration", href: "/services/temperature-calibration" },
-      { label: "Pressure Calibration", href: "/services/pressure-calibration" },
-      { label: "Mass Calibration", href: "/services/mass-calibration" },
-      { label: "Torque Calibration", href: "/services/torque-calibration" },
-      { label: "Flow Calibration", href: "/services/flow-calibration" },
-      { label: "Dimensional Calibration", href: "/services/dimensional-calibration" },
-      { label: "On-site Calibration", href: "/services/on-site-calibration" },
+      { label: "Calibration Instruments", href: "/services?category=instruments" },
+      { label: "Calibration Services", href: "/services?category=services" },
+      { label: "ISO Services", href: "/services?category=iso" },
+      { label: "Support Service", href: "/services?category=support" },
     ]
   },
   { label: "Industries", href: "/industries" },
@@ -73,383 +76,628 @@ export const NAV_LINKS = [
 ];
 
 export const SERVICES: Service[] = [
+  // --- Calibration Instruments ---
   {
-    id: "electrical",
-    title: "Electrical Calibration",
-    slug: "electrical-calibration",
-    description: "Precise calibration for multimeters, oscilloscopes, and power supplies with traceable standards.",
-    iconId: "zap",
-    longDescription: "Our electrical calibration services cover a wide range of instruments, ensuring they meet strict accuracy requirements. We utilize high-precision calibrators and standards traceable to national and international bodies.",
-    benefits: [
-      "Minimize measurement uncertainty",
-      "Ensure compliance with international standards",
-      "Extend equipment lifespan",
-      "Prevent costly production errors"
-    ],
-    process: [
-      { step: "Reception", description: "Equipment is logged and inspected for physical damage." },
-      { step: "Stabilization", description: "Instruments are acclimated to controlled laboratory conditions." },
-      { step: "Calibration", description: "Comparison against high-precision master standards." },
-      { step: "Documentation", description: "Generation of traceable calibration certificates." }
-    ],
-    equipment: [
-      "Digital Multimeters (up to 8.5 digits)",
-      "Digital Storage Oscilloscopes (up to 2GHz)",
-      "DC Power Supplies & Electronic Loads",
-      "Power Clamp Meter & Current Transformers",
-      "LCR Meters & Impedance Analyzers",
-      "Insulation Testers & Earth Testers"
-    ],
-    standards: [
-      "ISO/IEC 17025:2017 Accredited",
-      "NIST (USA) Traceable",
-      "NABL (India) Accredited"
-    ],
-    applications: [
-      "Electronics Manufacturing",
-      "Power Generation & Distribution",
-      "Research & Development Laboratories"
-    ],
-    faqs: [
-      {
-        question: "What parameters are covered under electrical calibration?",
-        answer: "We cover Voltage (AC/DC), Current (AC/DC), Resistance, Capacitance, Inductance, Frequency, and Phase."
-      },
-      {
-        question: "Can you calibrate high-precision 8.5 digit multimeters?",
-        answer: "Yes, our lab is equipped with Fluke 5720A/5730A calibrators capable of supporting ultra-high precision instruments."
-      }
-    ]
-  },
-  {
-    id: "mechanical",
-    title: "Mechanical Calibration",
-    slug: "mechanical-calibration",
-    description: "Accurate measurement for torque wrenches, force gauges, and weighing scales.",
+    id: "dial-calibration-tester",
+    title: "Dial Calibration Tester",
+    slug: "dial-calibration-tester",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop",
+    description: "High-precision testing equipment for dial gauges and indicators with ultra-fine resolution.",
     iconId: "settings",
-    longDescription: "Mechanical calibration is critical for maintaining the integrity of physical measurements. We provide services for force, torque, and mass instruments with exceptional precision.",
-    benefits: [
-      "Ensure structural integrity",
-      "Optimized assembly performance",
-      "Regulatory compliance",
-      "Reduced equipment downtime"
-    ],
+    longDescription: "Our Dial Calibration Tester is designed for the precise verification and calibration of dial indicators, test indicators, and bore gauges. It features a robust mechanical structure combined with high-resolution digital feedback to ensure micron-level accuracy.",
+    benefits: ["Micron-level precision", "Robust mechanical design", "Digital read-out compatibility", "Repeatable measurement results"],
     process: [
-      { step: "Initial Test", description: "Pre-calibration verification to determine 'as-found' data." },
-      { step: "Adjustment", description: "Fine-tuning of the instrument if found out of tolerance." },
-      { step: "Final Verification", description: "Post-adjustment testing to confirm accuracy." },
-      { step: "Certification", description: "Detailed reporting of all measurements and uncertainties." }
+      { step: "Initial Alignment", description: "Securing the dial indicator in the testing jig." },
+      { step: "Full Range Testing", description: "Verification at multiple points across the instrument's span." },
+      { step: "Hysteresis Check", description: "Measuring deviation between forward and backward strokes." }
     ],
-    equipment: [
-      "Dial Calibration Tester (High Precision)",
-      "Torque Wrenches & Drivers (up to 2000 Nm)",
-      "Digital Force Gauges (Tension & Compression)",
-      "Hydraulic & Pneumatic Load Cells",
-      "Analytical & Industrial Weighing Scales"
-    ],
-    standards: [
-      "ISO 6789 (Torque Tools)",
-      "ASTM E4 (Force Verification)",
-      "ISO/IEC 17025"
-    ],
-    applications: [
-      "Automotive Assembly Lines",
-      "Aerospace Component Testing",
-      "Construction Material Testing"
-    ],
+    equipment: ["Master Dial Tester", "Resolution Gauges", "Stability Blocks"],
+    standards: ["ISO 463", "ASME B89.1.10M"],
+    applications: ["Tool Rooms", "Quality Control Labs", "Machine Tool Manufacturers"],
     faqs: [
-      {
-        question: "How often should torque wrenches be calibrated?",
-        answer: "As per ISO 6789, it is recommended every 12 months or every 5,000 cycles, whichever comes first."
-      }
+      { question: "What is the accuracy of the tester?", answer: "Our testers provide accuracy up to ±0.001mm." },
+      { question: "Can it calibrate digital indicators?", answer: "Yes, it is compatible with both analog and digital indicators." }
     ]
   },
   {
-    id: "temperature",
-    title: "Temperature Calibration",
-    slug: "temperature-calibration",
-    description: "Calibration for RTDs, thermocouples, and infrared thermometers across broad ranges.",
-    iconId: "thermometer",
-    longDescription: "Ensuring accurate temperature readings is vital in many industries. Our lab provides high-stability temperature sources and reference probes for precise calibration.",
-    benefits: [
-      "Ensured product quality in pharma/food",
-      "Process safety optimization",
-      "Energy efficiency",
-      "Regulatory audit readiness"
-    ],
+    id: "power-clamp-meter",
+    title: "Power Clamp Meter",
+    slug: "power-clamp-meter",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1581092162384-8987c1794714?q=80&w=800&auto=format&fit=crop",
+    description: "Advanced electrical measurement tool for non-invasive current and power analysis.",
+    iconId: "zap",
+    longDescription: "The Power Clamp Meter is an essential tool for electrical engineers, allowing for the measurement of current, voltage, and power without breaking the circuit. It is calibrated to provide accurate True-RMS readings in complex industrial environments.",
+    benefits: ["Non-invasive measurement", "True-RMS accuracy", "Safety rated for industrial use", "Multiple parameter tracking"],
     process: [
-      { step: "Thermal Loading", description: "Placement of sensors in high-stability baths or dry blocks." },
-      { step: "Equilibrium", description: "Waiting for temperature stabilization at various setpoints." },
-      { step: "Comparison", description: "Readings against primary SPRTs or thermocouples." },
-      { step: "Reporting", description: "Complete data set with correction factors provided." }
+      { step: "Safety Check", description: "Visual inspection for insulation integrity." },
+      { step: "Load Simulation", description: "Testing against precision current sources." },
+      { step: "Harmonic Analysis", description: "Verification of accuracy across various frequencies." }
     ],
-    equipment: [
-      "Platinum Resistance Thermometers (RTDs)",
-      "Thermocouples (Type J, K, T, E, R, S, B, N)",
-      "Infrared Pyrometers & Thermal Imagers",
-      "Digital Thermometers & Data Loggers"
-    ],
-    standards: [
-      "ITS-90 Temperature Scale",
-      "ASTM E220 (Thermocouples)",
-      "ISO/IEC 17025"
-    ],
-    applications: [
-      "Pharmaceutical Storage & Production",
-      "Food Safety & Processing",
-      "Healthcare & Cold Chain Logistics"
-    ],
+    equipment: ["Multi-product Calibrator", "Current Coils", "Power Standards"],
+    standards: ["IEC 61010", "IEEE 519"],
+    applications: ["Electrical Maintenance", "Energy Auditing", "Power Quality Analysis"],
     faqs: [
-      {
-        question: "What is the temperature range of your calibration services?",
-        answer: "Our capabilities span from -196°C (Liquid Nitrogen) to +1200°C (Furnace)."
-      }
+      { question: "Does it measure power factor?", answer: "Yes, our advanced models measure Active, Reactive, and Apparent power as well as Power Factor." }
     ]
   },
   {
-    id: "pressure",
-    title: "Pressure Calibration",
-    slug: "pressure-calibration",
-    description: "High-precision pressure calibration for gauges, transducers, and transmitters.",
-    iconId: "gauge",
-    longDescription: "Our pressure calibration capabilities range from vacuum to high pressure, utilizing deadweight testers and high-accuracy digital controllers.",
-    benefits: [
-      "Enhanced process safety",
-      "Improved system reliability",
-      "Cost reduction through accuracy",
-      "Extended sensor life"
-    ],
-    process: [
-      { step: "System Cleanse", description: "Ensuring no contamination in pressure lines." },
-      { step: "Pressure Cycling", description: "Exercising the sensor to eliminate hysteresis." },
-      { step: "Point-to-Point Test", description: "Multiple pressure levels checked for linearity." },
-      { step: "Analysis", description: "Calculated error vs. manufacturer specifications." }
-    ],
-    equipment: [
-      "Digital & Analog Pressure Gauges",
-      "Pressure Transmitters & Transducers",
-      "Deadweight Testers (Hydraulic & Pneumatic)",
-      "Barometers & Manometers"
-    ],
-    standards: [
-      "EURAMET cg-17 (Pressure Gauges)",
-      "ISO/IEC 17025",
-      "NIST Traceable"
-    ],
-    applications: [
-      "Oil & Gas Pipeline Monitoring",
-      "Chemical Process Control",
-      "Hydraulic System Maintenance"
-    ],
-    faqs: [
-      {
-        question: "What is the maximum pressure you can calibrate?",
-        answer: "We can calibrate up to 40,000 psi (approx. 2800 bar) using our primary deadweight testers."
-      }
-    ]
-  },
-  {
-    id: "mass",
-    title: "Mass Calibration",
-    slug: "mass-calibration",
-    description: "Standard weight and balance calibration ensuring high measurement integrity.",
-    iconId: "scale",
-    longDescription: "We offer mass calibration services for weights and balances ranging from laboratory micro-balances to high-capacity industrial scales.",
-    benefits: [
-      "Legal metrology compliance",
-      "Material savings through precision",
-      "Audit-proof documentation",
-      "High sensitivity verification"
-    ],
-    process: [
-      { step: "Cleaning", description: "Removal of dust and surface contaminants." },
-      { step: "Environmental Compensation", description: "Buoyancy correction based on air density." },
-      { step: "Comparison", description: "Substitution weighing against class E2 weights." },
-      { step: "Calibration Report", description: "Individual weight values and uncertainties." }
-    ],
-    equipment: [
-      "E1, E2, F1, F2, M1 Class Weights",
-      "Analytical Micro-Balances",
-      "Industrial Floor & Bench Scales"
-    ],
-    standards: [
-      "OIML R111 (Weights)",
-      "ISO/IEC 17025",
-      "NABL Accredited"
-    ],
-    applications: [
-      "Analytical Laboratories",
-      "Jewelry & Precious Metals",
-      "Pharmaceutical Compounding"
-    ],
-    faqs: [
-      {
-        question: "What mass classes do you support?",
-        answer: "We are accredited to calibrate weights from Class E2 through M1."
-      }
-    ]
-  },
-  {
-    id: "torque",
-    title: "Torque Calibration",
-    slug: "torque-calibration",
-    description: "Precision torque tool calibration for consistent and reliable fastening.",
-    iconId: "activity",
-    longDescription: "Accuracy in torque is essential for safety and quality in assembly. We calibrate all types of torque tools including manual and electric drivers.",
-    benefits: [
-      "Joint integrity assurance",
-      "Operator safety",
-      "Warranty cost reduction",
-      "Process repeatability"
-    ],
-    process: [
-      { step: "Visual Check", description: "Inspection of drive, mechanism, and scales." },
-      { step: "Functional Test", description: "Checking the clicking or releasing mechanism." },
-      { step: "Torque Application", description: "Multiple hits at 20%, 60%, and 100% of range." },
-      { step: "Data Recording", description: "Average error and standard deviation calculated." }
-    ],
-    equipment: [
-      "Click-Type Torque Wrenches",
-      "Dial Torque Wrenches",
-      "Digital Torque Testers"
-    ],
-    standards: [
-      "ISO 6789:2017",
-      "ASME B107.300",
-      "ISO/IEC 17025"
-    ],
-    applications: [
-      "Automotive Powertrain Assembly",
-      "Aerospace Structural Fastening",
-      "Oil & Gas Flange Bolting"
-    ],
-    faqs: [
-      {
-        question: "Do you provide adjustment services for torque wrenches?",
-        answer: "Yes, we provide minor adjustments and repair services if the tool is found out of tolerance."
-      }
-    ]
-  },
-  {
-    id: "flow",
-    title: "Flow Calibration",
-    slug: "flow-calibration",
-    description: "Liquid and gas flow meter calibration for optimized process control.",
-    iconId: "droplets",
-    longDescription: "Our flow calibration services ensure your meters provide accurate data for process efficiency and billing accuracy.",
-    benefits: [
-      "Billing accuracy",
-      "Improved process efficiency",
-      "Leak detection support",
-      "Environmental compliance"
-    ],
-    process: [
-      { step: "Installation", description: "Meter mounted in a stable test loop." },
-      { step: "Priming", description: "Removal of air bubbles and establishing flow." },
-      { step: "Multi-point Verification", description: "Testing at 25%, 50%, 75%, and 100% flow rates." },
-      { step: "Final Check", description: "Pressure drop and signal integrity check." }
-    ],
-    equipment: [
-      "Liquid Flow Meters (Electromagnetic, Ultrasonic)",
-      "Gas Flow Meters (Vortex, Turbine)",
-      "Mass Flow Controllers (MFCs)"
-    ],
-    standards: [
-      "ISO 17025 Accredited",
-      "NIST Traceable Standards"
-    ],
-    applications: [
-      "Municipal Water Management",
-      "Chemical Processing",
-      "Energy Metering"
-    ],
-    faqs: [
-      {
-        question: "Can you calibrate flow meters on-site?",
-        answer: "Yes, we use portable ultrasonic flow meters for non-invasive on-site verification."
-      }
-    ]
-  },
-  {
-    id: "dimensional",
-    title: "Dimensional Calibration",
-    slug: "dimensional-calibration",
-    description: "Micrometer, caliper, and dial gauge calibration with micron-level precision.",
+    id: "slip-gauge-set",
+    title: "Slip Gauge Set",
+    slug: "slip-gauge-set",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop",
+    description: "Primary standards for dimensional metrology, available in Grade 0, 1, and 2.",
     iconId: "ruler",
-    longDescription: "Dimensional accuracy is the foundation of quality manufacturing. We provide high-precision measurements for all standard hand tools.",
-    benefits: [
-      "Product fit and finish",
-      "Interchangeability of parts",
-      "Scrap reduction",
-      "Quality control assurance"
-    ],
+    longDescription: "Our Slip Gauge Sets (also known as Gauge Blocks) serve as the foundation of dimensional measurement in tool rooms. Made from high-quality alloy steel or ceramic, they offer exceptional stability and wear resistance.",
+    benefits: ["Exceptional surface finish", "High thermal stability", "Wringability excellence", "NABL traceable"],
     process: [
-      { step: "De-magnetization", description: "Ensuring no magnetic pull affects measurements." },
-      { step: "Zeroing", description: "Establishment of the reference point." },
-      { step: "Point Verification", description: "Testing across the full range using gauge blocks." },
-      { step: "Certification", description: "Measurement results with uncertainty budget." }
+      { step: "Cleaning", description: "Removal of protective oils using high-grade solvents." },
+      { step: "De-magnetization", description: "Ensuring no magnetic attraction affects wringing." },
+      { step: "Interferometry", description: "Comparison against laser standards for Grade 0 blocks." }
     ],
-    equipment: [
-      "Slip Gauge Set (Grade 0, 1, 2)",
-      "Vernier, Dial & Digital Calipers",
-      "Outside & Inside Micrometers",
-      "Plunger & Lever Type Dial Gauges",
-      "Height Gauges & Depth Gauges"
-    ],
-    standards: [
-      "ISO 3650 (Gauge Blocks)",
-      "ISO/IEC 17025"
-    ],
-    applications: [
-      "Precision Machining & Tooling",
-      "Automotive Component Quality",
-      "Aerospace Manufacturing"
-    ],
+    equipment: ["Gauge Block Comparator", "Monochromatic Light Source", "Optical Flats"],
+    standards: ["ISO 3650", "IS 2984"],
+    applications: ["Standard Labs", "Tool & Die Making", "Inspection Calibration"],
     faqs: [
-      {
-        question: "What is your measurement uncertainty for gauge blocks?",
-        answer: "We offer ultra-low uncertainty levels suitable for Grade 0 slip gauges."
-      }
+      { question: "Steel vs Ceramic - which is better?", answer: "Ceramic is better for wear resistance and corrosion, while steel is the traditional choice for thermal coefficient matching." }
     ]
   },
   {
-    id: "onsite",
-    title: "On-Site Calibration",
-    slug: "on-site-calibration",
-    description: "Expert calibration services delivered directly to your facility for convenience.",
-    iconId: "truck",
-    longDescription: "Minimize downtime with our on-site calibration services. Our mobile lab brings the same level of precision and expertise to your doorstep.",
-    benefits: [
-      "Minimized production downtime",
-      "Zero transport risk for fragile equipment",
-      "Immediate results and adjustments",
-      "Reduced logistical costs"
-    ],
+    id: "thermocouple-sensor",
+    title: "Thermocouple Sensor",
+    slug: "thermocouple-sensor",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1527634311077-9943f7df34e2?q=80&w=800&auto=format&fit=crop",
+    description: "Reliable temperature sensing solutions for extreme industrial environments.",
+    iconId: "thermometer",
+    longDescription: "We provide high-quality Thermocouple Sensors (Types J, K, T, R, S, B) designed for a wide range of temperature measurements, from cryogenic applications to high-temperature furnaces.",
+    benefits: ["Wide temperature range", "Fast response time", "Durable sheath materials", "Custom lengths available"],
     process: [
-      { step: "Site Survey", description: "Reviewing environment and safety requirements." },
-      { step: "Setup", description: "Mobile standards deployment at the work area." },
-      { step: "Execution", description: "Calibration of fixed instruments and machinery." },
-      { step: "Instant Reporting", description: "Initial data provided before the team leaves." }
+      { step: "Thermal Equilibrium", description: "Placement in high-stability calibration baths." },
+      { step: "EMF Measurement", description: "Comparison against primary SPRT standards." },
+      { step: "Cold Junction Comp", description: "Verification of internal compensation accuracy." }
     ],
-    equipment: [
-      "Fixed Industrial Process Instruments",
-      "Large Weighing Systems (Silos & Bridges)",
-      "Environmental Chambers & Ovens"
-    ],
-    standards: [
-      "Accredited Mobile Lab Procedures",
-      "ISO/IEC 17025 Compliance"
-    ],
-    applications: [
-      "Large Scale Manufacturing Plants",
-      "Continuous Process Industries",
-      "Remote Industrial Sites"
-    ],
+    equipment: ["Dry Block Calibrator", "Standard PRT", "High-stability Furnaces"],
+    standards: ["ASTM E230", "IEC 60584"],
+    applications: ["Heat Treatment", "Plastic Molding", "Food Processing"],
     faqs: [
-      {
-        question: "How do you ensure lab-grade accuracy on-site?",
-        answer: "Our mobile teams use ruggedized master standards with superior environmental compensation."
-      }
+      { question: "Which type is best for 1000°C?", answer: "Type K or Type N are commonly used, but Type S/R are preferred for high-precision laboratory use at those temperatures." }
+    ]
+  },
+  {
+    id: "vernier-face-caliper",
+    title: "Vernier Face Caliper",
+    slug: "vernier-face-caliper",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1503691010413-b60f27109152?q=80&w=800&auto=format&fit=crop",
+    description: "Versatile dimensional measurement tool for internal, external, and depth checks.",
+    iconId: "ruler",
+    longDescription: "The Vernier Face Caliper is a staple in every machine shop. Our calipers are precision-ground to provide smooth movement and clear, easy-to-read scales, ensuring accurate measurements every time.",
+    benefits: ["Stainless steel construction", "Four-way measurement", "Fine adjustment screw", "Anti-glare satin chrome finish"],
+    process: [
+      { step: "Zero Verification", description: "Checking the alignment of jaws at the closed position." },
+      { step: "Linearity Test", description: "Measurement against grade 0 slip gauges at 5 points." },
+      { step: "Parallelism Check", description: "Ensuring measurement jaws are perfectly parallel." }
+    ],
+    equipment: ["Calibration Grade Gauge Blocks", "Granite Surface Plate", "Master Caliper"],
+    standards: ["ISO 13385-1", "DIN 862"],
+    applications: ["Machining", "Automotive Parts", "General Engineering"],
+    faqs: [
+      { question: "What is the typical resolution?", answer: "Our analog calipers typically offer 0.02mm, while digital versions offer 0.01mm." }
+    ]
+  },
+  {
+    id: "pressure-calibrator",
+    title: "Pressure Calibrator",
+    slug: "pressure-calibrator",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1581092162384-8987c1794714?q=80&w=800&auto=format&fit=crop",
+    description: "Field and lab solutions for testing pressure gauges and transmitters.",
+    iconId: "gauge",
+    longDescription: "Our Pressure Calibrators combine high-accuracy sensors with integrated pressure generation. They are rugged enough for field use while maintaining the precision required for laboratory standards.",
+    benefits: ["Dual-range capability", "Built-in hand pump", "Loop power supply", "Rugged field-ready design"],
+    process: [
+      { step: "Leak Test", description: "Pressure stabilization to ensure system integrity." },
+      { step: "Comparison", description: "Readings against internal master sensor." },
+      { step: "Logging", description: "Automatic capture of pressure vs. mA output for transmitters." }
+    ],
+    equipment: ["Deadweight Tester", "Digital Pressure Controller", "Vacuum Pumps"],
+    standards: ["DKD-R 6-1", "EURAMET cg-17"],
+    applications: ["Petrochemical Plants", "Hydraulic Maintenance", "Process Instrumentation"],
+    faqs: [
+      { question: "What is the max pressure?", answer: "We offer models ranging from vacuum up to 10,000 psi." }
+    ]
+  },
+  {
+    id: "multi-meter",
+    title: "Multi Meter",
+    slug: "multi-meter",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1517420812313-8fc196557673?q=80&w=800&auto=format&fit=crop",
+    description: "High-precision 8.5 digit multimeters for the most demanding lab requirements.",
+    iconId: "zap",
+    longDescription: "Our high-precision multimeters are the reference standard for DC and low-frequency AC measurements. Featuring up to 8.5 digits of resolution, they are essential for primary metrology labs.",
+    benefits: ["8.5 digit resolution", "Self-calibration technology", "Direct current measurement", "Graphic display for trend analysis"],
+    process: [
+      { step: "Warm-up", description: "24-hour stabilization to reach thermal equilibrium." },
+      { step: "Full Function Test", description: "Testing V, I, R, C across all ranges." },
+      { step: "Linearity Verification", description: "Using Josephsen Junction standards (for 8.5 digit models)." }
+    ],
+    equipment: ["Multi-product Calibrator", "Standard Resistors", "Saturated Buffer Cells"],
+    standards: ["ISO/IEC 17025", "MIL-STD-45662A"],
+    applications: ["Primary Metrology Labs", "Military Electronics", "Avionics Testing"],
+    faqs: [
+      { question: "How often should it be calibrated?", answer: "For primary standards, every 180 days; for general use, every 12 months." }
+    ]
+  },
+  {
+    id: "length-bar",
+    title: "Length Bar",
+    slug: "length-bar",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1531284895878-a284a1420cc0?q=80&w=800&auto=format&fit=crop",
+    description: "Master standards for large-scale dimensional calibration.",
+    iconId: "ruler",
+    longDescription: "Length bars are used for calibrating large instruments like long-reach micrometers and height gauges. Our bars are made from specialized steel with high thermal stability and precision-lapped ends.",
+    benefits: ["Standard lengths up to 1000mm", "High parallelism", "Serialized for traceability", "Protective wooden casing"],
+    process: [
+      { step: "Stabilization", description: "Minimum 48-hour soak in a 20°C environment." },
+      { step: "Lapping Inspection", description: "Surface finish check using optical flats." },
+      { step: "Comparator Measurement", description: "Verification against laser interferometer." }
+    ],
+    equipment: ["Horizontal Bench Micrometer", "Laser Interferometer", "Temp probes"],
+    standards: ["BS 1788", "ISO 3650"],
+    applications: ["Aerospace Manufacturing", "Heavy Engineering", "Metrology Facilities"],
+    faqs: [
+      { question: "Are these available in sets?", answer: "Yes, we offer standard sets and individual bars for custom requirements." }
+    ]
+  },
+  {
+    id: "digital-clamp-meters",
+    title: "Digital Clamp Meters",
+    slug: "digital-clamp-meters",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1635339004551-b213529b3e0b?q=80&w=800&auto=format&fit=crop",
+    description: "Compact and reliable digital clamps for quick current measurements.",
+    iconId: "activity",
+    longDescription: "Our Digital Clamp Meters are designed for electricians who need a reliable, easy-to-use tool for everyday maintenance. They offer quick current readings with integrated voltage and resistance measurement capabilities.",
+    benefits: ["Auto-ranging", "Backlit LCD", "CAT III 600V safety rating", "Compact jaw design"],
+    process: [
+      { step: "Function Verification", description: "Testing all dial positions for continuity and range." },
+      { step: "Clamp Calibration", description: "Using 50-turn coil to simulate high current loads." },
+      { step: "Accuracy Tuning", description: "Internal potentiometer adjustment if needed." }
+    ],
+    equipment: ["5522A Calibrator", "Current Coil", "Resistance Boxes"],
+    standards: ["IEC 61010-2-032", "EN 61326"],
+    applications: ["Residential Electrical", "HVAC Maintenance", "Panel Board Testing"],
+    faqs: [
+      { question: "Can it measure DC current?", answer: "Specific models feature Hall Effect sensors for both AC and DC measurement." }
+    ]
+  },
+  {
+    id: "earth-resistance-tester",
+    title: "Earth Resistance Tester",
+    slug: "earth-resistance-tester",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1581092918225-827878347209?q=80&w=800&auto=format&fit=crop",
+    description: "Safety critical instrument for verifying grounding and bonding systems.",
+    iconId: "zapoff",
+    longDescription: "Ensuring a low-resistance path to ground is vital for electrical safety. Our Earth Resistance Testers are calibrated to provide accurate soil resistivity and grounding system measurements.",
+    benefits: ["2, 3, and 4 pole testing", "High noise rejection", "Integrated battery charger", "Rugged outdoor case"],
+    process: [
+      { step: "Open Circuit Test", description: "Verifying the instrument's drive voltage." },
+      { step: "Resistance Check", description: "Testing against standard decade boxes with 4-wire leads." },
+      { step: "Frequency Sweep", description: "Checking noise filtering at 128Hz and other frequencies." }
+    ],
+    equipment: ["Standard Decade Resistance Box", "Variable Ground Simulator", "Precision Leads"],
+    standards: ["IEEE 81", "IEC 61557"],
+    applications: ["Substation Commissioning", "Lightning Protection", "Telecommunication Sites"],
+    faqs: [
+      { question: "Does it come with stakes?", answer: "Yes, our standard kits include earth stakes and reels of wire." }
+    ]
+  },
+  {
+    id: "cycling-power-meter",
+    title: "Cycling Power Meter",
+    slug: "cycling-power-meter",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1544216717-3bbf52512659?q=80&w=800&auto=format&fit=crop",
+    description: "Precision strain-gauge based power measurement for athletic performance.",
+    iconId: "activity",
+    longDescription: "Calibration of cycling power meters ensures that athletes are training at the correct intensities. We use specialized dynamic test benches to verify wattage accuracy across various cadences.",
+    benefits: ["±1% accuracy target", "Cadence verification", "Temperature compensation check", "Wireless signal integrity"],
+    process: [
+      { step: "Static Weight Test", description: "Applying known masses to verify torque calculation." },
+      { step: "Dynamic Bench Test", description: "Comparing against an SRM or PowerTap master hub." },
+      { step: "Thermal Drift Test", description: "Cycling between 5°C and 40°C to check offset." }
+    ],
+    equipment: ["Cyclus2 Ergometer", "Standard Masses", "ANT+/BLE Analyzers"],
+    standards: ["NIST Traceable Mass", "Proprietary Dynamic Standards"],
+    applications: ["Professional Sports Teams", "Performance Labs", "Manufacturer R&D"],
+    faqs: [
+      { question: "Can you calibrate pedal-based meters?", answer: "Yes, we support pedal, crank, and hub-based power meters." }
+    ]
+  },
+  {
+    id: "ampere-meter",
+    title: "Ampere Meter",
+    slug: "ampere-meter",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1590218126489-09b750977a0c?q=80&w=800&auto=format&fit=crop",
+    description: "Analog and digital ammeters for panel mounting or portable use.",
+    iconId: "zap",
+    longDescription: "Our Ampere Meters provide accurate current monitoring for industrial panels. Whether analog (moving iron/coil) or digital, we ensure they meet their specified accuracy class for reliable operation.",
+    benefits: ["Clear visibility", "High overload capacity", "Shunt and CT compatible", "Standard DIN sizes"],
+    process: [
+      { step: "Zero Adjustment", description: "Mechanical or electronic zeroing of the pointer/display." },
+      { step: "Scale Verification", description: "Testing at 20%, 40%, 60%, 80%, and 100% of f.s.d." },
+      { step: "Load Cycle", description: "Ensuring thermal stability under continuous rated current." }
+    ],
+    equipment: ["High Current Source", "Precision Shunts", "Standard Ammeter"],
+    standards: ["IEC 60051", "IS 1248"],
+    applications: ["Switchgear Panels", "Battery Charging Systems", "Process Control"],
+    faqs: [
+      { question: "Do you calibrate DC shunts as well?", answer: "Yes, we provide resistance calibration for high-current shunts up to 5000A." }
+    ]
+  },
+  {
+    id: "multimeter-standard",
+    title: "Multimeter",
+    slug: "multimeter",
+    category: "Calibration Instruments",
+    image: "https://images.unsplash.com/photo-1635339004551-b213529b3e0b?q=80&w=800&auto=format&fit=crop",
+    description: "Versatile handheld multimeters for general electrical and electronic testing.",
+    iconId: "activity",
+    longDescription: "The most commonly used tool in electrical engineering. We provide a range of handheld multimeters from leading brands, all calibrated and ready for use in industrial or laboratory environments.",
+    benefits: ["True-RMS measurement", "Ruggedized housing", "Long battery life", "Comprehensive test lead sets"],
+    process: [
+      { step: "Full Range Calibration", description: "Verifying all electrical parameters across all ranges." },
+      { step: "Environmental Testing", description: "Checking performance under humidity and temperature extremes." },
+      { step: "Safety Verification", description: "Fused input testing and CAT rating compliance." }
+    ],
+    equipment: ["5502A/5522A Calibrator", "Standard Decade Boxes", "Frequency Standards"],
+    standards: ["EN 61010", "ISO 17025"],
+    applications: ["Industrial Maintenance", "Electronic Repair", "Engineering Labs"],
+    faqs: [
+      { question: "Does it come with a certificate?", answer: "Yes, all our multimeters are supplied with a NABL traceable calibration certificate." }
+    ]
+  },
+
+  // --- Calibration Services ---
+  {
+    id: "mass-balance-calibration",
+    title: "Mass Balance Calibration Service",
+    slug: "mass-balance-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1516149668043-341a92a853bc?q=80&w=800&auto=format&fit=crop",
+    description: "Expert calibration for analytical and industrial weighing systems.",
+    iconId: "scale",
+    longDescription: "Precision weighing is critical in chemistry and manufacturing. Our mass balance calibration service uses Class E2 and F1 weights to ensure your balances are accurate to the sub-milligram level.",
+    benefits: ["OIML R111 compliance", "Linearity and Repeatability checks", "Corner load verification", "Uncertainty budget provided"],
+    process: [
+      { step: "Leveling", description: "Ensuring the balance is perfectly horizontal." },
+      { step: "Internal Cal", description: "Triggering and verifying the balance's internal calibration." },
+      { step: "External Verification", description: "Multi-point testing with certified standard weights." }
+    ],
+    equipment: ["Class E2 Weight Set", "Anti-vibration Table", "Temp/Humidity loggers"],
+    standards: ["OIML R76", "NIST Handbook 44"],
+    applications: ["Analytical Chemistry", "Pharmaceutical Filling", "Jewelry Trading"],
+    faqs: [
+      { question: "How often should I calibrate my lab balance?", answer: "We recommend daily internal checks and annual professional external calibration." }
+    ]
+  },
+  {
+    id: "hot-wire-anemometer-calibration",
+    title: "Hot Wire Anemometer NABL Calibration",
+    slug: "hot-wire-anemometer-nabl-calibration",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop",
+    description: "Specialized low-flow velocity calibration for cleanrooms and HVAC.",
+    iconId: "droplets",
+    longDescription: "Hot wire anemometers are sensitive instruments used for measuring very low air velocities. Our NABL-accredited wind tunnel ensures accurate calibration for laminar flow hoods and cleanroom monitoring.",
+    benefits: ["Accredited low-flow ranges", "Temperature compensation check", "Digital signal verification", "Traceable to NPL standards"],
+    process: [
+      { step: "Probe Inspection", description: "Checking the delicate wire sensor for contamination." },
+      { step: "Tunnel Stabilization", description: "Establishing steady laminar air flow." },
+      { step: "Velocity Comparison", description: "Reading against primary Pitot tube or Laser Doppler Anemometer." }
+    ],
+    equipment: ["Low-speed Wind Tunnel", "LDA Master", "Precision Barometer"],
+    standards: ["ISO 17713", "ASTM D4480"],
+    applications: ["HVAC Validation", "Cleanroom Certification", "Environmental Monitoring"],
+    faqs: [
+      { question: "What is the minimum velocity you can calibrate?", answer: "We can calibrate down to 0.05 m/s in our specialized low-flow tunnel." }
+    ]
+  },
+  {
+    id: "mechanical-instrument-calibration",
+    title: "Mechanical Instrument Calibration Service",
+    slug: "mechanical-instrument-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1504328156602-ff1447153abb?q=80&w=800&auto=format&fit=crop",
+    description: "Comprehensive calibration for all hand-held mechanical measuring tools.",
+    iconId: "settings",
+    longDescription: "From micrometers to torque wrenches, our mechanical calibration service ensures your production tools are within tolerance. We utilize high-grade master standards and controlled environments to minimize measurement uncertainty.",
+    benefits: ["One-stop shop for all tools", "Rapid turnaround", "Repair and adjustment services", "Digital certificate management"],
+    process: [
+      { step: "Reception & Log", description: "Unique tracking for every customer tool." },
+      { step: "Cleaning & Deburring", description: "Restoring measurement surfaces to optimal condition." },
+      { step: "Calibration", description: "Verification against NABL traceable standards." }
+    ],
+    equipment: ["Universal Length Machine", "Torque Tester", "Hardness Standards"],
+    standards: ["ISO/IEC 17025", "VDI/VDE 2617"],
+    applications: ["Automotive Manufacturing", "General Machined Parts", "Defense Contractors"],
+    faqs: [
+      { question: "Do you provide adjustment for torque wrenches?", answer: "Yes, we provide minor adjustment and click-mechanism lubrication as part of our service." }
+    ]
+  },
+  {
+    id: "process-instrument-calibration",
+    title: "Process Instrument Calibration",
+    slug: "process-instrument-calibration",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1535813540-d18117ab765a?q=80&w=800&auto=format&fit=crop",
+    description: "Calibration of transmitters, valves, and controllers in industrial process loops.",
+    iconId: "activity",
+    longDescription: "Our process instrument calibration service focuses on the critical components of your control loops. We calibrate pressure transmitters, temperature controllers, and I/P converters to ensure optimal process stability.",
+    benefits: ["Improved process yield", "Reduced energy consumption", "Regulatory compliance (FDA/EPA)", "Minimized safety risks"],
+    process: [
+      { step: "Loop Check", description: "Verifying signal integrity from sensor to DCS." },
+      { step: "Instrument Cal", description: "Using portable calibrators for 5-point verification." },
+      { step: "HART/Foundation Fieldbus", description: "Digital configuration and trim for smart instruments." }
+    ],
+    equipment: ["Documenting Process Calibrators", "Dry Block Heaters", "Pneumatic Hand Pumps"],
+    standards: ["ISA-S51.1", "IEC 60770"],
+    applications: ["Refineries", "Chemical Plants", "Power Generation"],
+    faqs: [
+      { question: "Can you perform this during a turnaround?", answer: "Yes, we specialize in high-volume calibration during scheduled plant shutdowns." }
+    ]
+  },
+  {
+    id: "analytical-instrument-calibration",
+    title: "Analytical Instrument Calibration Service",
+    slug: "analytical-instrument-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?q=80&w=800&auto=format&fit=crop",
+    description: "Precision calibration for pH meters, spectrophotometers, and HPLC systems.",
+    iconId: "flask",
+    longDescription: "Analytical results are only as good as the calibration behind them. We provide comprehensive calibration for laboratory analytical equipment using certified reference materials (CRMs).",
+    benefits: ["Compliance with GLP/GMP", "Certified Reference Materials", "Full IQ/OQ/PQ support", "Highly trained chemists"],
+    process: [
+      { step: "Baseline Check", description: "Verifying detector noise and drift levels." },
+      { step: "CRM Comparison", description: "Testing against NIST traceable standard solutions." },
+      { step: "Software Validation", description: "Ensuring data integrity and 21 CFR Part 11 compliance." }
+    ],
+    equipment: ["Standard Buffer Solutions", "Holmium Oxide Filters", "Precision Pipettes"],
+    standards: ["USP <1058>", "ISO 15189"],
+    applications: ["Pharma R&D", "Food Quality Labs", "Environmental Testing"],
+    faqs: [
+      { question: "Do you supply the buffer solutions?", answer: "Yes, we use only high-purity, certified buffer solutions for our pH and conductivity calibrations." }
+    ]
+  },
+  {
+    id: "sensor-calibration",
+    title: "Sensor Calibration",
+    slug: "sensor-calibration",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    description: "Verification of proximity, level, and specialized industrial sensors.",
+    iconId: "cpu",
+    longDescription: "Sensors are the eyes and ears of automation. We provide specialized calibration for proximity sensors, ultrasonic level transmitters, and gas detection sensors to ensure reliable feedback for your PLC/SCADA systems.",
+    benefits: ["Prevent false trips", "Ensure operator safety", "Optimize machine speed", "Traceable signal verification"],
+    process: [
+      { step: "Physical Align", description: "Checking the sensor mounting and target path." },
+      { step: "Response Test", description: "Triggering the sensor at various distances or concentrations." },
+      { step: "Switch Point Cal", description: "Adjusting hystersis and setpoints for precision switching." }
+    ],
+    equipment: ["Laser Distance Standards", "Standard Gas Mixtures", "Frequency Counters"],
+    standards: ["IEC 60947", "ISO 13849"],
+    applications: ["Robotic Assembly", "Warehouse Automation", "Safety Interlocks"],
+    faqs: [
+      { question: "Do you calibrate gas sensors?", answer: "Yes, we use certified span gases for CO, H2S, O2, and LEL sensors." }
+    ]
+  },
+  {
+    id: "in-lab-calibration",
+    title: "In-Lab Calibration Service",
+    slug: "in-lab-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1532187875605-1ef6c237a1a0?q=80&w=800&auto=format&fit=crop",
+    description: "Environmentally controlled calibration in our world-class facility.",
+    iconId: "microscope",
+    longDescription: "Our main laboratory provides the highest level of measurement precision. With strict temperature, humidity, and vibration controls, we offer the lowest possible measurement uncertainties for your reference standards.",
+    benefits: ["Lowest uncertainty levels", "Controlled environment (20°C ±0.5°C)", "Primary standard availability", "Comprehensive measurement reports"],
+    process: [
+      { step: "Quarantine", description: "Incoming inspection and environmental acclimation." },
+      { step: "Calibration", description: "Performed by senior metrologists on primary benches." },
+      { step: "Quality Audit", description: "Secondary review of all data before certificate issuance." }
+    ],
+    equipment: ["Air-bearing Benches", "SPRT Standards", "Josephson Voltage Array"],
+    standards: ["ISO/IEC 17025", "NABL"],
+    applications: ["Reference Standard Calibration", "Complex Instrumentation", "High-accuracy Tooling"],
+    faqs: [
+      { question: "What is your typical turnaround?", answer: "Standard turnaround is 5-7 working days for in-lab services." }
+    ]
+  },
+  {
+    id: "mobile-calibration",
+    title: "Mobile Calibration Service",
+    slug: "mobile-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop",
+    description: "Precision on wheels - we bring our lab to your doorstep.",
+    iconId: "truck",
+    longDescription: "Our mobile calibration units are fully equipped climate-controlled labs on wheels. They offer the convenience of on-site service with the precision and environmental control of a fixed facility.",
+    benefits: ["Zero transport risk", "Same-day turnaround", "Minimal equipment downtime", "Face-to-face consultation"],
+    process: [
+      { step: "Site Arrival", description: "Powering up and stabilizing mobile standards." },
+      { step: "Execution", description: "Engineers collect and calibrate items inside the van." },
+      { step: "Instant Delivery", description: "Return of tools with printed certificates on-site." }
+    ],
+    equipment: ["Multi-product Calibrator", "Portable Dry Blocks", "Master Gauge Blocks"],
+    standards: ["ISO/IEC 17025 (Mobile Scope)", "ISO 9001"],
+    applications: ["Large Manufacturing Sites", "Defense Bases", "Remote Infrastructure"],
+    faqs: [
+      { question: "Do you need our power supply?", answer: "Our mobile labs are equipped with high-stability onboard generators and UPS systems." }
+    ]
+  },
+  {
+    id: "in-process-calibration",
+    title: "In-Process Calibration Service",
+    slug: "in-process-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1565608411311-2930c78f182e?q=80&w=800&auto=format&fit=crop",
+    description: "Calibration of instruments while they remain active in the production line.",
+    iconId: "activity",
+    longDescription: "Stop losing production time to calibration. Our in-process service uses non-invasive methods and bypass loops to verify instrument accuracy while your plant keeps running.",
+    benefits: ["No production stops", "Real-world conditions", "Trend analysis of live data", "Reduced operational cost"],
+    process: [
+      { step: "Bypass Setup", description: "Safely isolating the instrument signal without process interruption." },
+      { step: "Comparison", description: "Using clamp-on or insertion standards for verification." },
+      { step: "Live Trim", description: "Fine-tuning transmitter output to match actual process values." }
+    ],
+    equipment: ["Clamp-on Ultrasonic Flowmeters", "Comparison Probes", "Loop Simulators"],
+    standards: ["ASME PTC 19.3", "ISA TR20.00.01"],
+    applications: ["Continuous Flow Industries", "Critical Power Systems", "HVAC Control"],
+    faqs: [
+      { question: "Is it as accurate as lab calibration?", answer: "While uncertainties are slightly higher, the benefit of calibrating at operating conditions often yields more practical accuracy." }
+    ]
+  },
+  {
+    id: "onsite-calibration-service",
+    title: "Onsite Calibration Service",
+    slug: "onsite-calibration-service",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+    description: "Professional engineers performing calibration directly at your workstation.",
+    iconId: "settings",
+    longDescription: "Our engineers visit your facility to calibrate fixed equipment like surface plates, ovens, and large scales. We bring the standards and expertise to you, ensuring your large-scale assets are verified without removal.",
+    benefits: ["No shipping costs", "Immediate adjustments", "Process-specific advice", "Bulk calibration efficiency"],
+    process: [
+      { step: "Area Preparation", description: "Setting up portable master standards at the equipment location." },
+      { step: "Verification", description: "Executing test protocols on the customer's equipment." },
+      { step: "Tagging", description: "Applying calibration labels and updating site records." }
+    ],
+    equipment: ["Precision Levels", "Data Loggers", "Electronic Load Banks"],
+    standards: ["ISO/IEC 17025", "Customer-specific SOPs"],
+    applications: ["Large Scale Weighing", "Thermal Processing", "Environmental Chambers"],
+    faqs: [
+      { question: "How many items can you do in a day?", answer: "A typical team can calibrate between 15-30 handheld instruments or 2-3 large systems per day." }
+    ]
+  },
+  {
+    id: "laboratory-instrument-services",
+    title: "Laboratory Instrument Services",
+    slug: "laboratory-instrument-services",
+    category: "Calibration Services",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306dca664?q=80&w=800&auto=format&fit=crop",
+    description: "Maintenance and validation for centrifuges, incubators, and shakers.",
+    iconId: "beaker",
+    longDescription: "Beyond simple calibration, we provide comprehensive maintenance and validation for general laboratory equipment. We ensure that your incubators maintain uniform temperature and your centrifuges operate at the correct RPM.",
+    benefits: ["Extended equipment life", "Compliance with ISO 15189", "Preventative maintenance included", "Detailed validation protocols"],
+    process: [
+      { step: "RPM Verification", description: "Non-contact tachometer check for centrifuges and shakers." },
+      { step: "Mapping", description: "Multipoint temperature/CO2 mapping for incubators." },
+      { step: "Filter Check", description: "Verifying HEPA filter integrity in safety cabinets." }
+    ],
+    equipment: ["Laser Tachometer", "Wireless Data Loggers", "Particle Counters"],
+    standards: ["ISO 15189", "EN 12469"],
+    applications: ["Clinical Labs", "Bio-Tech Research", "University Science Depts"],
+    faqs: [
+      { question: "Do you offer service contracts?", answer: "Yes, we provide annual maintenance contracts (AMC) for complete lab setups." }
+    ]
+  },
+
+  // --- ISO Services ---
+  {
+    id: "iso-9001-service",
+    title: "ISO 9001 Service",
+    slug: "iso-9001-service",
+    category: "ISO Services",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop",
+    description: "Complete consultancy for achieving and maintaining ISO 9001 certification.",
+    iconId: "shield",
+    longDescription: "We provide end-to-end support for ISO 9001 Quality Management Systems. Our experts guide you through the entire process, from gap analysis to the final certification audit, ensuring a robust and efficient QMS.",
+    benefits: ["Global recognition", "Improved process efficiency", "Customer satisfaction boost", "Risk-based thinking implementation"],
+    process: [
+      { step: "Gap Analysis", description: "Reviewing existing processes against ISO standards." },
+      { step: "Training", description: "Educating staff on QMS principles and internal auditing." },
+      { step: "Internal Audit", description: "Pre-certification check to ensure compliance." }
+    ],
+    equipment: ["QMS Management Software", "Audit Checklists", "Training Modules"],
+    standards: ["ISO 9001:2015"],
+    applications: ["Manufacturing", "Service Sector", "Healthcare Management"],
+    faqs: [
+      { question: "How long does it take?", answer: "A typical implementation takes between 3 to 6 months depending on the organization's size." }
+    ]
+  },
+  {
+    id: "iso-9001-documentation-kit",
+    title: "ISO 9001:2015 Documentation Kit",
+    slug: "iso-9001-2015-documentation-kit",
+    category: "ISO Services",
+    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=800&auto=format&fit=crop",
+    description: "Ready-to-use templates for procedures, forms, and policies.",
+    iconId: "file",
+    longDescription: "Save hundreds of hours with our professionally developed ISO 9001:2015 Documentation Kit. It includes fully editable Word/Excel templates for Quality Manuals, Procedures, and essential forms.",
+    benefits: ["Save time and effort", "Expert-designed templates", "Easily customizable", "Ensure 100% compliance"],
+    process: [
+      { step: "Template Selection", description: "Choosing the documents relevant to your business scope." },
+      { step: "Customization", description: "Adding company-specific details and workflows." },
+      { step: "Deployment", description: "Rolling out the new documentation to relevant departments." }
+    ],
+    equipment: ["Digital Template Library", "Instructional Guides"],
+    standards: ["ISO 9001:2015 Clause Requirements"],
+    applications: ["Startups", "SMEs", "Internal Compliance Teams"],
+    faqs: [
+      { question: "Are the templates editable?", answer: "Yes, all files are provided in MS Word and Excel formats for easy editing." }
+    ]
+  },
+  {
+    id: "iso-9001-manual",
+    title: "ISO 9001 Manual",
+    slug: "iso-9001-manual",
+    category: "ISO Services",
+    image: "https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?q=80&w=800&auto=format&fit=crop",
+    description: "Comprehensive quality manual development tailored to your organization.",
+    iconId: "boxes",
+    longDescription: "The Quality Manual is the heart of your QMS. We develop bespoke manuals that accurately reflect your business processes while meeting all requirements of the ISO 9001 standard.",
+    benefits: ["Clearly defined processes", "Regulatory alignment", "Employee clarity", "Strong audit foundation"],
+    process: [
+      { step: "Process Mapping", description: "Identifying and documenting key business interactions." },
+      { step: "Drafting", description: "Writing the manual in clear, concise professional language." },
+      { step: "Approval", description: "Final review and management sign-off." }
+    ],
+    equipment: ["Standard Operating Procedures", "Quality Policy Templates"],
+    standards: ["ISO 9001 Section 4, 5, 6"],
+    applications: ["Corporate Quality Depts", "Production Facilities", "Consultancy Firms"],
+    faqs: [
+      { question: "Is a manual still required in 2015 version?", answer: "While not explicitly named 'Quality Manual' in the standard, having a centralized document for scope and process interaction is still highly recommended." }
+    ]
+  },
+
+  // --- Support Service ---
+  {
+    id: "pickup-delivery-service",
+    title: "Pick-up and Delivery Service",
+    slug: "pick-up-and-delivery-service",
+    category: "Support Service",
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop",
+    description: "Safe and secure transport for your valuable precision instruments.",
+    iconId: "truck",
+    longDescription: "Don't risk your sensitive instruments with general couriers. Our specialized pick-up and delivery service uses padded cases and climate-monitored vehicles to ensure your tools arrive at our lab and back to you in perfect condition.",
+    benefits: ["Insurance coverage included", "Shock-absorbent packaging", "Real-time tracking", "Dedicated logistics team"],
+    process: [
+      { step: "Scheduling", description: "Booking a slot via our online portal or phone." },
+      { step: "Secure Packing", description: "Our driver assists with protective wrapping and casing." },
+      { step: "Direct Transport", description: "Non-stop transit to our laboratory facility." }
+    ],
+    equipment: ["Padded Transit Cases", "Shock Loggers", "GPS Tracked Vehicles"],
+    standards: ["Internal Logistics Quality Protocol", "ISO 9001"],
+    applications: ["All Calibration Clients", "Delicate Electronics", "Primary Standards"],
+    faqs: [
+      { question: "Is there a weight limit?", answer: "We can handle items from small sensors to large equipment up to 500kg with our tail-lift vehicles." }
     ]
   },
 ];
