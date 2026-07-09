@@ -6,7 +6,6 @@ import Footer from "@/components/layout/footer";
 import ScrollProgress from "@/components/ui/scroll-progress";
 import BackToTop from "@/components/ui/back-to-top";
 import CustomCursor from "@/components/ui/custom-cursor";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -66,22 +65,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${poppins.variable} ${inter.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-[100]">
-            Skip to content
-          </a>
-          <CustomCursor />
-          <ScrollProgress />
-          <Navbar />
-          <main id="main-content">{children}</main>
-          <Footer />
-          <BackToTop />
-        </ThemeProvider>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-[100]">
+          Skip to content
+        </a>
+        <CustomCursor />
+        <ScrollProgress />
+        <Navbar />
+        <main id="main-content">{children}</main>
+        <Footer />
+        <BackToTop />
       </body>
     </html>
   );

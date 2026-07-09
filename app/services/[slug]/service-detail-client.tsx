@@ -55,7 +55,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
                 {service.title}
               </h1>
-              <p className="text-xl text-muted-foreground dark:text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl text-muted-foreground  mb-8 leading-relaxed">
                 {service.longDescription}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -94,7 +94,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
       </section>
 
       {/* Content Grid */}
-      <section className="py-20 bg-muted dark:bg-muted/50">
+      <section className="py-20 bg-muted ">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
@@ -102,7 +102,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
             <div className="lg:col-span-8 space-y-12">
 
               {/* Benefits */}
-              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
                     <ShieldCheck className="h-6 w-6" />
@@ -115,14 +115,14 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
                       <div className="mt-1 bg-green-500/10 rounded-full p-1">
                         <CheckCircle2 className="h-5 w-5 text-green-600" />
                       </div>
-                      <p className="text-lg text-muted-foreground dark:text-muted-foreground font-medium">{benefit}</p>
+                      <p className="text-lg text-muted-foreground  font-medium">{benefit}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Equipment Covered */}
-              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
                     <Settings2 className="h-6 w-6" />
@@ -140,7 +140,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Process */}
-              <div id="process" className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
+              <div id="process" className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-10">
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
                     <Activity className="h-6 w-6" />
@@ -154,7 +154,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
                         {idx + 1}
                       </div>
                       <h4 className="text-xl font-bold text-foreground mb-2">{step.step}</h4>
-                      <p className="text-muted-foreground dark:text-muted-foreground leading-relaxed">{step.description}</p>
+                      <p className="text-muted-foreground  leading-relaxed">{step.description}</p>
                     </div>
                   ))}
                 </div>
@@ -181,7 +181,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Service FAQ */}
-              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-600">
                     <HelpCircle className="h-6 w-6" />
@@ -194,7 +194,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
                       <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground dark:text-muted-foreground">
+                      <AccordionContent className="text-muted-foreground ">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>

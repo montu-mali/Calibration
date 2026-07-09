@@ -15,8 +15,9 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                <span className="text-white font-bold text-2xl">{SITE_CONFIG.name.charAt(0)}</span>
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-4 h-4 bg-success" />
+                <span className="text-white font-bold text-2xl relative z-10">{SITE_CONFIG.name.charAt(0)}</span>
               </div>
               <span className="text-3xl font-bold tracking-tight">{SITE_CONFIG.name}</span>
             </Link>

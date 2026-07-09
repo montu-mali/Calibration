@@ -52,7 +52,7 @@ export default function GalleryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               A window into our advanced facilities, specialized instrumentation, and the technical team driving our precision.
             </motion.p>

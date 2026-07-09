@@ -44,6 +44,10 @@ const config: Config = {
 				foreground: "hsl(var(--card-foreground))",
 			},
 			success: '#16A34A',
+			brand: {
+				blue: '#0057D9',
+				green: '#16A34A',
+			},
 			gray: {
 				'50': '#F8FAFC',
 				'100': '#F1F5F9',

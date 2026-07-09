@@ -27,7 +27,7 @@ export default function Testimonials() {
         />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="bg-muted dark:bg-muted/50 rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm border border-border">
+          <div className="bg-muted  rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm border border-border">
             <Quote className="absolute top-12 left-12 h-24 w-24 text-primary/10 -rotate-12" />
 
             <AnimatePresence mode="wait">
@@ -86,7 +86,7 @@ export default function Testimonials() {
               variant="outline"
               size="icon"
               onClick={prev}
-              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl dark:shadow-none"
+              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl "
             >
               <ChevronLeft className="h-8 w-8" />
             </Button>
@@ -94,7 +94,7 @@ export default function Testimonials() {
               variant="outline"
               size="icon"
               onClick={next}
-              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl dark:shadow-none"
+              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl "
             >
               <ChevronRight className="h-8 w-8" />
             </Button>

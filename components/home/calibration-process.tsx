@@ -53,7 +53,7 @@ export default function CalibrationProcess() {
               >
                 <div className="shrink-0 w-20 h-20 rounded-[2rem] bg-background/5 border-4 border-secondary flex items-center justify-center mb-0 lg:mb-8 mr-8 lg:mr-0 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(0,87,217,0.4)] transition-all duration-500 relative">
                   <step.icon className="h-8 w-8 text-muted-foreground group-hover:text-white transition-colors" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-success rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg">
                     {index + 1}
                   </div>
                 </div>

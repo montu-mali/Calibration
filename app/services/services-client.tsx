@@ -38,7 +38,7 @@ function ServicesContent() {
 
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-muted dark:bg-muted/50">
+      <section className="py-16 md:py-20 bg-muted ">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
@@ -61,7 +61,7 @@ function ServicesContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               Industry-leading calibration for precision instruments, ISO compliance, and specialized laboratory services.
             </motion.p>
@@ -107,7 +107,7 @@ function ServicesContent() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                       >
-                        <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background dark:bg-card rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
+                        <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background  rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
                           <div className="relative h-64 w-full overflow-hidden">
                             <Image
                               src={service.image}
@@ -123,7 +123,7 @@ function ServicesContent() {
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="px-10 pt-0 flex-grow">
-                            <CardDescription className="text-base text-muted-foreground dark:text-muted-foreground leading-relaxed mb-6">
+                            <CardDescription className="text-base text-muted-foreground  leading-relaxed mb-6">
                               {service.description}
                             </CardDescription>
                           </CardContent>
@@ -134,7 +134,7 @@ function ServicesContent() {
                                   View Details
                                   <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                 </span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                               </Link>
                             </Button>
                           </CardFooter>

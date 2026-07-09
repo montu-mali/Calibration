@@ -33,7 +33,7 @@ export default function CertificatesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               Our laboratory maintains world-class certifications, validating our competence and commitment to measurement integrity.
             </motion.p>
@@ -47,7 +47,7 @@ export default function CertificatesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background dark:bg-card rounded-[3.5rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+                className="bg-background  rounded-[3.5rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
               >
                 <div className="relative h-72 w-full overflow-hidden p-4">
                   <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
@@ -67,7 +67,7 @@ export default function CertificatesPage() {
                 </div>
                 <div className="p-10 pt-6 flex-grow flex flex-col">
                   <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{cert.title}</h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground text-lg mb-10 leading-relaxed flex-grow">
+                  <p className="text-muted-foreground  text-lg mb-10 leading-relaxed flex-grow">
                     {cert.description} Verified adherence to international metrology standards and technical requirements.
                   </p>
                   <Button className="w-full h-16 rounded-2xl group/btn font-bold text-xl relative overflow-hidden">
@@ -75,7 +75,7 @@ export default function CertificatesPage() {
                       <Download className="mr-3 h-6 w-6 group-hover/btn:animate-bounce" />
                       Download PDF
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Button>
                 </div>
               </motion.div>

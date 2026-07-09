@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,9 +56,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center space-x-3 group">
           <motion.div
             whileHover={{ rotate: 90 }}
-            className="w-11 h-11 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20"
+            className="w-11 h-11 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 relative overflow-hidden"
           >
-            <span className="text-white font-bold text-2xl">C</span>
+            <div className="absolute top-0 right-0 w-4 h-4 bg-success" />
+            <span className="text-white font-bold text-2xl relative z-10">C</span>
           </motion.div>
           <span className={cn(
             "text-2xl font-bold tracking-tight transition-colors duration-300",
@@ -112,7 +112,7 @@ export default function Navbar() {
                         "group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-base font-medium transition-all",
                         isTransparent
                           ? "text-white/80 hover:text-white hover:bg-white/10"
-                          : "text-muted-foreground dark:text-muted-foreground hover:text-primary dark:hover:text-primary hover:bg-primary/5",
+                          : "text-muted-foreground  hover:text-primary  hover:bg-primary/5",
                         pathname === link.href && !isTransparent && "text-primary bg-primary/5",
                         pathname === link.href && isTransparent && "text-white bg-white/20"
                       )}>
@@ -125,7 +125,6 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="ml-6 flex items-center space-x-4">
-            <ModeToggle />
             <Button className="rounded-full px-8 h-12 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:-translate-y-0.5 active:translate-y-0">
               Request Quote
             </Button>
@@ -134,7 +133,6 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="lg:hidden flex items-center space-x-4">
-          <ModeToggle />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className={cn(
@@ -148,8 +146,9 @@ export default function Navbar() {
               <div className="flex flex-col h-full bg-background">
                 <SheetHeader className="p-6 border-b border-border">
                   <SheetTitle className="text-left flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">{SITE_CONFIG.name.charAt(0)}</span>
+                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-3 h-3 bg-success" />
+                      <span className="text-white font-bold text-xl relative z-10">{SITE_CONFIG.name.charAt(0)}</span>
                     </div>
                     <span className="text-xl font-bold">{SITE_CONFIG.name}</span>
                   </SheetTitle>

@@ -66,7 +66,7 @@ export default function CareersClient() {
                   <perk.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">{perk.title}</h3>
-                <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">{perk.desc}</p>
+                <p className="text-lg text-muted-foreground  leading-relaxed">{perk.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function CareersClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group p-10 md:p-14 rounded-[3.5rem] bg-background dark:bg-card border border-border shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
+                  className="group p-10 md:p-14 rounded-[3.5rem] bg-background  border border-border shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
                     <div className="space-y-6">
@@ -110,7 +110,7 @@ export default function CareersClient() {
                           Apply
                           <ArrowRight className="ml-3 h-7 w-7 transition-transform group-hover/btn:translate-x-2" />
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </Button>
                   </div>

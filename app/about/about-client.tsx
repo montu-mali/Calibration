@@ -88,7 +88,7 @@ export default function AboutPage() {
               <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-10 tracking-tight leading-[1.1]">
                 Built on Integrity and <span className="text-primary">Absolute Accuracy</span>
               </h2>
-              <div className="space-y-8 text-xl text-muted-foreground dark:text-muted-foreground leading-relaxed">
+              <div className="space-y-8 text-xl text-muted-foreground  leading-relaxed">
                 <p>
                   {SITE_CONFIG.name} began with a singular focus: to redefine the standards of measurement in the industrial world. What started as a specialized lab in 2004 has evolved into a national leader in metrology.
                 </p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Vision Values */}
-      <section className="py-20 bg-muted dark:bg-muted/50">
+      <section className="py-20 bg-muted ">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {values.map((val, idx) => (
@@ -129,13 +129,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-12 rounded-[3.5rem] bg-background dark:bg-card border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                className="group p-12 rounded-[3.5rem] bg-background  border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
               >
                 <div className="w-20 h-20 rounded-[2rem] bg-primary/5 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <val.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-3xl font-bold text-foreground mb-6">{val.title}</h3>
-                <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">{val.text}</p>
+                <p className="text-lg text-muted-foreground  leading-relaxed">{val.text}</p>
               </motion.div>
             ))}
           </div>

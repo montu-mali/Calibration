@@ -21,7 +21,7 @@ export default function ServicesSection() {
   ].filter(Boolean) as typeof SERVICES;
 
   return (
-    <section className="py-20 bg-muted dark:bg-muted/50">
+    <section className="py-20 bg-muted ">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Precision Capabilities"
@@ -38,7 +38,7 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background dark:bg-card rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
+              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background  rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={service.image}
@@ -58,7 +58,7 @@ export default function ServicesSection() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="px-8 pt-0 flex-grow">
-                  <CardDescription className="text-base text-muted-foreground dark:text-muted-foreground leading-relaxed line-clamp-2 mb-6">
+                  <CardDescription className="text-base text-muted-foreground  leading-relaxed line-clamp-2 mb-6">
                     {service.description}
                   </CardDescription>
                 </CardContent>

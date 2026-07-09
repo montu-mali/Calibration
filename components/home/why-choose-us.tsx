@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
                 <feature.icon className="h-10 w-10" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-6 leading-tight">{feature.title}</h3>
-              <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground  leading-relaxed mb-8">
                 {feature.description}
               </p>
               <div className="flex items-center text-primary font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">

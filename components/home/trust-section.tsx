@@ -16,7 +16,7 @@ export default function TrustSection() {
   return (
     <section className="py-12 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="bg-muted dark:bg-muted/50 rounded-[2.5rem] p-10 md:p-12 border border-border shadow-sm relative overflow-hidden">
+        <div className="bg-muted  rounded-[2.5rem] p-10 md:p-12 border border-border shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-12 relative z-10">

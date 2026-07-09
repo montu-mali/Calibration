@@ -9,7 +9,7 @@ import { Download, ExternalLink } from "lucide-react";
 
 export default function CertificatesSection() {
   return (
-    <section className="py-20 bg-muted dark:bg-muted/50">
+    <section className="py-20 bg-muted ">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Global Accreditation"
@@ -25,7 +25,7 @@ export default function CertificatesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-background dark:bg-card rounded-[3rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+              className="bg-background  rounded-[3rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
             >
               <div className="relative h-64 w-full overflow-hidden">
                 <Image
@@ -43,7 +43,7 @@ export default function CertificatesSection() {
               </div>
               <div className="p-10 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{cert.title}</h3>
-                <p className="text-muted-foreground dark:text-muted-foreground text-base mb-8 leading-relaxed flex-grow">
+                <p className="text-muted-foreground  text-base mb-8 leading-relaxed flex-grow">
                   {cert.description}
                 </p>
                 <Button variant="outline" className="w-full h-14 rounded-2xl group/btn border-2 border-border font-bold hover:bg-primary hover:border-primary hover:text-white transition-all shadow-sm">

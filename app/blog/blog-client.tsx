@@ -35,7 +35,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               Exploring the frontiers of measurement science, quality standards, and industrial innovation.
             </motion.p>
@@ -111,7 +111,7 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-background dark:bg-card rounded-[3.5rem] overflow-hidden border border-border shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500"
+                className="group bg-background  rounded-[3.5rem] overflow-hidden border border-border shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500"
               >
                 <div className="relative h-72 overflow-hidden m-4 rounded-[2.5rem]">
                   <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -126,7 +126,7 @@ export default function BlogPage() {
                   <h3 className="text-2xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                     {post.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground dark:text-muted-foreground mb-8 line-clamp-2 leading-relaxed">
+                  <p className="text-lg text-muted-foreground  mb-8 line-clamp-2 leading-relaxed">
                     {post.excerpt}
                   </p>
                   <Link href="#" className="inline-flex items-center font-bold text-primary text-sm uppercase tracking-widest group/link">

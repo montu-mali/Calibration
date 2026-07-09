@@ -38,7 +38,7 @@ export default function CTA() {
               Quality Standards?
             </h2>
 
-            <p className="text-xl md:text-2xl text-muted-foreground dark:text-slate-300 mb-16 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground  mb-16 leading-relaxed max-w-2xl mx-auto">
               Our engineers are ready to build a custom calibration plan for your organization. Contact us today for a technical consultation.
             </p>
 
@@ -49,7 +49,7 @@ export default function CTA() {
                     Request Quote
                     <ArrowRight className="ml-3 h-7 w-7 transition-transform group-hover:translate-x-2" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </Button>
               <div className="flex flex-col sm:flex-row items-center gap-8">
@@ -58,7 +58,7 @@ export default function CTA() {
                     <Phone className="h-7 w-7 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-muted-foreground dark:text-slate-300 text-sm font-bold uppercase tracking-widest mb-1">Call Technical</div>
+                    <div className="text-muted-foreground  text-sm font-bold uppercase tracking-widest mb-1">Call Technical</div>
                     <div className="text-white text-xl font-bold">{CONTACT_INFO.phone}</div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function CTA() {
                   transition={{ delay: 0.4 + idx * 0.1 }}
                 >
                   <div className="text-3xl md:text-4xl font-bold text-white mb-2">{item.value}</div>
-                  <div className="text-muted-foreground dark:text-muted-foreground text-xs font-bold uppercase tracking-[0.2em]">{item.label}</div>
+                  <div className="text-muted-foreground  text-xs font-bold uppercase tracking-[0.2em]">{item.label}</div>
                 </motion.div>
               ))}
             </div>

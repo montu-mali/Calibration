@@ -58,7 +58,7 @@ export default function SectionHeading({
           transition={{ duration: 0.6, delay: 0.1 }}
           className={cn(
             "text-lg md:text-xl leading-relaxed max-w-3xl font-medium",
-            light ? "text-muted-foreground" : "text-muted-foreground dark:text-muted-foreground",
+            light ? "text-muted-foreground" : "text-muted-foreground ",
             centered ? "mx-auto" : ""
           )}
         >

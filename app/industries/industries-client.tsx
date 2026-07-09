@@ -32,7 +32,7 @@ export default function IndustriesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               Providing high-compliance calibration solutions for the world's most demanding engineering environments.
             </motion.p>
@@ -58,7 +58,7 @@ export default function IndustriesPage() {
                   <h3 className="text-2xl font-bold text-foreground mb-6 group-hover:text-white transition-colors">
                     {industry.name}
                   </h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground text-base group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-grow">
+                  <p className="text-muted-foreground  text-base group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-grow">
                     Specialized metrology services designed for the unique regulatory landscape of {industry.name.toLowerCase()} engineering.
                   </p>
                   <div className="space-y-4 mb-8">
@@ -91,7 +91,7 @@ export default function IndustriesPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-background dark:bg-card p-10 rounded-[3rem] shadow-2xl border border-border z-20 hidden md:block">
+              <div className="absolute -bottom-10 -right-10 bg-background  p-10 rounded-[3rem] shadow-2xl border border-border z-20 hidden md:block">
                 <div className="text-5xl font-bold text-primary mb-2">100%</div>
                 <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Industry Compliance</div>
               </div>
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
                     </div>
                     <div>
                       <h4 className="text-2xl font-bold text-foreground mb-3">{item.title}</h4>
-                      <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">{item.desc}</p>
+                      <p className="text-lg text-muted-foreground  leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}

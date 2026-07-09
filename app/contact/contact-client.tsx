@@ -12,7 +12,7 @@ export default function ContactPage() {
     <div className="pt-20">
       <section className="py-16 md:py-20 bg-background relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-accent/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-success/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -36,7 +36,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
               Our specialists are ready to provide technical consultation and customized calibration strategies for your organization.
             </motion.p>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   <div className="bg-background/90 backdrop-blur-md p-6 rounded-3xl shadow-xl text-center border border-white/50">
                     <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                     <h3 className="text-lg font-bold text-foreground mb-1">Main Laboratory</h3>
-                    <p className="text-muted-foreground dark:text-muted-foreground max-w-[200px] mx-auto text-xs font-medium">{CONTACT_INFO.address}</p>
+                    <p className="text-muted-foreground  max-w-[200px] mx-auto text-xs font-medium">{CONTACT_INFO.address}</p>
                     <Button variant="link" size="sm" className="mt-2 text-primary font-bold" asChild>
                       <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
                         Get Directions
@@ -94,7 +94,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-background p-10 md:p-16 rounded-[3.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] dark:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] border border-border relative overflow-hidden"
+              className="bg-background p-10 md:p-16 rounded-[3.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)]  border border-border relative overflow-hidden"
             >
               <h3 className="text-3xl font-bold text-foreground mb-10">Request a Consultation</h3>
               <form className="space-y-8 relative z-10">
@@ -113,7 +113,7 @@ export default function ContactPage() {
                     Send Inquiry
                     <Send className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Button>
               </form>
             </motion.div>
