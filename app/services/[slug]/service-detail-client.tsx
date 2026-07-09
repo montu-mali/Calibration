@@ -33,11 +33,11 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-white relative overflow-hidden border-b border-slate-100">
+      <section className="py-20 bg-background relative overflow-hidden border-b border-border">
         <div className="container mx-auto px-6">
           <Link
             href="/services"
-            className="group inline-flex items-center text-slate-400 hover:text-primary mb-8 font-bold transition-all"
+            className="group inline-flex items-center text-muted-foreground hover:text-primary mb-8 font-bold transition-all"
           >
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Back to Capabilities
@@ -52,10 +52,10 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 text-primary shadow-sm border border-primary/10">
                 <Icon className="h-8 w-8" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-secondary mb-6 leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
                 {service.title}
               </h1>
-              <p className="text-xl text-slate-500 mb-8 leading-relaxed">
+              <p className="text-xl text-muted-foreground dark:text-muted-foreground mb-8 leading-relaxed">
                 {service.longDescription}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -72,7 +72,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-slate-100"
+              className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-border"
             >
               <Image
                 src={`https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200`}
@@ -94,7 +94,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
       </section>
 
       {/* Content Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
+      <section className="py-20 bg-muted dark:bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
@@ -102,12 +102,12 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
             <div className="lg:col-span-8 space-y-12">
 
               {/* Benefits */}
-              <div className="bg-white dark:bg-slate-950 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
                     <ShieldCheck className="h-6 w-6" />
                   </div>
-                  <h2 className="text-3xl font-bold text-secondary dark:text-white">Key Benefits</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Key Benefits</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {service.benefits.map((benefit) => (
@@ -115,46 +115,46 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
                       <div className="mt-1 bg-green-500/10 rounded-full p-1">
                         <CheckCircle2 className="h-5 w-5 text-green-600" />
                       </div>
-                      <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">{benefit}</p>
+                      <p className="text-lg text-muted-foreground dark:text-muted-foreground font-medium">{benefit}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Equipment Covered */}
-              <div className="bg-white dark:bg-slate-950 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
                     <Settings2 className="h-6 w-6" />
                   </div>
-                  <h2 className="text-3xl font-bold text-secondary dark:text-white">Equipment Covered</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Equipment Covered</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.equipment.map((item) => (
-                    <div key={item} className="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <div key={item} className="flex items-center gap-3 p-4 bg-muted rounded-xl border border-border">
                       <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="font-bold text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="font-bold text-foreground">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Process */}
-              <div id="process" className="bg-white dark:bg-slate-950 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+              <div id="process" className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-10">
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
                     <Activity className="h-6 w-6" />
                   </div>
-                  <h2 className="text-3xl font-bold text-secondary dark:text-white">Calibration Process</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Calibration Process</h2>
                 </div>
-                <div className="space-y-8 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100 dark:before:bg-slate-800">
+                <div className="space-y-8 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-border">
                   {service.process.map((step, idx) => (
                     <div key={step.step} className="relative pl-12">
-                      <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-white dark:bg-slate-950 border-2 border-primary flex items-center justify-center font-bold text-primary z-10">
+                      <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-background border-2 border-primary flex items-center justify-center font-bold text-primary z-10">
                         {idx + 1}
                       </div>
-                      <h4 className="text-xl font-bold text-secondary dark:text-white mb-2">{step.step}</h4>
-                      <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{step.description}</p>
+                      <h4 className="text-xl font-bold text-foreground mb-2">{step.step}</h4>
+                      <p className="text-muted-foreground dark:text-muted-foreground leading-relaxed">{step.description}</p>
                     </div>
                   ))}
                 </div>
@@ -181,20 +181,20 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Service FAQ */}
-              <div className="bg-white dark:bg-slate-950 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+              <div className="bg-background dark:bg-card p-10 rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-600">
                     <HelpCircle className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-secondary dark:text-white">Service FAQ</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Service FAQ</h3>
                 </div>
                 <Accordion type="single" collapsible className="w-full">
                   {service.faqs.map((faq, idx) => (
-                    <AccordionItem key={idx} value={`faq-${idx}`} className="border-slate-100 dark:border-slate-800">
-                      <AccordionTrigger className="text-left font-bold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">
+                    <AccordionItem key={idx} value={`faq-${idx}`} className="border-border">
+                      <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-slate-500 dark:text-slate-400">
+                      <AccordionContent className="text-muted-foreground dark:text-muted-foreground">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
@@ -205,7 +205,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               {/* Contact Card */}
               <div className="bg-secondary p-10 rounded-[2.5rem] text-white">
                 <h3 className="text-2xl font-bold mb-4">Need Expert Advice?</h3>
-                <p className="text-slate-400 mb-8 leading-relaxed">
+                <p className="text-muted-foreground mb-8 leading-relaxed">
                   Our engineers are ready to help you with your specific calibration needs.
                 </p>
                 <Button variant="default" className="w-full h-14 rounded-xl text-lg font-bold bg-primary hover:bg-primary/90" asChild>

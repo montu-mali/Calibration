@@ -39,7 +39,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 backdrop-blur-md text-slate-300 text-sm font-bold uppercase tracking-widest mb-8"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-slate-300 text-sm font-bold uppercase tracking-widest mb-8"
             >
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
               <span>NABL Accredited Laboratory</span>
@@ -51,7 +51,7 @@ export default function Hero() {
               <span className="text-primary italic">Measurement</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-xl leading-relaxed">
               ISO Certified Calibration Laboratory delivering world-class accuracy and reliability for mission-critical engineering across India.
             </p>
 
@@ -65,7 +65,7 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-2xl h-16 px-10 text-xl font-bold text-white border-white/20 bg-white dark:bg-slate-950/5 hover:bg-white dark:bg-slate-950/10 backdrop-blur-md transition-all" asChild>
+              <Button size="lg" variant="outline" className="rounded-2xl h-16 px-10 text-xl font-bold text-white border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all" asChild>
                 <Link href="/services">Explore Services</Link>
               </Button>
             </div>
@@ -131,7 +131,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute top-10 right-0 bg-white dark:bg-slate-950/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl"
+                className="absolute top-10 right-0 bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl"
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
@@ -147,7 +147,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-                className="absolute bottom-20 -left-10 bg-white dark:bg-slate-950/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl"
+                className="absolute bottom-20 -left-10 bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl"
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-success rounded-xl flex items-center justify-center">

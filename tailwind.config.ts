@@ -10,31 +10,40 @@ const config: Config = {
   theme: {
 	extend: {
 		colors: {
+			border: "hsl(var(--border))",
+			input: "hsl(var(--input))",
+			ring: "hsl(var(--ring))",
+			background: "hsl(var(--background))",
+			foreground: "hsl(var(--foreground))",
 			primary: {
-          DEFAULT: '#0057D9',
-          foreground: '#FFFFFF',
-          50: '#E6EFFF',
-          100: '#CCE0FF',
-          200: '#99C2FF',
-          300: '#66A3FF',
-          400: '#3385FF',
-          500: '#0057D9',
-          600: '#004BB3',
-          700: '#003E8C',
-          800: '#003166',
-          900: '#002440',
-        },
+				DEFAULT: "hsl(var(--primary))",
+				foreground: "hsl(var(--primary-foreground))",
+			},
 			secondary: {
-          DEFAULT: '#0F172A',
-          foreground: '#FFFFFF',
-        },
+				DEFAULT: "hsl(var(--secondary))",
+				foreground: "hsl(var(--secondary-foreground))",
+			},
+			destructive: {
+				DEFAULT: "hsl(var(--destructive))",
+				foreground: "hsl(var(--destructive-foreground))",
+			},
+			muted: {
+				DEFAULT: "hsl(var(--muted))",
+				foreground: "hsl(var(--muted-foreground))",
+			},
 			accent: {
-          DEFAULT: '#0EA5E9',
-          foreground: '#FFFFFF',
-        },
+				DEFAULT: "hsl(var(--accent))",
+				foreground: "hsl(var(--accent-foreground))",
+			},
+			popover: {
+				DEFAULT: "hsl(var(--popover))",
+				foreground: "hsl(var(--popover-foreground))",
+			},
+			card: {
+				DEFAULT: "hsl(var(--card))",
+				foreground: "hsl(var(--card-foreground))",
+			},
 			success: '#16A34A',
-			background: '#FFFFFF',
-        foreground: '#0F172A',
 			gray: {
 				'50': '#F8FAFC',
 				'100': '#F1F5F9',
@@ -47,25 +56,6 @@ const config: Config = {
 				'800': '#1E293B',
 				'900': '#0F172A'
 			},
-			border: '#E2E8F0',
-        muted: {
-          DEFAULT: '#F1F5F9',
-          foreground: '#64748B',
-        },
-        card: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#0F172A',
-        },
-        popover: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#0F172A',
-        },
-        destructive: {
-          DEFAULT: '#EF4444',
-          foreground: '#FFFFFF',
-        },
-        input: '#E2E8F0',
-        ring: '#0057D9',
 		},
 		fontFamily: {
 			poppins: [

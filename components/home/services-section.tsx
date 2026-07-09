@@ -10,7 +10,7 @@ import { ArrowUpRight, ArrowRight, Activity } from "lucide-react";
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
+    <section className="py-20 bg-muted dark:bg-muted/50">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Industry-Leading Services"
@@ -27,9 +27,9 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-white dark:bg-slate-950 rounded-[2.5rem] overflow-hidden flex flex-col p-4">
+              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] dark:hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 border border-border bg-background dark:bg-card rounded-[2.5rem] overflow-hidden flex flex-col p-4">
                 <CardHeader className="relative p-8 pb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gray-50 dark:bg-slate-900/50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                  <div className="w-20 h-20 rounded-2xl bg-muted dark:bg-muted flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                     {(() => {
                       const Icon = ICON_MAP[service.iconId] || Activity;
                       return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
@@ -40,12 +40,12 @@ export default function ServicesSection() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="px-8 pt-0 flex-grow">
-                  <CardDescription className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">
+                  <CardDescription className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed line-clamp-3">
                     {service.description}
                   </CardDescription>
-                  <div className="mt-8 pt-8 border-t border-slate-50 grid grid-cols-2 gap-4">
+                  <div className="mt-8 pt-8 border-t border-border grid grid-cols-2 gap-4">
                     {service.equipment?.slice(0, 2).map((eq) => (
-                      <div key={eq} className="text-[11px] font-bold uppercase tracking-widest text-slate-400 bg-slate-50 p-2 rounded-lg text-center truncate">
+                      <div key={eq} className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground bg-muted p-2 rounded-lg text-center truncate">
                         {eq}
                       </div>
                     ))}

@@ -15,7 +15,7 @@ export default function AboutPage() {
   ];
 
   const timeline = [
-    { year: "2014", event: "Calibration Lab Founded", desc: "Started as a specialized electrical calibration facility." },
+    { year: "2004", event: "Calibration Lab Founded", desc: "Started as a specialized electrical calibration facility." },
     { year: "2008", event: "Achieved NABL Accreditation", desc: "First major milestone towards global technical competence." },
     { year: "2015", event: "Multi-Domain Expansion", desc: "Added Mechanical, Pressure, and Temperature capabilities." },
     { year: "2020", event: "Digital Transformation", desc: "Implemented cloud-based traceable reporting systems." },
@@ -33,9 +33,9 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/10 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
           >
-            <span>Since 2014</span>
+            <span>Since 2004</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -48,15 +48,15 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-3xl text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            Two decades of relentless dedication to the science of precision and engineering excellence.
+            Over two decades of relentless dedication to the science of precision and engineering excellence.
           </motion.p>
         </div>
       </section>
 
       {/* Legacy Section */}
-      <section className="py-20 bg-white dark:bg-slate-950 relative">
+      <section className="py-20 bg-background relative">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
@@ -85,12 +85,12 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-secondary dark:text-white mb-10 tracking-tight leading-[1.1]">
+              <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-10 tracking-tight leading-[1.1]">
                 Built on Integrity and <span className="text-primary">Absolute Accuracy</span>
               </h2>
-              <div className="space-y-8 text-xl text-slate-500 dark:text-slate-400 leading-relaxed">
+              <div className="space-y-8 text-xl text-muted-foreground dark:text-muted-foreground leading-relaxed">
                 <p>
-                  {SITE_CONFIG.name} began with a singular focus: to redefine the standards of measurement in the industrial world. What started as a specialized lab in 2014 has evolved into a national leader in metrology.
+                  {SITE_CONFIG.name} began with a singular focus: to redefine the standards of measurement in the industrial world. What started as a specialized lab in 2004 has evolved into a national leader in metrology.
                 </p>
                 <p>
                   Today, we serve the most critical sectors—from Aerospace to Pharmaceuticals—ensuring that every measurement is traceable, every tool is accurate, and every client is compliant.
@@ -103,12 +103,12 @@ export default function AboutPage() {
                   { icon: Users, label: "Expert Staff", value: "50+ Engineers" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gray-50 dark:bg-slate-900/50 rounded-xl flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center shrink-0">
                       <item.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">{item.label}</div>
-                      <div className="text-2xl font-bold text-secondary dark:text-white">{item.value}</div>
+                      <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-1">{item.label}</div>
+                      <div className="text-2xl font-bold text-foreground">{item.value}</div>
                     </div>
                   </div>
                 ))}
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Vision Values */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-900/50">
+      <section className="py-20 bg-muted dark:bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {values.map((val, idx) => (
@@ -129,13 +129,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-12 rounded-[3.5rem] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                className="group p-12 rounded-[3.5rem] bg-background dark:bg-card border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
               >
                 <div className="w-20 h-20 rounded-[2rem] bg-primary/5 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <val.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-3xl font-bold text-secondary dark:text-white mb-6">{val.title}</h3>
-                <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">{val.text}</p>
+                <h3 className="text-3xl font-bold text-foreground mb-6">{val.title}</h3>
+                <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">{val.text}</p>
               </motion.div>
             ))}
           </div>
@@ -143,13 +143,13 @@ export default function AboutPage() {
       </section>
 
       {/* Modern Timeline */}
-      <section className="py-20 bg-white dark:bg-slate-950 overflow-hidden">
+      <section className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-6">
           <SectionHeading title="Our Evolution" centered subtitle="A journey of technical milestones and continuous innovation." />
 
           <div className="relative max-w-5xl mx-auto pt-20">
             {/* Horizontal line for desktop */}
-            <div className="absolute top-[20%] left-0 w-full h-[2px] bg-slate-100 hidden lg:block" />
+            <div className="absolute top-[20%] left-0 w-full h-[2px] bg-border hidden lg:block" />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {timeline.map((item, idx) => (
@@ -161,11 +161,11 @@ export default function AboutPage() {
                   transition={{ delay: idx * 0.1 }}
                   className="relative group"
                 >
-                  <div className="hidden lg:block absolute top-[-5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-2 border-primary group-hover:bg-primary group-hover:scale-150 transition-all z-10" />
+                  <div className="hidden lg:block absolute top-[-5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-primary group-hover:scale-150 transition-all z-10" />
                   <div className="text-center lg:pt-12">
                     <div className="text-4xl font-bold text-primary mb-2">{item.year}</div>
-                    <h4 className="text-xl font-bold text-secondary dark:text-white mb-4 group-hover:text-primary transition-colors">{item.event}</h4>
-                    <p className="text-sm text-slate-400 font-medium leading-relaxed">{item.desc}</p>
+                    <h4 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{item.event}</h4>
+                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}

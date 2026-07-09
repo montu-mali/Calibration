@@ -10,7 +10,7 @@ import CTA from "@/components/home/cta";
 export default function CertificatesPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
@@ -24,7 +24,7 @@ export default function CertificatesPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-secondary dark:text-white mb-8 leading-[1] tracking-tighter"
+              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
             >
               Technical <br />
               <span className="text-primary italic">Accreditation.</span>
@@ -33,7 +33,7 @@ export default function CertificatesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
             >
               Our laboratory maintains world-class certifications, validating our competence and commitment to measurement integrity.
             </motion.p>
@@ -47,7 +47,7 @@ export default function CertificatesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-slate-950 rounded-[3.5rem] overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+                className="bg-background dark:bg-card rounded-[3.5rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
               >
                 <div className="relative h-72 w-full overflow-hidden p-4">
                   <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
@@ -66,8 +66,8 @@ export default function CertificatesPage() {
                   </div>
                 </div>
                 <div className="p-10 pt-6 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4 leading-tight">{cert.title}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-lg mb-10 leading-relaxed flex-grow">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{cert.title}</h3>
+                  <p className="text-muted-foreground dark:text-muted-foreground text-lg mb-10 leading-relaxed flex-grow">
                     {cert.description} Verified adherence to international metrology standards and technical requirements.
                   </p>
                   <Button className="w-full h-16 rounded-2xl group/btn font-bold text-xl relative overflow-hidden">
@@ -89,7 +89,7 @@ export default function CertificatesPage() {
 
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-[1.1]">Our Commitment <br /> to Quality Metrology</h2>
-              <p className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-4xl">
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl">
                 Our quality management system is built on the foundations of ISO/IEC 17025. We ensure that every measurement is traceable, every engineer is certified, and every process is optimized for accuracy.
               </p>
             </div>

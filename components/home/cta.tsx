@@ -8,7 +8,7 @@ import { CONTACT_INFO } from "@/lib/constants";
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 overflow-hidden">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -27,7 +27,7 @@ export default function CTA() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-12"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-12"
             >
               <span>Get Started</span>
             </motion.div>
@@ -38,7 +38,7 @@ export default function CTA() {
               Quality Standards?
             </h2>
 
-            <p className="text-xl md:text-2xl text-slate-400 mb-16 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground dark:text-slate-300 mb-16 leading-relaxed max-w-2xl mx-auto">
               Our engineers are ready to build a custom calibration plan for your organization. Contact us today for a technical consultation.
             </p>
 
@@ -54,11 +54,11 @@ export default function CTA() {
               </Button>
               <div className="flex flex-col sm:flex-row items-center gap-8">
                 <div className="flex items-center space-x-4 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
                     <Phone className="h-7 w-7 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-1">Call Technical</div>
+                    <div className="text-muted-foreground dark:text-slate-300 text-sm font-bold uppercase tracking-widest mb-1">Call Technical</div>
                     <div className="text-white text-xl font-bold">{CONTACT_INFO.phone}</div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function CTA() {
                   transition={{ delay: 0.4 + idx * 0.1 }}
                 >
                   <div className="text-3xl md:text-4xl font-bold text-white mb-2">{item.value}</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-[0.2em]">{item.label}</div>
+                  <div className="text-muted-foreground dark:text-muted-foreground text-xs font-bold uppercase tracking-[0.2em]">{item.label}</div>
                 </motion.div>
               ))}
             </div>

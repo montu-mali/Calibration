@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
               <span className="text-3xl font-bold tracking-tight">{SITE_CONFIG.name}</span>
             </Link>
-            <p className="text-slate-400 text-lg leading-relaxed max-w-xs">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-xs">
               Precision Beyond Measurement. India's leading ISO Certified Calibration Laboratory.
             </p>
             <div className="flex space-x-4">
@@ -50,14 +50,14 @@ export default function Footer() {
             <ul className="space-y-4">
               {NAV_LINKS.filter(l => !l.dropdown).map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-slate-400 hover:text-white transition-all hover:translate-x-2 flex items-center group">
+                  <Link href={link.href} className="text-muted-foreground hover:text-white transition-all hover:translate-x-2 flex items-center group">
                     <ArrowRight className="h-4 w-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-white transition-all hover:translate-x-2 flex items-center group">
+                <Link href="/services" className="text-muted-foreground hover:text-white transition-all hover:translate-x-2 flex items-center group">
                   <ArrowRight className="h-4 w-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                   Services
                 </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {SERVICES.slice(0, 5).map((service) => (
                 <li key={service.id}>
-                  <Link href={`/services/${service.slug}`} className="text-slate-400 hover:text-white transition-all hover:translate-x-2 flex items-center group">
+                  <Link href={`/services/${service.slug}`} className="text-muted-foreground hover:text-white transition-all hover:translate-x-2 flex items-center group">
                     <ArrowRight className="h-4 w-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                     {service.title}
                   </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <span className="ml-3 h-1 w-8 bg-primary rounded-full" />
             </h4>
             <div className="space-y-4">
-              <p className="text-slate-400 text-sm">Stay updated with latest calibration standards.</p>
+              <p className="text-muted-foreground text-sm">Stay updated with latest calibration standards.</p>
               <div className="flex flex-col space-y-3">
                 <Input
                   placeholder="Email address"
@@ -101,13 +101,13 @@ export default function Footer() {
             </div>
 
             <div className="pt-4 border-t border-white/10 space-y-4">
-              <div className="flex items-center space-x-4 text-slate-400 group">
+              <div className="flex items-center space-x-4 text-muted-foreground group">
                 <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <span className="font-medium">{CONTACT_INFO.phone}</span>
               </div>
-              <div className="flex items-center space-x-4 text-slate-400 group">
+              <div className="flex items-center space-x-4 text-muted-foreground group">
                 <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. Designed for the future of precision.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (

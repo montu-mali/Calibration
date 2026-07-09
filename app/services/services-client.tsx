@@ -11,7 +11,7 @@ import CTA from "@/components/home/cta";
 export default function ServicesPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-slate-900/50">
+      <section className="py-16 md:py-20 bg-muted dark:bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
@@ -25,7 +25,7 @@ export default function ServicesPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-secondary dark:text-white mb-8 leading-[1] tracking-tighter"
+              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
             >
               Technical <br />
               <span className="text-primary italic">Capabilities.</span>
@@ -34,7 +34,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
             >
               NABL accredited calibration services across 10+ domains, delivering traceable results that define industry benchmarks.
             </motion.p>
@@ -49,9 +49,9 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-white dark:bg-slate-950 rounded-[3rem] overflow-hidden flex flex-col p-6">
+                <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background dark:bg-card rounded-[3rem] overflow-hidden flex flex-col p-6">
                   <CardHeader className="p-8 pb-4">
-                    <div className="w-20 h-20 rounded-[2rem] bg-gray-50 dark:bg-slate-900/50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                    <div className="w-20 h-20 rounded-[2rem] bg-muted flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                       {(() => {
                         const Icon = ICON_MAP[service.iconId] || Activity;
                         return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
@@ -62,7 +62,7 @@ export default function ServicesPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="px-8 pt-0 flex-grow">
-                    <CardDescription className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+                    <CardDescription className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed mb-8">
                       {service.description}
                     </CardDescription>
                   </CardContent>

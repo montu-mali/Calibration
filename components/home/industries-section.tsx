@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export default function IndustriesSection() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
           <SectionHeading
@@ -35,14 +35,14 @@ export default function IndustriesSection() {
               className="group"
             >
               <Link href="/industries">
-                <div className="h-full flex flex-col items-center p-10 rounded-[2.5rem] bg-gray-50 dark:bg-slate-900/50 border border-transparent transition-all duration-500 group-hover:bg-white dark:bg-slate-950 group-hover:border-primary group-hover:shadow-[0_30px_60px_-15px_rgba(0,87,217,0.1)]">
-                  <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-slate-950 flex items-center justify-center mb-6 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="h-full flex flex-col items-center p-10 rounded-[2.5rem] bg-muted border border-transparent transition-all duration-500 group-hover:bg-card group-hover:border-primary group-hover:shadow-[0_30px_60px_-15px_rgba(0,87,217,0.1)]">
+                  <div className="w-20 h-20 rounded-[2rem] bg-background flex items-center justify-center mb-6 shadow-sm border border-border group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     {(() => {
                       const Icon = ICON_MAP[industry.iconId] || Activity;
                       return <Icon className="h-9 w-9 text-primary group-hover:text-white transition-colors" />;
                     })()}
                   </div>
-                  <span className="font-bold text-secondary dark:text-white text-lg group-hover:text-primary transition-colors text-center leading-tight">
+                  <span className="font-bold text-foreground text-lg group-hover:text-primary transition-colors text-center leading-tight">
                     {industry.name}
                   </span>
                   <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">

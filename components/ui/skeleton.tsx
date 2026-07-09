@@ -20,7 +20,7 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function ServiceCardSkeleton() {
   return (
-    <div className="p-10 rounded-[3rem] bg-gray-50 border border-slate-100">
+    <div className="p-10 rounded-[3rem] bg-muted border border-border">
       <Skeleton className="w-16 h-16 rounded-2xl mb-10" />
       <Skeleton className="h-8 w-3/4 mb-4" />
       <Skeleton className="h-4 w-full mb-2" />

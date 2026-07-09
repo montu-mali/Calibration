@@ -33,7 +33,7 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <SectionHeading
           title="The Calibration Advantage"
@@ -49,13 +49,13 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative p-10 rounded-[3rem] bg-gray-50 dark:bg-slate-900/50 border border-transparent hover:bg-white dark:bg-slate-950 hover:border-primary/20 hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500 group"
+              className="relative p-10 rounded-[3rem] bg-muted border border-transparent hover:bg-card hover:border-primary/20 hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500 group"
             >
               <div className={`w-20 h-20 rounded-[2rem] ${feature.color} text-white flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 shadow-xl transition-all duration-500`}>
                 <feature.icon className="h-10 w-10" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 leading-tight">{feature.title}</h3>
-              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6 leading-tight">{feature.title}</h3>
+              <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed mb-8">
                 {feature.description}
               </p>
               <div className="flex items-center text-primary font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">

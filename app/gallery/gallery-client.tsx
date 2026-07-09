@@ -29,7 +29,7 @@ export default function GalleryPage() {
 
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
@@ -43,7 +43,7 @@ export default function GalleryPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-secondary dark:text-white mb-8 leading-[1] tracking-tighter"
+              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
             >
               Visual <br />
               <span className="text-primary italic">Heritage.</span>
@@ -52,7 +52,7 @@ export default function GalleryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground leading-relaxed"
             >
               A window into our advanced facilities, specialized instrumentation, and the technical team driving our precision.
             </motion.p>
@@ -68,7 +68,7 @@ export default function GalleryPage() {
                   "px-10 py-4 rounded-2xl font-bold transition-all duration-500 border-2 text-lg",
                   activeCategory === cat
                     ? "bg-primary border-primary text-white shadow-2xl shadow-primary/30"
-                    : "bg-white dark:bg-slate-950 border-slate-100 dark:border-slate-800 text-slate-400 hover:border-primary/30 hover:text-primary"
+                    : "bg-background border-border text-muted-foreground hover:border-primary/30 hover:text-primary"
                 )}
               >
                 {cat}
@@ -98,7 +98,7 @@ export default function GalleryPage() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
-                  <div className="bg-white dark:bg-slate-950/10 backdrop-blur-md border border-white/20 p-8 rounded-[2rem] transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="bg-background/10 backdrop-blur-md border border-white/20 p-8 rounded-[2rem] transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
                     <span className="text-primary font-bold text-xs uppercase tracking-widest mb-3 block">{img.category}</span>
                     <div className="flex items-center justify-between">
                       <h4 className="text-white text-2xl font-bold leading-tight">{img.title}</h4>

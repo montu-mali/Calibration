@@ -58,7 +58,7 @@ export default function Statistics() {
               <div className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter">
                 <Counter value={stat.value} target={stat.target} />
               </div>
-              <div className="h-1 w-12 bg-white dark:bg-slate-950/30 mx-auto mb-6 rounded-full" />
+              <div className="h-1 w-12 bg-white/20 mx-auto mb-6 rounded-full" />
               <p className="text-blue-100 text-lg font-bold uppercase tracking-[0.2em]">
                 {stat.label}
               </p>

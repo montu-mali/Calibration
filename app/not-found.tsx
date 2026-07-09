@@ -9,11 +9,11 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-6">
+    <div className="min-h-screen flex items-center justify-center bg-background px-6">
       <div className="text-center">
         <h1 className="text-9xl font-bold text-primary mb-4">404</h1>
-        <h2 className="text-4xl font-bold text-secondary mb-6">Page Not Found</h2>
-        <p className="text-slate-500 text-lg mb-10 max-w-md mx-auto">
+        <h2 className="text-4xl font-bold text-foreground mb-6">Page Not Found</h2>
+        <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
           The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

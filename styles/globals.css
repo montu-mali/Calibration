@@ -14,7 +14,7 @@
     --primary-foreground: 210 40% 98%;
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 210 40% 96.1%;
+    --muted: 210 40% 98%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 199 89% 48%;
     --accent-foreground: 210 40% 98%;
@@ -57,13 +57,13 @@
     @apply bg-background text-foreground font-inter antialiased selection:bg-primary/20 selection:text-primary;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-bold tracking-tight text-secondary;
+    @apply font-poppins font-bold tracking-tight text-foreground;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg dark:bg-background/70 dark:border-white/10;
   }
   .glass-dark {
     @apply bg-secondary/80 backdrop-blur-md border border-white/10 shadow-2xl;
@@ -81,10 +81,10 @@
     @apply text-4xl md:text-5xl font-bold leading-tight mb-6;
   }
   .text-body {
-    @apply text-lg text-slate-600 leading-relaxed;
+    @apply text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed;
   }
   .premium-shadow {
-    @apply shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)];
+    @apply shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] dark:shadow-none;
   }
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-2;
@@ -96,9 +96,9 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-50;
+  @apply bg-muted dark:bg-muted/50;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full border-4 border-gray-50 hover:bg-gray-400 transition-colors;
+  @apply bg-gray-300 rounded-full border-4 border-background hover:bg-gray-400 transition-colors dark:bg-muted-foreground/30 dark:border-background dark:hover:bg-muted-foreground/50;
 }

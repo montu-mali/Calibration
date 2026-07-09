@@ -26,7 +26,7 @@ export default function CareersClient() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white dark:bg-slate-950/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
           >
             <Star className="h-4 w-4" />
             <span>Be Part of the Future</span>
@@ -43,14 +43,14 @@ export default function CareersClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-3xl text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
             We are looking for the next generation of metrologists and engineers to drive measurement excellence.
           </motion.p>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-slate-950">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
             {perks.map((perk, idx) => (
@@ -60,20 +60,20 @@ export default function CareersClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-12 rounded-[3.5rem] bg-gray-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:bg-white dark:bg-slate-950 hover:border-primary transition-all duration-500"
+                className="group p-12 rounded-[3.5rem] bg-muted border border-border hover:bg-card hover:border-primary transition-all duration-500"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-950 shadow-sm flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-background shadow-sm flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <perk.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">{perk.title}</h3>
-                <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">{perk.desc}</p>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{perk.title}</h3>
+                <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">{perk.desc}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold text-secondary dark:text-white tracking-tight mb-4">Open Opportunities</h2>
+              <h2 className="text-5xl font-bold text-foreground tracking-tight mb-4">Open Opportunities</h2>
               <div className="h-1.5 w-24 bg-primary rounded-full mx-auto" />
             </div>
 
@@ -85,20 +85,20 @@ export default function CareersClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group p-10 md:p-14 rounded-[3.5rem] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
+                  className="group p-10 md:p-14 rounded-[3.5rem] bg-background dark:bg-card border border-border shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
                     <div className="space-y-6">
                       <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
                         {job.department}
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white group-hover:text-primary transition-colors leading-tight">{job.title}</h3>
+                      <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">{job.title}</h3>
                       <div className="flex flex-wrap gap-8">
-                        <div className="flex items-center text-slate-400 font-bold text-sm uppercase tracking-widest">
+                        <div className="flex items-center text-muted-foreground font-bold text-sm uppercase tracking-widest">
                           <MapPin className="h-5 w-5 mr-3 text-primary" />
                           {job.location}
                         </div>
-                        <div className="flex items-center text-slate-400 font-bold text-sm uppercase tracking-widest">
+                        <div className="flex items-center text-muted-foreground font-bold text-sm uppercase tracking-widest">
                           <Clock className="h-5 w-5 mr-3 text-primary" />
                           {job.type}
                         </div>

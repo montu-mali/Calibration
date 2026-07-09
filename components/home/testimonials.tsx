@@ -16,7 +16,7 @@ export default function Testimonials() {
   const prev = () => setCurrent((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-6">
@@ -27,7 +27,7 @@ export default function Testimonials() {
         />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="bg-gray-50 dark:bg-slate-900/50 rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm dark:shadow-none border border-slate-50">
+          <div className="bg-muted dark:bg-muted/50 rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm border border-border">
             <Quote className="absolute top-12 left-12 h-24 w-24 text-primary/10 -rotate-12" />
 
             <AnimatePresence mode="wait">
@@ -65,13 +65,13 @@ export default function Testimonials() {
                         />
                       ))}
                     </div>
-                    <p className="text-2xl md:text-4xl text-secondary dark:text-white font-medium leading-[1.4] mb-12 italic tracking-tight">
+                    <p className="text-2xl md:text-4xl text-foreground font-medium leading-[1.4] mb-12 italic tracking-tight">
                       "{TESTIMONIALS[current].content}"
                     </p>
                     <div className="flex items-center space-x-6">
                       <div className="h-px w-12 bg-primary" />
                       <div>
-                        <h4 className="text-2xl font-bold text-secondary dark:text-white mb-1">{TESTIMONIALS[current].name}</h4>
+                        <h4 className="text-2xl font-bold text-foreground mb-1">{TESTIMONIALS[current].name}</h4>
                         <p className="text-primary font-bold uppercase tracking-widest text-sm">{TESTIMONIALS[current].company}</p>
                       </div>
                     </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
               variant="outline"
               size="icon"
               onClick={prev}
-              className="w-16 h-16 rounded-full border-2 border-slate-100 dark:border-slate-800 text-secondary dark:text-white hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl shadow-slate-200/50"
+              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl dark:shadow-none"
             >
               <ChevronLeft className="h-8 w-8" />
             </Button>
@@ -94,7 +94,7 @@ export default function Testimonials() {
               variant="outline"
               size="icon"
               onClick={next}
-              className="w-16 h-16 rounded-full border-2 border-slate-100 dark:border-slate-800 text-secondary dark:text-white hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl shadow-slate-200/50"
+              className="w-16 h-16 rounded-full border-2 border-border text-foreground hover:bg-primary hover:border-primary hover:text-white transition-all shadow-xl dark:shadow-none"
             >
               <ChevronRight className="h-8 w-8" />
             </Button>

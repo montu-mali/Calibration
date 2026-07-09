@@ -23,34 +23,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mechatronics Calibration | Precision Beyond Measurement",
-    template: "%s | Mechatronics Calibration"
+    default: "Calibration | Precision Beyond Measurement",
+    template: "%s | Calibration"
   },
-  description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services across India. NABL Accredited.",
+  description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services. NABL Accredited.",
   keywords: ["calibration services", "NABL laboratory", "ISO 17025", "electrical calibration", "mechanical calibration", "precision measurement"],
-  authors: [{ name: "Mechatronics Calibration India" }],
-  creator: "Mechatronics Calibration",
+  authors: [{ name: "Calibration Services" }],
+  creator: "Calibration",
   openGraph: {
     type: "website",
-    locale: "en_IN",
-    url: "https://mechatronics-cal.com",
-    siteName: "Mechatronics Calibration",
-    title: "Mechatronics Calibration | Precision Beyond Measurement",
-    description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services across India.",
+    locale: "en_US",
+    url: "https://calibration.com",
+    siteName: "Calibration",
+    title: "Calibration | Precision Beyond Measurement",
+    description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services.",
     images: [
       {
-        url: "https://mechatronics-cal.com/og-image.jpg",
+        url: "https://calibration.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mechatronics Calibration - Precision Beyond Measurement",
+        alt: "Calibration - Precision Beyond Measurement",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mechatronics Calibration | Precision Beyond Measurement",
+    title: "Calibration | Precision Beyond Measurement",
     description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services.",
-    images: ["https://mechatronics-cal.com/twitter-image.jpg"],
+    images: ["https://calibration.com/twitter-image.jpg"],
   },
   robots: {
     index: true,
