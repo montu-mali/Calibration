@@ -51,8 +51,8 @@ export default function ContactPage() {
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {[
-                  { icon: Phone, label: "Call Us", value: CONTACT_INFO.phone, sub: CONTACT_INFO.workingHours },
-                  { icon: Mail, label: "Email Us", value: CONTACT_INFO.email, sub: "24/7 Response Time" },
+                  { icon: Phone, label: "Call Us", value: CONTACT_INFO.phone, sub: CONTACT_INFO.workingHours, href: `tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}` },
+                  { icon: Mail, label: "Email Us", value: CONTACT_INFO.email, sub: "24/7 Response Time", href: `mailto:${CONTACT_INFO.email}` },
                   { icon: MapPin, label: "Visit Lab", value: "Vatva GIDC", sub: "Ahmedabad, India" },
                   { icon: Globe, label: "Global Presence", value: "Across India", sub: "12+ Service Centers" },
                 ].map((item) => (
@@ -61,7 +61,13 @@ export default function ContactPage() {
                       <item.icon className="text-primary h-6 w-6 group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">{item.label}</h3>
-                    <div className="text-xl font-bold text-foreground mb-1 break-all">{item.value}</div>
+                    {item.href ? (
+                      <a href={item.href} className="block text-xl font-bold text-foreground mb-1 break-all hover:text-primary transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="text-xl font-bold text-foreground mb-1 break-all">{item.value}</div>
+                    )}
                     <div className="text-sm text-muted-foreground font-medium">{item.sub}</div>
                   </div>
                 ))}

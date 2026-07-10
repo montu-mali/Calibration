@@ -59,7 +59,9 @@ export default function CTA() {
                   </div>
                   <div className="text-left">
                     <div className="text-muted-foreground  text-sm font-bold uppercase tracking-widest mb-1">Call Technical</div>
-                    <div className="text-white text-xl font-bold">{CONTACT_INFO.phone}</div>
+                    <a href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} className="text-white text-xl font-bold hover:text-primary transition-colors block">
+                      {CONTACT_INFO.phone}
+                    </a>
                   </div>
                 </div>
               </div>

@@ -107,13 +107,13 @@ export default function Footer() {
                 <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
-                <span className="font-medium">{CONTACT_INFO.phone}</span>
+                <a href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} className="font-medium hover:text-primary transition-colors">{CONTACT_INFO.phone}</a>
               </div>
               <div className="flex items-center space-x-4 text-muted-foreground group">
                 <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
-                <span className="font-medium">{CONTACT_INFO.email}</span>
+                <a href={`mailto:${CONTACT_INFO.email}`} className="font-medium hover:text-primary transition-colors break-all">{CONTACT_INFO.email}</a>
               </div>
             </div>
           </div>
