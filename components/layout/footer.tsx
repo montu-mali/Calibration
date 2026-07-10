@@ -122,10 +122,10 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. Designed for the future of precision.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-              <Link key={item} href="#" className="hover:text-white transition-colors">{item}</Link>
-            ))}
-          </div>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+            </div>
         </div>
       </div>
     </footer>

@@ -27,6 +27,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
   const { scrollYProgress } = useScroll();
@@ -43,6 +44,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const isTransparent = pathname === "/" && !isScrolled;
 
@@ -131,7 +137,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="lg:hidden flex items-center space-x-4">
-          <Sheet>
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -169,6 +175,7 @@ export default function Navbar() {
                                 <Link
                                   key={item.label}
                                   href={item.href}
+                                  onClick={() => setMobileOpen(false)}
                                   className="text-lg font-semibold text-foreground hover:text-primary p-4 rounded-2xl hover:bg-muted transition-all"
                                 >
                                   {item.label}
@@ -179,6 +186,7 @@ export default function Navbar() {
                         ) : (
                           <Link
                             href={link.href}
+                            onClick={() => setMobileOpen(false)}
                             className={cn(
                               "text-xl font-bold p-4 rounded-2xl transition-all",
                               pathname === link.href
@@ -194,9 +202,11 @@ export default function Navbar() {
                   </nav>
                 </div>
                 <div className="p-6 border-t border-border">
-                  <Button className="w-full h-14 rounded-2xl text-lg font-bold shadow-xl shadow-primary/20">
-                    Request a Quote
-                  </Button>
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                    <Button className="w-full h-14 rounded-2xl text-lg font-bold shadow-xl shadow-primary/20">
+                      Request a Quote
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </SheetContent>
@@ -206,3 +216,4 @@ export default function Navbar() {
     </header>
   );
 }
+
