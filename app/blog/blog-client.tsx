@@ -37,7 +37,8 @@ export default function BlogPage() {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
             >
-              Exploring the frontiers of measurement science, quality standards, and industrial innovation.
+              Exploring the frontiers of measurement science, quality standards,
+              and industrial innovation.
             </motion.p>
           </div>
 
@@ -82,19 +83,34 @@ export default function BlogPage() {
               </div>
 
               <div className="p-10 rounded-[3rem] bg-muted border border-border">
-                <h3 className="text-2xl font-bold text-foreground mb-8">Recent Updates</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-8">
+                  Recent Updates
+                </h3>
                 <div className="space-y-10">
                   {BLOG_POSTS.slice(1).map((post, idx) => (
-                    <Link key={post.id} href="#" className="group flex gap-6 items-center">
+                    <Link
+                      key={post.id}
+                      href="#"
+                      className="group flex gap-6 items-center"
+                    >
                       <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-md">
-                        <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
                       </div>
                       <div className="space-y-2">
-                        <div className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">{post.category}</div>
+                        <div className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">
+                          {post.category}
+                        </div>
                         <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2">
                           {post.title}
                         </h4>
-                        <div className="text-muted-foreground text-xs font-bold">{post.date}</div>
+                        <div className="text-muted-foreground text-xs font-bold">
+                          {post.date}
+                        </div>
                       </div>
                     </Link>
                   ))}
@@ -104,7 +120,7 @@ export default function BlogPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {[...BLOG_POSTS, ...BLOG_POSTS].slice(0, 6).map((post, index) => (
+            {[...BLOG_POSTS].slice(0, 3).map((post, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -114,7 +130,12 @@ export default function BlogPage() {
                 className="group bg-background  rounded-[3.5rem] overflow-hidden border border-border shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500"
               >
                 <div className="relative h-72 overflow-hidden m-4 rounded-[2.5rem]">
-                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                   <div className="absolute top-6 left-6">
                     <div className="px-4 py-2 rounded-xl bg-background/90 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-widest shadow-lg">
                       {post.category}
@@ -122,14 +143,19 @@ export default function BlogPage() {
                   </div>
                 </div>
                 <div className="p-10 pt-4">
-                  <div className="text-muted-foreground text-xs font-bold uppercase tracking-widest mb-6">{post.date}</div>
+                  <div className="text-muted-foreground text-xs font-bold uppercase tracking-widest mb-6">
+                    {post.date}
+                  </div>
                   <h3 className="text-2xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                     {post.title}
                   </h3>
                   <p className="text-lg text-muted-foreground  mb-8 line-clamp-2 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <Link href="#" className="inline-flex items-center font-bold text-primary text-sm uppercase tracking-widest group/link">
+                  <Link
+                    href="#"
+                    className="inline-flex items-center font-bold text-primary text-sm uppercase tracking-widest group/link"
+                  >
                     Read Analysis
                     <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-2" />
                   </Link>

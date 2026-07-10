@@ -61,7 +61,7 @@ export default function ContactPage() {
                       <item.icon className="text-primary h-6 w-6 group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">{item.label}</h3>
-                    <div className="text-xl font-bold text-foreground mb-1">{item.value}</div>
+                    <div className="text-xl font-bold text-foreground mb-1 break-all">{item.value}</div>
                     <div className="text-sm text-muted-foreground font-medium">{item.sub}</div>
                   </div>
                 ))}

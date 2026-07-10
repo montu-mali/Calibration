@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { CONTACT_INFO, NAV_LINKS, SERVICES, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -14,12 +15,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Company Info */}
           <div className="space-y-8">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-4 h-4 bg-success" />
-                <span className="text-white font-bold text-2xl relative z-10">{SITE_CONFIG.name.charAt(0)}</span>
-              </div>
-              <span className="text-3xl font-bold tracking-tight">{SITE_CONFIG.name}</span>
+            <Link href="/" className="flex items-center space-x-3 bg-white p-3 rounded-2xl w-fit mb-4">
+              <img
+                src="/calibration_logo.jpg"
+                alt="Mechatronics Calibration LLP Logo"
+                className="h-12 md:h-14 w-auto object-contain shrink-0"
+              />
             </Link>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-xs">
               Precision Beyond Measurement. India's leading ISO Certified Calibration Laboratory.
@@ -44,7 +45,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-8 flex items-center">
+            <h4 className="text-xl font-bold mb-8 flex items-center text-white">
               Quick Links
               <span className="ml-3 h-1 w-8 bg-primary rounded-full" />
             </h4>
@@ -68,7 +69,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-bold mb-8 flex items-center">
+            <h4 className="text-xl font-bold mb-8 flex items-center text-white">
               Core Services
               <span className="ml-3 h-1 w-8 bg-primary rounded-full" />
             </h4>
@@ -86,7 +87,7 @@ export default function Footer() {
 
           {/* Contact & Newsletter */}
           <div className="space-y-8">
-            <h4 className="text-xl font-bold mb-8 flex items-center">
+            <h4 className="text-xl font-bold mb-8 flex items-center text-white">
               Newsletter
               <span className="ml-3 h-1 w-8 bg-primary rounded-full" />
             </h4>

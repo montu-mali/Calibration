@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -15,7 +16,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetHeader,
+} from "@/components/ui/sheet";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 export default function Navbar() {
@@ -26,7 +33,7 @@ export default function Navbar() {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   useEffect(() => {
@@ -45,7 +52,7 @@ export default function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isTransparent
           ? "bg-transparent py-6"
-          : "bg-background/80 backdrop-blur-xl border-b border-border py-3 shadow-sm"
+          : "bg-background/80 backdrop-blur-xl border-b border-border py-3 shadow-sm",
       )}
     >
       <motion.div
@@ -53,20 +60,15 @@ export default function Navbar() {
         style={{ scaleX }}
       />
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3 group">
-          <motion.div
-            whileHover={{ rotate: 90 }}
-            className="w-11 h-11 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-4 h-4 bg-success" />
-            <span className="text-white font-bold text-2xl relative z-10">C</span>
-          </motion.div>
-          <span className={cn(
-            "text-2xl font-bold tracking-tight transition-colors duration-300",
-            isTransparent ? "text-white" : "text-foreground"
-          )}>
-            {SITE_CONFIG.name}
-          </span>
+        <Link
+          href="/"
+          className="flex items-center space-x-3 group bg-white py-1 px-4 rounded-2xl shadow-sm border border-border shrink-0"
+        >
+          <img
+            src="/calibration_logo.jpg"
+            alt="Mechatronics Calibration LLP Logo"
+            className="h-10 md:h-12 w-auto object-contain shrink-0 transition-all duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -77,10 +79,7 @@ export default function Navbar() {
                 <NavigationMenuItem key={link.label}>
                   {link.dropdown ? (
                     <>
-                      <NavigationMenuTrigger className={cn(
-                        "bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 transition-all text-base font-medium",
-                        isTransparent ? "text-white hover:text-white" : "text-foreground"
-                      )}>
+                      <NavigationMenuTrigger className="bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-all text-base font-medium text-foreground">
                         {link.label}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
@@ -97,7 +96,8 @@ export default function Navbar() {
                                     <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                                   </div>
                                   <p className="line-clamp-1 text-xs leading-snug text-muted-foreground mt-1">
-                                    Precision {item.label.toLowerCase()} services.
+                                    Precision {item.label.toLowerCase()}{" "}
+                                    services.
                                   </p>
                                 </Link>
                               </NavigationMenuLink>
@@ -108,14 +108,12 @@ export default function Navbar() {
                     </>
                   ) : (
                     <Link href={link.href} legacyBehavior passHref>
-                      <NavigationMenuLink className={cn(
-                        "group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-base font-medium transition-all",
-                        isTransparent
-                          ? "text-white/80 hover:text-white hover:bg-white/10"
-                          : "text-muted-foreground  hover:text-primary  hover:bg-primary/5",
-                        pathname === link.href && !isTransparent && "text-primary bg-primary/5",
-                        pathname === link.href && isTransparent && "text-white bg-white/20"
-                      )}>
+                      <NavigationMenuLink
+                        className={cn(
+                          "group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-base font-medium transition-all text-muted-foreground hover:text-primary hover:bg-primary/5",
+                          pathname === link.href && "text-primary bg-primary/5",
+                        )}
+                      >
                         {link.label}
                       </NavigationMenuLink>
                     </Link>
@@ -135,22 +133,26 @@ export default function Navbar() {
         <div className="lg:hidden flex items-center space-x-4">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(
-                "rounded-xl",
-                isTransparent ? "text-white hover:bg-white/10" : "text-foreground hover:bg-muted"
-              )}>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-xl text-foreground hover:bg-muted"
+              >
                 <Menu className="h-7 w-7" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-[450px] border-l-0 p-0">
+            <SheetContent
+              side="right"
+              className="w-full sm:w-[450px] border-l-0 p-0"
+            >
               <div className="flex flex-col h-full bg-background">
                 <SheetHeader className="p-6 border-b border-border">
-                  <SheetTitle className="text-left flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-3 h-3 bg-success" />
-                      <span className="text-white font-bold text-xl relative z-10">{SITE_CONFIG.name.charAt(0)}</span>
-                    </div>
-                    <span className="text-xl font-bold">{SITE_CONFIG.name}</span>
+                  <SheetTitle className="text-left flex items-center space-x-3 bg-white p-3 rounded-xl border border-border shrink-0 w-fit">
+                    <img
+                      src="/calibration_logo.jpg"
+                      alt="Mechatronics Calibration LLP Logo"
+                      className="h-10 w-auto object-contain shrink-0"
+                    />
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex-grow overflow-y-auto p-6">
@@ -159,7 +161,9 @@ export default function Navbar() {
                       <div key={link.label} className="flex flex-col">
                         {link.dropdown ? (
                           <div className="py-2">
-                            <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-4 mb-2 block">{link.label}</span>
+                            <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-4 mb-2 block">
+                              {link.label}
+                            </span>
                             <div className="grid grid-cols-1 gap-1">
                               {link.dropdown.map((item) => (
                                 <Link
@@ -177,7 +181,9 @@ export default function Navbar() {
                             href={link.href}
                             className={cn(
                               "text-xl font-bold p-4 rounded-2xl transition-all",
-                              pathname === link.href ? "text-primary bg-primary/5" : "text-foreground hover:bg-muted"
+                              pathname === link.href
+                                ? "text-primary bg-primary/5"
+                                : "text-foreground hover:bg-muted",
                             )}
                           >
                             {link.label}

@@ -13,11 +13,11 @@ export default function ServicesSection() {
   // Show 6 representative services from different categories on the home page
   const featuredServices = [
     SERVICES.find(s => s.id === "dial-calibration-tester"),
-    SERVICES.find(s => s.id === "mass-balance-calibration"),
+    SERVICES.find(s => s.id === "mass-balance-calibration-service"),
     SERVICES.find(s => s.id === "pressure-calibrator"),
-    SERVICES.find(s => s.id === "hot-wire-anemometer-calibration"),
+    SERVICES.find(s => s.id === "hot-wire-anemometer-nabl-calibration"),
     SERVICES.find(s => s.id === "iso-9001-service"),
-    SERVICES.find(s => s.id === "pickup-delivery-service"),
+    SERVICES.find(s => s.id === "pick-up-and-delivery-service"),
   ].filter(Boolean) as typeof SERVICES;
 
   return (

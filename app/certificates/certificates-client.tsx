@@ -88,7 +88,7 @@ export default function CertificatesPage() {
             </div>
 
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-[1.1]">Our Commitment <br /> to Quality Metrology</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-[1.1] text-white">Our Commitment <br /> to Quality Metrology</h2>
               <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl">
                 Our quality management system is built on the foundations of ISO/IEC 17025. We ensure that every measurement is traceable, every engineer is certified, and every process is optimized for accuracy.
               </p>
