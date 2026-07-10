@@ -21,39 +21,91 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://mechatronics-calibration.com"
+  ),
   title: {
-    default: "Calibration | Precision Beyond Measurement",
-    template: "%s | Calibration"
+    default: "Mechatronics Calibration LLP | Precision Beyond Measurement",
+    template: "%s | Mechatronics Calibration LLP",
   },
-  description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services. NABL Accredited.",
-  keywords: ["calibration services", "NABL laboratory", "ISO 17025", "electrical calibration", "mechanical calibration", "precision measurement"],
-  authors: [{ name: "Calibration Services" }],
-  creator: "Calibration",
+  description:
+    "NABL-accredited, ISO/IEC 17025 certified calibration laboratory in Ahmedabad. Expert calibration of electrical, mechanical, thermal & pressure instruments with traceable certificates. 20+ years, 12,000+ instruments.",
+  keywords: [
+    "calibration services Ahmedabad",
+    "NABL accredited laboratory",
+    "ISO 17025 calibration",
+    "electrical calibration",
+    "mechanical calibration",
+    "thermal calibration",
+    "pressure calibration",
+    "dimensional metrology",
+    "instrument calibration India",
+    "NABL certificate",
+    "precision measurement",
+    "calibration laboratory Gujarat",
+    "Mechatronics Calibration",
+  ],
+  authors: [{ name: "Mechatronics Calibration LLP", url: "https://mechatronics-calibration.com" }],
+  creator: "Mechatronics Calibration LLP",
+  publisher: "Mechatronics Calibration LLP",
+  category: "Calibration & Metrology Services",
+  classification: "Industrial Services",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://calibration.com",
-    siteName: "Calibration",
-    title: "Calibration | Precision Beyond Measurement",
-    description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services.",
+    locale: "en_IN",
+    url: "https://mechatronics-calibration.com",
+    siteName: "Mechatronics Calibration LLP",
+    title: "Mechatronics Calibration LLP | Precision Beyond Measurement",
+    description:
+      "NABL-accredited ISO 17025 calibration laboratory in Ahmedabad. Precision calibration for electrical, mechanical, thermal & pressure instruments.",
     images: [
       {
-        url: "https://calibration.com/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Calibration - Precision Beyond Measurement",
+        alt: "Mechatronics Calibration LLP — Precision Beyond Measurement",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calibration | Precision Beyond Measurement",
-    description: "ISO Certified Calibration Laboratory delivering accurate, reliable and traceable calibration services.",
-    images: ["https://calibration.com/twitter-image.jpg"],
+    site: "@mechatronics_cal",
+    creator: "@mechatronics_cal",
+    title: "Mechatronics Calibration LLP | Precision Beyond Measurement",
+    description:
+      "NABL-accredited ISO 17025 calibration laboratory in Ahmedabad. 20+ years of precision measurement excellence.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/calibration_logo.jpg", type: "image/jpeg" },
+    ],
+    apple: [
+      { url: "/calibration_logo.jpg", type: "image/jpeg" },
+    ],
+    shortcut: "/calibration_logo.jpg",
+  },
+  // Add your Google Search Console verification token here:
+  // verification: { google: "YOUR_GSC_VERIFICATION_TOKEN", other: { "msvalidate.01": "YOUR_BING_TOKEN" } },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 };
 
