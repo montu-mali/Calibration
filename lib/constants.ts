@@ -954,14 +954,14 @@ export const JOBS = [
 
 export const CONTACT_INFO = {
   address: process.env.NEXT_PUBLIC_CONTACT_ADDRESS || "Plot No. 45, GIDC Estate, Vatva, Ahmedabad, GJ 382445",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@calibration.com",
-  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 (79) 2583-0000",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mechatronics018@gmail.com",
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 7984193798",
   workingHours: "Mon - Sat: 9:00 AM - 6:00 PM",
 };
 
 export const SITE_CONFIG = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "Calibration",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://calibration.com",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "Mechatronics Calibration LLP",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mechatronics-calibration.vercel.app/",
 };
 
 export const SOCIAL_LINKS = [

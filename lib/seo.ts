@@ -1,13 +1,10 @@
-// lib/seo.ts
-// Central SEO configuration for Mechatronics Calibration LLP
-// All page metadata should use these helpers to stay consistent.
-
 import type { Metadata } from "next";
 
 export const SITE = {
   name: "Mechatronics Calibration LLP",
   shortName: "Mechatronics",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mechatronics-calibration.com",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL || "https://mechatronics-calibration.vercel.app/",
   description:
     "NABL-accredited, ISO 17025 certified calibration laboratory in Ahmedabad. Expert calibration of electrical, mechanical, thermal & pressure instruments with traceable certificates.",
   tagline: "Precision Beyond Measurement",
@@ -22,8 +19,8 @@ export const SITE = {
     region: "GJ",
   },
   contact: {
-    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 (79) 2583-0000",
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@mechatronics-calibration.com",
+    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 7984193798",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mechatronics018@gmail.com",
   },
   geo: {
     latitude: "22.9884",
@@ -41,13 +38,21 @@ export function siteUrl(path = ""): string {
 }
 
 /** Standard metadata defaults merged with per-page overrides */
-export function buildMetadata(overrides: Partial<Metadata> & {
-  title: string;
-  description: string;
-  path?: string;
-  ogImage?: string;
-}): Metadata {
-  const { title, description, path = "", ogImage = DEFAULT_OG_IMAGE, ...rest } = overrides;
+export function buildMetadata(
+  overrides: Partial<Metadata> & {
+    title: string;
+    description: string;
+    path?: string;
+    ogImage?: string;
+  },
+): Metadata {
+  const {
+    title,
+    description,
+    path = "",
+    ogImage = DEFAULT_OG_IMAGE,
+    ...rest
+  } = overrides;
   const canonical = siteUrl(path);
   const image = ogImage.startsWith("http") ? ogImage : siteUrl(ogImage);
 
@@ -71,7 +76,11 @@ export function buildMetadata(overrides: Partial<Metadata> & {
       description,
       images: [image],
     },
-    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
+    },
     ...rest,
   };
 }
@@ -110,9 +119,7 @@ export function localBusinessSchema() {
       { "@type": "State", name: "Gujarat" },
       { "@type": "Country", name: "India" },
     ],
-    sameAs: [
-      "https://www.indiamart.com/mechatronics-calibration-services/",
-    ],
+    sameAs: ["https://www.indiamart.com/mechatronics-calibration-services/"],
     knowsAbout: [
       "Calibration Services",
       "NABL Accreditation",
@@ -138,7 +145,10 @@ export function websiteSchema() {
     publisher: { "@id": siteUrl("/#organization") },
     potentialAction: {
       "@type": "SearchAction",
-      target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/services?q={search_term_string}` },
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE.url}/services?q={search_term_string}`,
+      },
       "query-input": "required name=search_term_string",
     },
   };
