@@ -10,13 +10,13 @@ import CTA from "@/components/home/cta";
 export default function CertificatesPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-background relative overflow-hidden">
+      <section className="py-8 md:py-12 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
             >
               <ShieldCheck className="h-4 w-4" />
               <span>Certified Excellence</span>
@@ -24,7 +24,7 @@ export default function CertificatesPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
+              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Technical <br />
               <span className="text-primary italic">Accreditation.</span>
@@ -33,7 +33,7 @@ export default function CertificatesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground  leading-relaxed"
             >
               Our laboratory maintains world-class certifications, validating our competence and commitment to measurement integrity.
             </motion.p>
@@ -89,7 +89,7 @@ export default function CertificatesPage() {
 
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-[1.1] text-white">Our Commitment <br /> to Quality Metrology</h2>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl">
+              <p className="text-base md:text-lg text-muted-foreground mb-12 leading-relaxed max-w-4xl">
                 Our quality management system is built on the foundations of ISO/IEC 17025. We ensure that every measurement is traceable, every engineer is certified, and every process is optimized for accuracy.
               </p>
             </div>

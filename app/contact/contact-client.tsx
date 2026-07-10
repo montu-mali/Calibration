@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function ContactPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-background relative overflow-hidden">
+      <section className="py-8 md:py-12 bg-background relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-success/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4" />
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
             >
               <MessageSquare className="h-4 w-4" />
               <span>Connect With Us</span>
@@ -27,7 +27,7 @@ export default function ContactPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
+              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Let's Talk <br />
               <span className="text-primary italic">Precision.</span>
@@ -36,7 +36,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground  leading-relaxed"
             >
               Our specialists are ready to provide technical consultation and customized calibration strategies for your organization.
             </motion.p>

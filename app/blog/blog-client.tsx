@@ -12,13 +12,13 @@ import CTA from "@/components/home/cta";
 export default function BlogPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-background relative overflow-hidden">
+      <section className="py-8 md:py-12 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
             >
               <Newspaper className="h-4 w-4" />
               <span>Metrology Insights</span>
@@ -26,7 +26,7 @@ export default function BlogPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
+              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Industry <br />
               <span className="text-primary italic">Intelligence.</span>
@@ -35,7 +35,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground  leading-relaxed"
             >
               Exploring the frontiers of measurement science, quality standards,
               and industrial innovation.
@@ -48,6 +48,7 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               className="lg:col-span-8 group cursor-pointer"
             >
+              <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="block">
               <div className="relative aspect-[16/9] rounded-[4rem] overflow-hidden mb-12 shadow-2xl">
                 <Image
                   src={BLOG_POSTS[0].image}
@@ -71,6 +72,7 @@ export default function BlogPage() {
                   </div>
                 </div>
               </div>
+              </Link>
             </motion.div>
 
             <div className="lg:col-span-4 space-y-12">
@@ -90,7 +92,7 @@ export default function BlogPage() {
                   {BLOG_POSTS.slice(1).map((post, idx) => (
                     <Link
                       key={post.id}
-                      href="#"
+                      href={`/blog/${post.slug}`}
                       className="group flex gap-6 items-center"
                     >
                       <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-md">
@@ -153,7 +155,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <Link
-                    href="#"
+                    href={`/blog/${post.slug}`}
                     className="inline-flex items-center font-bold text-primary text-sm uppercase tracking-widest group/link"
                   >
                     Read Analysis

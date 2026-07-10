@@ -920,29 +920,335 @@ export const BLOG_POSTS = [
   {
     id: "1",
     title: "Understanding ISO/IEC 17025",
-    excerpt: "Why it matters for your laboratory and how it ensures measurement quality.",
+    excerpt: "Why it matters for your laboratory and how it ensures measurement quality across every instrument you calibrate.",
     date: "Oct 24, 2024",
     category: "Standards",
     image: "/images/blog/iso_17025_blog.jpg",
     slug: "understanding-iso-17025",
+    readTime: "7 min read",
+    author: {
+      name: "Dr. Arvind Sharma",
+      role: "Chief Metrologist",
+      avatar: "https://i.pravatar.cc/150?u=arvind",
+    },
+    tags: ["ISO 17025", "NABL", "Accreditation", "Quality", "Standards"],
+    content: [
+      {
+        type: "intro",
+        text: "ISO/IEC 17025 is the world's most widely used standard for testing and calibration laboratories. Whether you are an instrument manufacturer, a quality manager, or a factory owner, understanding this standard is fundamental to ensuring that your measurements are accurate, traceable, and globally accepted.",
+      },
+      {
+        type: "heading",
+        text: "What Is ISO/IEC 17025?",
+      },
+      {
+        type: "paragraph",
+        text: "ISO/IEC 17025:2017 is the international standard that specifies the general requirements for the competence, impartiality, and consistent operation of testing and calibration laboratories. It was developed by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). The standard replaces the earlier 1999 version and introduces a stronger focus on risk-based thinking and process approach.",
+      },
+      {
+        type: "callout",
+        title: "Key Fact",
+        text: "Over 85,000 laboratories in more than 160 countries are currently accredited to ISO/IEC 17025 — making it the most recognized laboratory quality standard in the world.",
+      },
+      {
+        type: "heading",
+        text: "The Two Pillars: Technical Competence & Management System",
+      },
+      {
+        type: "paragraph",
+        text: "The standard is built on two equally important pillars. The first is technical competence — the laboratory must demonstrate that it has the right staff, equipment, methods, and environment to produce reliable results. The second is a sound management system, ensuring processes are documented, reviewed, and continuously improved.",
+      },
+      {
+        type: "list",
+        title: "Core Requirements of ISO/IEC 17025",
+        items: [
+          "Impartiality and confidentiality obligations",
+          "Documented structure, responsibilities, and authority",
+          "Resource management — personnel, facilities, equipment",
+          "Method validation and measurement uncertainty estimation",
+          "Ensuring metrological traceability of all results",
+          "Sampling, handling, and transport of test items",
+          "Technical records and reporting of results",
+          "Management system requirements (aligned with ISO 9001)",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Why Metrological Traceability Matters",
+      },
+      {
+        type: "paragraph",
+        text: "One of the most critical concepts in ISO/IEC 17025 is metrological traceability — the property of a measurement result whereby it can be related to a stated reference through an unbroken chain of calibrations. This chain ultimately leads back to national or international standards such as those maintained by CSIR-NPL in India or NIST in the USA.",
+      },
+      {
+        type: "paragraph",
+        text: "Without traceability, your calibration certificates are essentially meaningless. A torque wrench calibrated against an uncalibrated reference cannot guarantee any accuracy. This is why NABL-accredited laboratories, which are India's implementation of ISO/IEC 17025, are so critical for industrial quality.",
+      },
+      {
+        type: "callout",
+        title: "What NABL Means for You",
+        text: "NABL (National Accreditation Board for Testing and Calibration Laboratories) is India's premier accreditation body operating under ISO/IEC 17025. A calibration certificate from a NABL-accredited lab like Mechatronics Calibration LLP is recognised by government agencies, courts of law, and international trade bodies.",
+      },
+      {
+        type: "heading",
+        text: "ISO 17025 vs ISO 9001: What's the Difference?",
+      },
+      {
+        type: "paragraph",
+        text: "Many businesses confuse ISO 9001 (quality management) with ISO/IEC 17025. While ISO 9001 ensures a quality management system is in place across an organisation, ISO/IEC 17025 goes deeper — it validates the technical competence to produce accurate measurement results. In fact, ISO 17025 incorporates ISO 9001 principles but adds layer upon layer of technical requirements specific to laboratory operations.",
+      },
+      {
+        type: "list",
+        title: "Benefits of Working with an ISO 17025 Accredited Lab",
+        items: [
+          "Globally accepted calibration certificates",
+          "Reduced risk of product recalls and quality failures",
+          "Compliance with regulatory and export requirements",
+          "Lower measurement uncertainty = higher product quality",
+          "Defensible data in case of legal disputes",
+          "Access to international mutual recognition arrangements (MRAs)",
+        ],
+      },
+      {
+        type: "heading",
+        text: "How to Verify a Lab's Accreditation",
+      },
+      {
+        type: "paragraph",
+        text: "Before sending your instruments for calibration, always verify the laboratory's accreditation status. In India, you can check on the NABL portal (nabl-india.org) by entering the lab's NABL registration number. Look for the specific scope of accreditation — a lab accredited for electrical calibration may not be accredited for dimensional or thermal measurements.",
+      },
+      {
+        type: "paragraph",
+        text: "Mechatronics Calibration LLP holds NABL accreditation across electrical, mechanical, thermal, and pressure domains, ensuring your complete calibration requirements are met under a single accredited roof.",
+      },
+    ],
   },
   {
     id: "2",
     title: "Common Mistakes in Tool Maintenance",
-    excerpt: "Avoid these frequent errors to prolong the life of your precision instruments.",
+    excerpt: "Avoid these frequent errors to prolong the life of your precision instruments and maintain calibration integrity.",
     date: "Oct 15, 2024",
     category: "Maintenance",
     image: "/images/blog/tool_maintenance_blog.jpg",
     slug: "common-mistakes-tool-maintenance",
+    readTime: "6 min read",
+    author: {
+      name: "Priya Nair",
+      role: "Senior Calibration Engineer",
+      avatar: "https://i.pravatar.cc/150?u=priya",
+    },
+    tags: ["Maintenance", "Precision Instruments", "Best Practices", "Quality"],
+    content: [
+      {
+        type: "intro",
+        text: "Precision instruments are significant investments for any manufacturing or laboratory operation. Yet, every day, expensive instruments are rendered inaccurate — or outright damaged — by avoidable maintenance mistakes. Here is our definitive guide to the most common errors and how to fix them.",
+      },
+      {
+        type: "heading",
+        text: "Mistake #1: Ignoring the Calibration Schedule",
+      },
+      {
+        type: "paragraph",
+        text: "The single most costly mistake is skipping or delaying calibration. All measuring instruments drift over time due to mechanical wear, thermal cycling, and environmental exposure. A multimeter that was accurate 12 months ago may now be reading 2–5% off — enough to cause product rejections or, worse, to accept out-of-tolerance products.",
+      },
+      {
+        type: "callout",
+        title: "Industry Rule of Thumb",
+        text: "If in doubt, calibrate annually. For instruments in harsh environments, high-usage applications, or critical safety roles (such as torque wrenches on aircraft assemblies), calibrate every 3–6 months.",
+      },
+      {
+        type: "heading",
+        text: "Mistake #2: Improper Storage Conditions",
+      },
+      {
+        type: "paragraph",
+        text: "Precision instruments should be stored in a controlled environment — typically between 18°C and 25°C with relative humidity below 60%. Storing calipers in a hot toolbox, leaving thermocouples exposed to direct sunlight, or keeping digital multimeters near strong magnetic fields can all introduce drift that won't be caught until the next calibration.",
+      },
+      {
+        type: "list",
+        title: "Storage Best Practices",
+        items: [
+          "Always return instruments to their protective cases after use",
+          "Use silica gel desiccant packs in storage areas with humidity issues",
+          "Keep digital instruments away from strong electromagnetic sources",
+          "Store optical instruments (surface plates, optical flats) in vibration-free areas",
+          "Remove batteries from instruments stored for more than 3 months",
+          "Label instruments clearly with their calibration due date",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Mistake #3: Skipping Zero Verification",
+      },
+      {
+        type: "paragraph",
+        text: "Many operators forget to zero their instruments before use. A vernier caliper with a 0.02 mm zero error, used across 500 measurements per day, will introduce systematic error into every single measurement. Most digital instruments have an automatic zeroing function — make it a non-negotiable step in your work instructions.",
+      },
+      {
+        type: "heading",
+        text: "Mistake #4: Using the Wrong Cleaning Methods",
+      },
+      {
+        type: "paragraph",
+        text: "Cleaning precision instruments incorrectly can be as damaging as not cleaning them at all. Abrasive cloths scratch measurement surfaces, reducing accuracy. Petroleum-based solvents attack rubber seals and lacquer coatings. Strong acids or alkalines can destroy surface hardening treatments on gauge blocks and slip gauges.",
+      },
+      {
+        type: "list",
+        title: "Approved Cleaning Methods by Instrument Type",
+        items: [
+          "Calipers & micrometers: lint-free cloth with isopropyl alcohol (IPA)",
+          "Gauge blocks: optical-grade tissue with petroleum ether or IPA",
+          "Electrical instruments: dry brush only — no liquids near terminals",
+          "Pressure gauges: soft cloth; never immerse in liquid",
+          "Thermocouples: dry wipe; check sheath integrity regularly",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Mistake #5: Ignoring Physical Damage",
+      },
+      {
+        type: "paragraph",
+        text: "A dropped torque wrench, a scratched micrometer anvil, or a bent thermocouple sheath are often \"fixed\" by a cosmetic wipe-down and returned to service. Physical damage almost always introduces measurement error. If an instrument has been dropped or impacted, it must be sent for calibration before further use — regardless of whether it appears damaged.",
+      },
+      {
+        type: "callout",
+        title: "Damage Protocol",
+        text: "Implement a formal 'Drop and Shock' protocol in your quality management system. Any instrument involved in a physical incident must be tagged 'Out of Service — Calibration Required' and quarantined until recalibrated.",
+      },
+      {
+        type: "heading",
+        text: "Mistake #6: Failing to Document Calibration History",
+      },
+      {
+        type: "paragraph",
+        text: "A calibration certificate is only valuable if it is filed, tracked, and acted upon. Many organisations receive NABL certificates and simply store them — never reviewing the measurement uncertainties, never tracking drift trends, and never identifying instruments that consistently fail. A well-maintained instrument history register allows you to predict failure before it happens.",
+      },
+      {
+        type: "list",
+        title: "What a Good Instrument Register Should Track",
+        items: [
+          "Unique instrument ID and description",
+          "Calibration due date (with automated reminder)",
+          "As-found and as-left readings from each calibration",
+          "Measurement uncertainty at last calibration",
+          "History of any damage, repair, or adjustment",
+          "Location and responsible user",
+        ],
+      },
+    ],
   },
   {
     id: "3",
     title: "The Future of Digital Calibration",
-    excerpt: "How Industry 4.0 is transforming the landscape of measurement and traceability.",
+    excerpt: "How Industry 4.0 is transforming the landscape of measurement science, traceability, and calibration management.",
     date: "Oct 02, 2024",
     category: "Technology",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     slug: "future-of-digital-calibration",
+    readTime: "8 min read",
+    author: {
+      name: "Rahul Desai",
+      role: "R&D Technology Lead",
+      avatar: "https://i.pravatar.cc/150?u=rahul",
+    },
+    tags: ["Industry 4.0", "Digital Calibration", "IoT", "Automation", "Technology"],
+    content: [
+      {
+        type: "intro",
+        text: "The calibration industry, traditionally one of the most conservative in metrology, is undergoing a quiet revolution. Driven by Industry 4.0, IoT connectivity, and artificial intelligence, the way instruments are calibrated, tracked, and certified is changing faster than at any point in the past 50 years.",
+      },
+      {
+        type: "heading",
+        text: "The Problem with Traditional Calibration",
+      },
+      {
+        type: "paragraph",
+        text: "For decades, calibration followed a predictable, time-based cycle: an instrument is removed from service, sent to a laboratory, calibrated manually against a standard, and returned with a paper certificate. This process, while reliable, is slow, expensive, and reactive. It tells you how accurate an instrument was at the moment of calibration — not how accurate it is right now.",
+      },
+      {
+        type: "callout",
+        title: "The Calibration Gap",
+        text: "Studies show that over 60% of measurement errors in manufacturing are not caught by periodic calibration schedules. They occur between calibration events, when no one is looking.",
+      },
+      {
+        type: "heading",
+        text: "Connected Instruments: Real-Time Monitoring",
+      },
+      {
+        type: "paragraph",
+        text: "The first wave of digital calibration is already here — connected instruments that continuously report their own health metrics. Smart pressure transmitters, for example, can detect internal sensor drift and flag anomalies to a SCADA system in real time. Temperature sensors with embedded self-verification algorithms can compare their readings against internal reference junctions and report uncertainty values continuously.",
+      },
+      {
+        type: "list",
+        title: "What Connected Calibration Enables",
+        items: [
+          "Condition-based calibration intervals (instead of fixed time periods)",
+          "Instant alerts when drift exceeds acceptable thresholds",
+          "Automated calibration records without manual documentation",
+          "Traceability data embedded directly in measurement output",
+          "Remote calibration verification for instruments in hazardous areas",
+          "Predictive maintenance based on drift trend analysis",
+        ],
+      },
+      {
+        type: "heading",
+        text: "AI and Machine Learning in Metrology",
+      },
+      {
+        type: "paragraph",
+        text: "Artificial intelligence is beginning to transform how laboratories process calibration data. Machine learning models trained on thousands of historical calibration records can predict when an instrument is likely to go out of tolerance — before it actually does. This shifts calibration from a reactive to a predictive discipline.",
+      },
+      {
+        type: "paragraph",
+        text: "At the national metrology level, AI is being used to analyse uncertainty chains, identify systematic errors in measurement standards, and accelerate the development of new primary standards. The UK's National Physical Laboratory (NPL) has demonstrated AI systems that can reduce measurement uncertainty in certain electrical standards by up to 40%.",
+      },
+      {
+        type: "heading",
+        text: "Digital Calibration Certificates (DCC)",
+      },
+      {
+        type: "paragraph",
+        text: "The Physikalisch-Technische Bundesanstalt (PTB) of Germany, along with EURAMET (the European association of national metrology institutes), has been developing the Digital Calibration Certificate (DCC) — a machine-readable XML-based replacement for paper calibration certificates. DCCs can be read by ERP systems, quality management software, and even the instruments themselves.",
+      },
+      {
+        type: "callout",
+        title: "India's Digital Push",
+        text: "NABL India is actively working on digital certificate frameworks aligned with global DCC standards. Laboratories like Mechatronics Calibration LLP are already issuing digital PDF certificates with QR code verification, bridging the gap until full DCC adoption.",
+      },
+      {
+        type: "heading",
+        text: "Blockchain for Calibration Traceability",
+      },
+      {
+        type: "paragraph",
+        text: "Blockchain technology offers a tamper-proof, decentralised ledger for recording calibration events. Several pilot projects in aerospace and pharmaceutical sectors have demonstrated blockchain-based systems where every calibration event — from the primary national standard down to the factory-floor instrument — is recorded as an immutable transaction. This creates a continuous, auditable chain of traceability that cannot be falsified.",
+      },
+      {
+        type: "heading",
+        text: "What This Means for Industry",
+      },
+      {
+        type: "paragraph",
+        text: "For manufacturers, the shift to digital calibration means lower costs through optimised calibration intervals, faster production cycles through reduced instrument downtime, and higher confidence in measurement quality. For calibration laboratories, it means investment in digital infrastructure, staff retraining, and new business models built around data services rather than one-time certificate issuance.",
+      },
+      {
+        type: "list",
+        title: "Steps to Prepare Your Organisation",
+        items: [
+          "Audit your current instrument fleet for IoT/digital connectivity capability",
+          "Invest in a calibration management software (CMMS or dedicated LIMS)",
+          "Establish a digital instrument register with QR-coded asset tags",
+          "Work with your calibration lab to receive digital certificates",
+          "Train quality teams on reading and using measurement uncertainty data",
+          "Plan a phased move to condition-based calibration intervals",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "The future of calibration is not just more accurate — it is continuous, connected, and intelligent. Organisations that embrace digital metrology today will have a significant competitive advantage in quality, compliance, and cost efficiency over the next decade.",
+      },
+    ],
   },
 ];
 

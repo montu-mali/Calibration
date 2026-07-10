@@ -38,13 +38,13 @@ function ServicesContent() {
 
   return (
     <div className="pt-20">
-      <section className="py-16 md:py-20 bg-muted ">
+      <section className="py-8 md:py-12 bg-muted ">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
             >
               <Zap className="h-4 w-4" />
               <span>Full Spectrum Solutions</span>
@@ -52,7 +52,7 @@ function ServicesContent() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter"
+              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Technical <br />
               <span className="text-primary italic">Capabilities.</span>
@@ -61,7 +61,7 @@ function ServicesContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-muted-foreground  leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground  leading-relaxed"
             >
               Industry-leading calibration for precision instruments, ISO compliance, and specialized laboratory services.
             </motion.p>

@@ -18,7 +18,7 @@ export default function CareersClient() {
 
   return (
     <div className="pt-20">
-      <section className="py-20 md:py-32 bg-secondary text-white relative overflow-hidden">
+      <section className="py-10 md:py-16 bg-secondary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#0057D9_0%,transparent_50%)] opacity-30" />
 
@@ -26,7 +26,7 @@ export default function CareersClient() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
           >
             <Star className="h-4 w-4" />
             <span>Be Part of the Future</span>
@@ -34,7 +34,7 @@ export default function CareersClient() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-9xl font-bold mb-8 tracking-tighter leading-[1]"
+            className="text-4xl md:text-6xl font-bold mb-4 tracking-tighter leading-[1]"
           >
             Engineer Your <br />
             <span className="text-primary italic">Ambition.</span>
@@ -43,7 +43,7 @@ export default function CareersClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
             We are looking for the next generation of metrologists and engineers to drive measurement excellence.
           </motion.p>

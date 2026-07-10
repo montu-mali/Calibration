@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative py-24 md:py-32 bg-secondary overflow-hidden">
+      <section className="relative py-10 md:py-16 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,#0057D9_0%,transparent_50%)] opacity-30" />
 
@@ -33,14 +33,14 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/10 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-8"
+            className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-white/10 border border-white/10 text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4"
           >
             <span>Since 2004</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-9xl font-bold text-white mb-8 tracking-tighter leading-[1]"
+            className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tighter leading-[1]"
           >
             Our <span className="text-primary italic">Story</span>
           </motion.h1>
@@ -48,7 +48,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
             Over two decades of relentless dedication to the science of precision and engineering excellence.
           </motion.p>
