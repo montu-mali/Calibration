@@ -49,7 +49,7 @@ export default function BlogPage() {
               className="lg:col-span-8 group cursor-pointer"
             >
               <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="block">
-              <div className="relative aspect-[16/9] rounded-[4rem] overflow-hidden mb-12 shadow-2xl">
+              <div className="relative aspect-[16/9] rounded-3xl md:rounded-[4rem] overflow-hidden mb-12 shadow-2xl">
                 <Image
                   src={BLOG_POSTS[0].image}
                   alt={BLOG_POSTS[0].title}
@@ -80,11 +80,11 @@ export default function BlogPage() {
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
                 <Input
                   placeholder="Search insights..."
-                  className="pl-16 h-20 rounded-[2rem] bg-muted border-transparent focus:bg-card focus:border-primary transition-all text-lg font-medium"
+                  className="pl-16 h-16 md:h-20 rounded-full md:rounded-[2rem] bg-muted border-transparent focus:bg-card focus:border-primary transition-all text-base md:text-lg font-medium"
                 />
               </div>
 
-              <div className="p-10 rounded-[3rem] bg-muted border border-border">
+              <div className="p-8 md:p-10 rounded-3xl md:rounded-[3rem] bg-muted border border-border">
                 <h3 className="text-2xl font-bold text-foreground mb-8">
                   Recent Updates
                 </h3>
@@ -129,9 +129,9 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-background  rounded-[3.5rem] overflow-hidden border border-border shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500"
+                className="group bg-background  rounded-3xl md:rounded-[3.5rem] overflow-hidden border border-border shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.1)] transition-all duration-500"
               >
-                <div className="relative h-72 overflow-hidden m-4 rounded-[2.5rem]">
+                <div className="relative h-64 md:h-72 overflow-hidden m-3 md:m-4 rounded-2xl md:rounded-[2.5rem]">
                   <Image
                     src={post.image}
                     alt={post.title}

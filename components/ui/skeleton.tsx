@@ -20,7 +20,7 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function ServiceCardSkeleton() {
   return (
-    <div className="p-10 rounded-[3rem] bg-muted border border-border">
+    <div className="p-10 rounded-3xl md:rounded-[3rem] bg-muted border border-border">
       <Skeleton className="w-16 h-16 rounded-2xl mb-10" />
       <Skeleton className="h-8 w-3/4 mb-4" />
       <Skeleton className="h-4 w-full mb-2" />
@@ -32,7 +32,7 @@ export function ServiceCardSkeleton() {
 
 export function IndustryCardSkeleton() {
   return (
-    <div className="aspect-square rounded-[3rem] overflow-hidden bg-gray-100">
+    <div className="aspect-square rounded-3xl md:rounded-[3rem] overflow-hidden bg-gray-100">
       <Skeleton className="w-full h-full" />
     </div>
   );

@@ -24,7 +24,7 @@ const STEPS = [
 
 export default function CalibrationProcess() {
   return (
-    <section className="py-20 bg-secondary relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-secondary relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none"
            style={{ backgroundImage: "radial-gradient(#0057D9 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
@@ -41,7 +41,7 @@ export default function CalibrationProcess() {
           {/* Vertical line for mobile, horizontal for desktop */}
           <div className="absolute left-[39px] lg:left-0 top-0 w-0.5 lg:w-full h-full lg:h-0.5 bg-gradient-to-b lg:bg-gradient-to-r from-primary/0 via-primary to-primary/0 top-1/2 lg:-translate-y-1/2 z-0 opacity-20" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 lg:gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 relative z-10">
             {STEPS.map((step, index) => (
               <motion.div
                 key={step.title}
@@ -49,17 +49,17 @@ export default function CalibrationProcess() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex lg:flex-col items-center lg:items-center text-left lg:text-center group"
+                className="flex lg:flex-col items-start lg:items-center text-left lg:text-center group"
               >
-                <div className="shrink-0 w-20 h-20 rounded-[2rem] bg-background/5 border-4 border-secondary flex items-center justify-center mb-0 lg:mb-8 mr-8 lg:mr-0 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(0,87,217,0.4)] transition-all duration-500 relative">
-                  <step.icon className="h-8 w-8 text-muted-foreground group-hover:text-white transition-colors" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-success rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[2rem] bg-background/5 border-4 border-secondary flex items-center justify-center mb-0 lg:mb-8 mr-6 lg:mr-0 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(0,87,217,0.4)] transition-all duration-500 relative">
+                  <step.icon className="h-6 w-6 md:h-8 md:w-8 text-muted-foreground group-hover:text-white transition-colors" />
+                  <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-6 h-6 md:w-8 md:h-8 bg-success rounded-lg md:rounded-xl flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg">
                     {index + 1}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xs">
                     {step.desc}
                   </p>
                 </div>

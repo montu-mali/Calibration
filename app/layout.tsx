@@ -115,8 +115,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
+    <html lang="en" className="scroll-smooth overflow-x-hidden w-full">
+      <body className={`${poppins.variable} ${inter.variable} antialiased overflow-x-hidden w-full relative`}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-[100]">
           Skip to content
         </a>

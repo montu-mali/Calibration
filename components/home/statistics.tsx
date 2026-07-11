@@ -40,12 +40,12 @@ function Counter({ value, target }: { value: string, target: number }) {
 
 export default function Statistics() {
   return (
-    <section className="py-16 bg-primary overflow-hidden relative">
+    <section className="py-12 md:py-16 bg-primary overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
            style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           {STATS.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -55,11 +55,11 @@ export default function Statistics() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 tracking-tighter">
                 <Counter value={stat.value} target={stat.target} />
               </div>
-              <div className="h-1 w-12 bg-white/20 mx-auto mb-6 rounded-full" />
-              <p className="text-blue-100 text-lg font-bold uppercase tracking-[0.2em]">
+              <div className="h-1 w-10 md:w-12 bg-white/20 mx-auto mb-4 md:mb-6 rounded-full" />
+              <p className="text-blue-100 text-sm md:text-lg font-bold uppercase tracking-[0.2em]">
                 {stat.label}
               </p>
             </motion.div>

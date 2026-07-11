@@ -23,7 +23,7 @@ export default function IndustriesPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Sectors We <br />
               <span className="text-primary italic">Empower.</span>
@@ -48,8 +48,8 @@ export default function IndustriesPage() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="group"
               >
-                <div className="h-full flex flex-col p-10 rounded-[3rem] bg-muted border border-border group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.2)] transition-all duration-500">
-                  <div className="w-20 h-20 rounded-[2rem] bg-background flex items-center justify-center mb-10 shadow-sm border border-border group-hover:bg-primary-foreground/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="h-full flex flex-col p-8 md:p-10 rounded-3xl md:rounded-[3rem] bg-muted border border-border group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.2)] transition-all duration-500">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[2rem] bg-background flex items-center justify-center mb-10 shadow-sm border border-border group-hover:bg-primary-foreground/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     {(() => {
                       const Icon = ICON_MAP[industry.iconId] || Activity;
                       return <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />;
@@ -83,7 +83,7 @@ export default function IndustriesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-12">
             <div className="relative group">
-              <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800"
                   alt="Industrial Sector Excellence"
@@ -91,27 +91,27 @@ export default function IndustriesPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-background  p-10 rounded-[3rem] shadow-2xl border border-border z-20 hidden md:block">
-                <div className="text-5xl font-bold text-primary mb-2">100%</div>
+              <div className="absolute -bottom-10 -right-10 bg-background  p-10 rounded-3xl md:rounded-[3rem] shadow-2xl border border-border z-20 hidden md:block">
+                <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">100%</div>
                 <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Industry Compliance</div>
               </div>
             </div>
 
             <div className="space-y-12">
-              <h2 className="text-5xl font-bold text-foreground tracking-tight leading-[1.1]">Sector-Specific <br />Technical <span className="text-primary italic">Competence.</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">Sector-Specific <br />Technical <span className="text-primary italic">Competence.</span></h2>
               <div className="space-y-10">
                 {[
                   { title: "Regulatory Compliance", desc: "Our lab operates under strict adherence to sector-specific mandates including FDA, DGCA, and Automotive standards.", icon: ShieldCheck },
                   { icon: Globe, title: "Traceable Metrology", desc: "Unbroken chains of traceability back to National (NPL) and International (NIST) primary standards." },
                   { icon: Zap, title: "Operational Velocity", desc: "Process-driven calibration designed to sync with your high-volume manufacturing cycles." },
                 ].map((item) => (
-                  <div key={item.title} className="flex space-x-8 group">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-muted border border-border flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm">
-                      <item.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  <div key={item.title} className="flex flex-col sm:flex-row gap-4 sm:gap-8 group">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.5rem] bg-muted border border-border flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm">
+                      <item.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-foreground mb-3">{item.title}</h4>
-                      <p className="text-lg text-muted-foreground  leading-relaxed">{item.desc}</p>
+                      <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3">{item.title}</h4>
+                      <p className="text-base sm:text-lg text-muted-foreground  leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}

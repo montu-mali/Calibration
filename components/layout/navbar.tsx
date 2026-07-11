@@ -23,6 +23,12 @@ import {
   SheetTitle,
   SheetHeader,
 } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 export default function Navbar() {
@@ -149,49 +155,54 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-full sm:w-[450px] border-l-0 p-0"
+              className="w-[85vw] sm:w-[450px] border-l-0 p-0 shadow-2xl"
             >
               <div className="flex flex-col h-full bg-background">
-                <SheetHeader className="p-6 border-b border-border">
-                  <SheetTitle className="text-left flex items-center space-x-3 bg-white p-3 rounded-xl border border-border shrink-0 w-fit">
+                <SheetHeader className="p-6 border-b border-border bg-muted/30">
+                  <SheetTitle className="text-left">
                     <img
                       src="/calibration_logo.jpg"
                       alt="Mechatronics Calibration LLP Logo"
-                      className="h-10 w-auto object-contain shrink-0"
+                      className="h-10 w-auto object-contain"
                     />
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex-grow overflow-y-auto p-6">
-                  <nav className="flex flex-col space-y-2">
+                <div className="flex-grow overflow-y-auto px-6 pt-2 pb-6">
+                  <nav className="flex flex-col">
                     {NAV_LINKS.map((link) => (
-                      <div key={link.label} className="flex flex-col">
+                      <div key={link.label} className="flex flex-col border-b border-border/50 last:border-0">
                         {link.dropdown ? (
-                          <div className="py-2">
-                            <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-4 mb-2 block">
-                              {link.label}
-                            </span>
-                            <div className="grid grid-cols-1 gap-1">
-                              {link.dropdown.map((item) => (
-                                <Link
-                                  key={item.label}
-                                  href={item.href}
-                                  onClick={() => setMobileOpen(false)}
-                                  className="text-lg font-semibold text-foreground hover:text-primary p-4 rounded-2xl hover:bg-muted transition-all"
-                                >
-                                  {item.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
+                          <Accordion type="single" collapsible className="w-full">
+                            <AccordionItem value={link.label} className="border-none">
+                              <AccordionTrigger className="text-lg font-bold py-3 hover:no-underline transition-all [&[data-state=open]]:text-primary">
+                                {link.label}
+                              </AccordionTrigger>
+                              <AccordionContent className="pb-4 pt-0 px-2">
+                                <div className="flex flex-col space-y-3 border-l-2 border-primary/10 ml-2 pl-4">
+                                  {link.dropdown.map((item) => (
+                                    <Link
+                                      key={item.label}
+                                      href={item.href}
+                                      onClick={() => setMobileOpen(false)}
+                                      className="text-base font-medium text-muted-foreground hover:text-primary transition-all flex items-start group/link"
+                                    >
+                                      <div className="h-1.5 w-1.5 rounded-full bg-primary/40 mr-3 mt-2 shrink-0 transition-all group-hover/link:bg-primary group-hover/link:scale-150" />
+                                      <span className="leading-tight">{item.label}</span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
                         ) : (
                           <Link
                             href={link.href}
                             onClick={() => setMobileOpen(false)}
                             className={cn(
-                              "text-xl font-bold p-4 rounded-2xl transition-all",
+                              "text-lg font-bold py-3 transition-all",
                               pathname === link.href
-                                ? "text-primary bg-primary/5"
-                                : "text-foreground hover:bg-muted",
+                                ? "text-primary"
+                                : "text-foreground hover:text-primary",
                             )}
                           >
                             {link.label}
@@ -201,10 +212,14 @@ export default function Navbar() {
                     ))}
                   </nav>
                 </div>
-                <div className="p-6 border-t border-border">
+                <div className="p-6 border-t border-border bg-muted/30">
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    <Button className="w-full h-14 rounded-2xl text-lg font-bold shadow-xl shadow-primary/20">
-                      Request a Quote
+                    <Button className="w-full h-14 rounded-2xl text-lg font-bold shadow-xl shadow-primary/20 group relative overflow-hidden">
+                      <span className="relative z-10 flex items-center justify-center">
+                        Request a Quote
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Button>
                   </Link>
                 </div>

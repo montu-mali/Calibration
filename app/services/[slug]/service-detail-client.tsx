@@ -33,11 +33,11 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-background relative overflow-hidden border-b border-border">
+      <section className="pt-2 md:pt-8 pb-16 md:py-20 bg-background relative overflow-hidden border-b border-border">
         <div className="container mx-auto px-6">
           <Link
             href="/services"
-            className="group inline-flex items-center text-muted-foreground hover:text-primary mb-8 font-bold transition-all"
+            className="group inline-flex items-center text-muted-foreground hover:text-primary mb-6 md:mb-8 font-bold transition-all"
           >
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Back to Capabilities
@@ -49,10 +49,10 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 text-primary shadow-sm border border-primary/10">
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 md:mb-8 text-primary shadow-sm border border-primary/10">
                 <Icon className="h-8 w-8" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
                 {service.title}
               </h1>
               <p className="text-xl text-muted-foreground  mb-8 leading-relaxed">
@@ -102,7 +102,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
             <div className="lg:col-span-8 space-y-12">
 
               {/* Benefits */}
-              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-8 md:p-10 rounded-3xl md:rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
                     <ShieldCheck className="h-6 w-6" />
@@ -122,7 +122,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Equipment Covered */}
-              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-8 md:p-10 rounded-3xl md:rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
                     <Settings2 className="h-6 w-6" />
@@ -140,7 +140,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Process */}
-              <div id="process" className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
+              <div id="process" className="bg-background  p-8 md:p-10 rounded-3xl md:rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-10">
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
                     <Activity className="h-6 w-6" />
@@ -165,7 +165,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
             <div className="lg:col-span-4 space-y-12">
 
               {/* Applications */}
-              <div className="bg-primary p-10 rounded-[2rem] text-white shadow-xl shadow-primary/20">
+              <div className="bg-primary p-8 md:p-10 rounded-3xl md:rounded-[2rem] text-white shadow-xl shadow-primary/20">
                 <div className="flex items-center gap-4 mb-8">
                   <BookOpen className="h-7 w-7" />
                   <h3 className="text-2xl font-bold">Applications</h3>
@@ -181,7 +181,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Service FAQ */}
-              <div className="bg-background  p-10 rounded-[2rem] border border-border shadow-sm">
+              <div className="bg-background  p-8 md:p-10 rounded-3xl md:rounded-[2rem] border border-border shadow-sm">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-600">
                     <HelpCircle className="h-6 w-6" />
@@ -203,7 +203,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ slug:
               </div>
 
               {/* Contact Card */}
-              <div className="bg-secondary p-10 rounded-[2.5rem] text-white">
+              <div className="bg-secondary p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] text-white">
                 <h3 className="text-2xl font-bold mb-4">Need Expert Advice?</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Our engineers are ready to help you with your specific calibration needs.

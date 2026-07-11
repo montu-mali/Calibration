@@ -74,26 +74,23 @@ function RenderBlock({ block }: { block: ContentBlock }) {
 
     case "heading":
       return (
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-primary rounded-full inline-block shrink-0" />
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-6 border-l-4 border-primary pl-4">
           {block.text}
         </h2>
       );
 
     case "callout":
       return (
-        <div className="my-8 rounded-3xl bg-primary/5 border border-primary/20 p-8">
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+        <div className="my-8 rounded-3xl bg-primary/5 border border-primary/20 p-6 md:p-8">
+          <div className="flex items-center gap-4 mb-3">
+            <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
               <Lightbulb className="w-5 h-5 text-primary" />
             </div>
-            <div>
-              <p className="text-primary font-bold text-sm uppercase tracking-widest mb-2">
-                {block.title}
-              </p>
-              <p className="text-foreground/80 leading-relaxed">{block.text}</p>
-            </div>
+            <p className="text-primary font-bold text-sm uppercase tracking-widest">
+              {block.title}
+            </p>
           </div>
+          <p className="text-foreground/80 leading-relaxed sm:pl-14">{block.text}</p>
         </div>
       );
 
@@ -292,7 +289,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
       </section>
 
       {/* ── ARTICLE + SIDEBAR ────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="pt-16 pb-8 md:pt-24 md:pb-12 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
@@ -311,9 +308,9 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
               </div>
 
               {/* tags */}
-              <div className="mt-12 pt-8 border-t border-border">
-                <div className="flex flex-wrap items-center gap-3">
-                  <Tag className="w-4 h-4 text-muted-foreground" />
+              <div className="mt-12 pt-8 border-t border-border flex items-start gap-4">
+                <Tag className="w-5 h-5 text-muted-foreground shrink-0 mt-1.5" />
+                <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
@@ -331,7 +328,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
               </div>
 
               {/* author card */}
-              <div className="mt-10 rounded-[2.5rem] bg-muted border border-border p-8 flex gap-6 items-start">
+              <div className="mt-10 rounded-3xl md:rounded-[2.5rem] bg-muted border border-border p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
                 <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-primary/20 shrink-0">
                   <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" />
                 </div>

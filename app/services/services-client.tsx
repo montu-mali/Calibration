@@ -5,7 +5,7 @@ import { SERVICES } from "@/lib/constants";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowUpRight, Zap } from "lucide-react";
+import { ArrowUpRight, Zap, ChevronDown } from "lucide-react";
 import CTA from "@/components/home/cta";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -52,7 +52,7 @@ function ServicesContent() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1] tracking-tighter"
             >
               Technical <br />
               <span className="text-primary italic">Capabilities.</span>
@@ -67,8 +67,27 @@ function ServicesContent() {
             </motion.p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-20">
+          {/* Mobile Category Filter (Dropdown) */}
+          <div className="md:hidden mb-12 max-w-sm mx-auto">
+            <div className="relative">
+              <select
+                className="w-full h-14 appearance-none bg-background border border-border rounded-2xl px-6 text-lg font-bold text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
+                value={activeCategory || ""}
+                onChange={(e) => setActiveCategory(e.target.value || null)}
+              >
+                <option value="">All Services</option>
+                {categories.map(cat => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+              <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+                <ChevronDown className="h-5 w-5" />
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Category Filter (Pills) */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4 mb-20">
             <Button
               variant={activeCategory === null ? "default" : "outline"}
               onClick={() => setActiveCategory(null)}
@@ -96,7 +115,7 @@ function ServicesContent() {
               return (
                 <div key={cat} className="space-y-12">
                   <div className="flex items-center space-x-6">
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight">{cat}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{cat}</h2>
                     <div className="h-px bg-border flex-grow" />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -107,7 +126,7 @@ function ServicesContent() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                       >
-                        <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background  rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
+                        <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background  rounded-3xl md:rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
                           <div className="relative h-64 w-full overflow-hidden">
                             <Image
                               src={service.image}
@@ -117,17 +136,17 @@ function ServicesContent() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           </div>
-                          <CardHeader className="p-10 pb-4">
+                          <CardHeader className="p-6 md:p-10 pb-2 md:pb-4">
                             <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors leading-tight min-h-[4rem] flex items-center">
                               {service.title}
                             </CardTitle>
                           </CardHeader>
-                          <CardContent className="px-10 pt-0 flex-grow">
+                          <CardContent className="px-6 md:px-10 pt-0 flex-grow">
                             <CardDescription className="text-base text-muted-foreground  leading-relaxed mb-6">
                               {service.description}
                             </CardDescription>
                           </CardContent>
-                          <CardFooter className="p-10 pt-4">
+                          <CardFooter className="p-6 md:p-10 pt-4 md:pt-4">
                             <Button className="w-full h-14 rounded-2xl group/btn font-bold text-lg relative overflow-hidden" asChild>
                               <Link href={`/services/${service.slug}`}>
                                 <span className="relative z-10 flex items-center justify-center">

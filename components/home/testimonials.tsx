@@ -27,7 +27,7 @@ export default function Testimonials() {
         />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="bg-muted  rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm border border-border">
+          <div className="bg-muted rounded-3xl md:rounded-[4rem] p-10 md:p-24 relative overflow-hidden shadow-sm border border-border">
             <Quote className="absolute top-12 left-12 h-24 w-24 text-primary/10 -rotate-12" />
 
             <AnimatePresence mode="wait">
@@ -41,7 +41,7 @@ export default function Testimonials() {
               >
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                   <div className="relative shrink-0">
-                    <div className="w-48 h-48 md:w-64 md:h-64 rounded-[3rem] overflow-hidden shadow-2xl relative z-10 rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl relative z-10 rotate-3 group-hover:rotate-0 transition-transform duration-500">
                       <Image
                         src={TESTIMONIALS[current].image}
                         alt={TESTIMONIALS[current].name}
@@ -50,7 +50,7 @@ export default function Testimonials() {
                       />
                     </div>
                     {/* Decorative square behind image */}
-                    <div className="absolute inset-0 bg-primary rounded-[3rem] -rotate-6 z-0" />
+                    <div className="absolute inset-0 bg-primary rounded-3xl md:rounded-[3rem] -rotate-6 z-0" />
                   </div>
 
                   <div className="flex-grow">

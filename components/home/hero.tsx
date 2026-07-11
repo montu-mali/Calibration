@@ -34,43 +34,44 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center space-x-3 px-4 py-2 rounded-2xl bg-primary/5 border border-primary/10 backdrop-blur-md text-primary text-sm font-bold uppercase tracking-widest mb-8"
+              className="inline-flex items-center space-x-2 md:space-x-3 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl bg-primary/5 border border-primary/10 backdrop-blur-md text-primary text-xs md:text-sm font-bold uppercase tracking-wider md:tracking-widest mb-6 md:mb-8"
             >
-              <span className="flex h-2 w-2 rounded-full bg-success animate-pulse" />
+              <span className="flex shrink-0 h-2 w-2 rounded-full bg-success animate-pulse" />
               <span>NABL Accredited Laboratory</span>
             </motion.div>
 
-            <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1] tracking-tighter">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-8 leading-[1.15] md:leading-[1] tracking-tighter">
               Precision <br />
               Beyond <br />
               <span className="text-success italic">Measurement</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 md:mb-12 max-w-xl leading-relaxed mx-auto lg:mx-0">
               ISO Certified Calibration Laboratory delivering world-class accuracy and reliability for mission-critical engineering across India.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" className="rounded-2xl h-16 px-10 text-xl font-bold shadow-2xl shadow-primary/20 group overflow-hidden relative" asChild>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 w-full sm:w-auto">
+              <Button size="lg" className="rounded-2xl h-14 md:h-16 px-6 md:px-10 text-lg md:text-xl font-bold shadow-2xl shadow-primary/20 group overflow-hidden relative w-full sm:w-auto" asChild>
                 <Link href="/contact">
                   <span className="relative z-10 flex items-center">
                     Request Quote
-                    <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 md:ml-3 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-1" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-2xl h-16 px-10 text-xl font-bold text-primary border-primary/20 bg-primary/5 hover:bg-primary/10 backdrop-blur-md transition-all" asChild>
+              <Button size="lg" variant="outline" className="rounded-2xl h-14 md:h-16 px-6 md:px-10 text-lg md:text-xl font-bold text-primary border-primary/20 bg-primary/5 hover:bg-primary/10 backdrop-blur-md transition-all w-full sm:w-auto" asChild>
                 <Link href="/services">Explore Services</Link>
               </Button>
             </div>
 
-            <div className="mt-16 flex items-center space-x-8 opacity-30">
+            <div className="mt-12 md:mt-16 flex items-center justify-center lg:justify-start space-x-8 opacity-30">
               {[ShieldCheck, Activity, Gauge, Zap].map((Icon, i) => (
                 <Icon key={i} className="h-8 w-8 text-foreground" />
               ))}
@@ -97,14 +98,14 @@ export default function Hero() {
                     scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
                   }}
                   className={cn(
-                    "absolute inset-0 rounded-[4rem] border border-primary/5",
+                    "absolute inset-0 rounded-3xl md:rounded-[4rem] border border-primary/5",
                     i === 0 ? "m-0" : i === 1 ? "m-12" : "m-24"
                   )}
                 />
               ))}
 
               {/* Main Visual */}
-              <div className="absolute inset-0 m-12 bg-gradient-to-br from-white to-gray-50 backdrop-blur-2xl rounded-[4rem] border border-border shadow-2xl overflow-hidden flex items-center justify-center p-12">
+              <div className="absolute inset-0 m-12 bg-gradient-to-br from-white to-gray-50 backdrop-blur-2xl rounded-3xl md:rounded-[4rem] border border-border shadow-2xl overflow-hidden flex items-center justify-center p-12">
                 <div className="relative w-full h-full">
                   <Image
                     src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"

@@ -40,7 +40,7 @@ export default function AboutPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tighter leading-[1]"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 tracking-tighter leading-[1]"
           >
             Our <span className="text-primary italic">Story</span>
           </motion.h1>
@@ -65,7 +65,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative aspect-square rounded-[3.5rem] overflow-hidden shadow-2xl z-10">
+              <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden shadow-2xl z-10">
                 <Image
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
                   alt="Engineering Excellence"
@@ -74,8 +74,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className="absolute -top-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-10 -right-10 bg-primary p-12 rounded-[3rem] text-white hidden md:block shadow-2xl z-20">
-                <div className="text-6xl font-bold mb-2 tracking-tighter">20+</div>
+              <div className="absolute -bottom-10 -right-10 bg-primary p-12 rounded-3xl md:rounded-[3rem] text-white hidden md:block shadow-2xl z-20">
+                <div className="text-4xl sm:text-6xl font-bold mb-2 tracking-tighter">20+</div>
                 <div className="text-sm font-bold uppercase tracking-widest opacity-80">Years of Precision</div>
               </div>
             </motion.div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-10 tracking-tight leading-[1.1]">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-10 tracking-tight leading-[1.1]">
                 Built on Integrity and <span className="text-primary">Absolute Accuracy</span>
               </h2>
               <div className="space-y-8 text-xl text-muted-foreground  leading-relaxed">
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-8 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
                 {[
                   { icon: ShieldCheck, label: "NABL Accredited", value: "ISO 17025" },
                   { icon: Users, label: "Expert Staff", value: "50+ Engineers" },
@@ -129,9 +129,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-12 rounded-[3.5rem] bg-background  border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                className="group p-8 md:p-12 rounded-3xl md:rounded-[3.5rem] bg-background  border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
               >
-                <div className="w-20 h-20 rounded-[2rem] bg-primary/5 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[2rem] bg-primary/5 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <val.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-3xl font-bold text-foreground mb-6">{val.title}</h3>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 >
                   <div className="hidden lg:block absolute top-[-5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-primary group-hover:scale-150 transition-all z-10" />
                   <div className="text-center lg:pt-12">
-                    <div className="text-4xl font-bold text-primary mb-2">{item.year}</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">{item.year}</div>
                     <h4 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{item.event}</h4>
                     <p className="text-sm text-muted-foreground font-medium leading-relaxed">{item.desc}</p>
                   </div>

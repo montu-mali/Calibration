@@ -8,14 +8,14 @@ import { CONTACT_INFO } from "@/lib/constants";
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section className="py-12 md:py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-secondary rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(15,23,42,0.3)]"
+          className="bg-secondary rounded-3xl md:rounded-[4rem] p-8 md:p-24 text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(15,23,42,0.3)]"
         >
           {/* Futuristic background patterns */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0057D9_0%,transparent_50%)] opacity-20" />
@@ -32,18 +32,18 @@ export default function CTA() {
               <span>Get Started</span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-8xl font-bold text-white mb-10 leading-[1] tracking-tighter">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter">
               Ready to <br />
               <span className="text-primary italic">Elevate</span> Your <br />
               Quality Standards?
             </h2>
 
-            <p className="text-xl md:text-2xl text-muted-foreground  mb-16 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-10 md:mb-16 leading-relaxed max-w-2xl mx-auto">
               Our engineers are ready to build a custom calibration plan for your organization. Contact us today for a technical consultation.
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <Button size="lg" className="rounded-[2rem] h-20 px-12 text-2xl font-bold w-full md:w-auto shadow-2xl shadow-primary/30 group relative overflow-hidden" asChild>
+              <Button size="lg" className="rounded-2xl md:rounded-[2rem] h-20 px-12 text-2xl font-bold w-full md:w-auto shadow-2xl shadow-primary/30 group relative overflow-hidden" asChild>
                 <Link href="/contact">
                   <span className="relative z-10 flex items-center justify-center">
                     Request Quote
@@ -67,7 +67,7 @@ export default function CTA() {
               </div>
             </div>
 
-            <div className="mt-24 pt-16 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <div className="mt-12 md:mt-24 pt-10 md:pt-16 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
               {[
                 { label: "Instruments", value: "12,000+" },
                 { label: "Technical Staff", value: "50+" },
@@ -81,7 +81,7 @@ export default function CTA() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + idx * 0.1 }}
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{item.value}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">{item.value}</div>
                   <div className="text-muted-foreground  text-xs font-bold uppercase tracking-[0.2em]">{item.label}</div>
                 </motion.div>
               ))}

@@ -38,7 +38,7 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background  rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
+              <Card className="h-full group hover:shadow-[0_40px_80px_-15px_rgba(0,87,217,0.15)] transition-all duration-500 border-none bg-background rounded-3xl md:rounded-[3rem] overflow-hidden flex flex-col shadow-sm">
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={service.image}
@@ -52,17 +52,17 @@ export default function ServicesSection() {
                     </span>
                   </div>
                 </div>
-                <CardHeader className="p-8 pb-4">
+                <CardHeader className="p-6 md:p-8 pb-2 md:pb-4">
                   <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors leading-tight min-h-[4rem] flex items-center">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-8 pt-0 flex-grow">
+                <CardContent className="px-6 md:px-8 pt-0 flex-grow">
                   <CardDescription className="text-base text-muted-foreground  leading-relaxed line-clamp-2 mb-6">
                     {service.description}
                   </CardDescription>
                 </CardContent>
-                <CardFooter className="p-8 pt-4">
+                <CardFooter className="p-6 md:p-8 pt-4 md:pt-4">
                   <Button variant="outline" className="w-full h-14 rounded-2xl border-2 group/btn font-bold text-lg hover:bg-primary hover:border-primary hover:text-white transition-all" asChild>
                     <Link href={`/services/${service.slug}`}>
                       <span className="flex items-center justify-center">

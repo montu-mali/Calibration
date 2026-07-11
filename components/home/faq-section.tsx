@@ -13,7 +13,7 @@ import { Plus } from "lucide-react";
 
 export default function FAQSection() {
   return (
-    <section className="py-20 bg-muted ">
+    <section className="py-12 md:py-20 bg-muted ">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
           title="Technical FAQ"
@@ -32,12 +32,12 @@ export default function FAQSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background  px-10 rounded-[2.5rem] border border-border shadow-sm overflow-hidden"
+                className="bg-background px-6 md:px-10 rounded-2xl md:rounded-[2.5rem] border border-border shadow-sm overflow-hidden"
               >
-                <AccordionTrigger className="text-left text-xl font-bold text-foreground hover:text-primary transition-all py-10 hover:no-underline group">
+                <AccordionTrigger className="text-left text-lg md:text-xl font-bold text-foreground hover:text-primary transition-all py-6 md:py-10 hover:no-underline group">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground  pb-10 text-lg leading-relaxed font-medium">
+                <AccordionContent className="text-muted-foreground pb-6 md:pb-10 text-base md:text-lg leading-relaxed font-medium">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

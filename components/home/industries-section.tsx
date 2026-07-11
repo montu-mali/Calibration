@@ -35,8 +35,8 @@ export default function IndustriesSection() {
               className="group"
             >
               <Link href="/industries">
-                <div className="h-full flex flex-col items-center p-10 rounded-[2.5rem] bg-muted border border-transparent transition-all duration-500 group-hover:bg-card group-hover:border-primary group-hover:shadow-[0_30px_60px_-15px_rgba(0,87,217,0.1)]">
-                  <div className="w-20 h-20 rounded-[2rem] bg-background flex items-center justify-center mb-6 shadow-sm border border-border group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="h-full flex flex-col items-center p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-muted border border-transparent transition-all duration-500 group-hover:bg-card group-hover:border-primary group-hover:shadow-[0_30px_60px_-15px_rgba(0,87,217,0.1)]">
+                  <div className="w-20 h-20 rounded-2xl md:rounded-[2rem] bg-background flex items-center justify-center mb-6 shadow-sm border border-border group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     {(() => {
                       const Icon = ICON_MAP[industry.iconId] || Activity;
                       return <Icon className="h-9 w-9 text-primary group-hover:text-white transition-colors" />;

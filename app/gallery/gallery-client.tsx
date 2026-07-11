@@ -59,13 +59,13 @@ export default function GalleryPage() {
           </div>
 
           {/* Premium Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "px-10 py-4 rounded-2xl font-bold transition-all duration-500 border-2 text-lg",
+                  "px-6 py-2 md:px-10 md:py-4 rounded-xl md:rounded-2xl font-bold transition-all duration-500 border-2 text-sm md:text-lg",
                   activeCategory === cat
                     ? "bg-primary border-primary text-white shadow-2xl shadow-primary/30"
                     : "bg-background border-border text-muted-foreground hover:border-primary/30 hover:text-primary"
@@ -87,7 +87,7 @@ export default function GalleryPage() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5 }}
                 className={cn(
-                  "group relative rounded-[3rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-700",
+                  "group relative rounded-3xl md:rounded-[3rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-700",
                   img.span
                 )}
               >
@@ -98,7 +98,7 @@ export default function GalleryPage() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
-                  <div className="bg-background/10 backdrop-blur-md border border-white/20 p-8 rounded-[2rem] transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="bg-background/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl md:rounded-[2rem] transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
                     <span className="text-primary font-bold text-xs uppercase tracking-widest mb-3 block">{img.category}</span>
                     <div className="flex items-center justify-between">
                       <h4 className="text-white text-2xl font-bold leading-tight">{img.title}</h4>

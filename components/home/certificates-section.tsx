@@ -25,9 +25,9 @@ export default function CertificatesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-background  rounded-[3rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+              className="bg-background rounded-3xl md:rounded-[3rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <div className="relative h-48 md:h-64 w-full overflow-hidden">
                 <Image
                   src={cert.image}
                   alt={cert.title}
@@ -41,15 +41,11 @@ export default function CertificatesSection() {
                   </div>
                 </div>
               </div>
-              <div className="p-10 flex-grow flex flex-col">
-                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{cert.title}</h3>
-                <p className="text-muted-foreground  text-base mb-8 leading-relaxed flex-grow">
+              <div className="p-6 md:p-10 flex-grow flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4 leading-tight">{cert.title}</h3>
+                <p className="text-muted-foreground  text-base mb-2 md:mb-4 leading-relaxed flex-grow">
                   {cert.description}
                 </p>
-                <Button variant="outline" className="w-full h-14 rounded-2xl group/btn border-2 border-border font-bold hover:bg-primary hover:border-primary hover:text-white transition-all shadow-sm">
-                  <Download className="mr-2 h-5 w-5 group-hover/btn:animate-bounce" />
-                  Download PDF
-                </Button>
               </div>
             </motion.div>
           ))}

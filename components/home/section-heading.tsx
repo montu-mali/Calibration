@@ -42,7 +42,8 @@ export default function SectionHeading({
         )}
         <h2
           className={cn(
-            "text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]",
+            "text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-[1.1]",
+            centered ? "text-center" : "text-left",
             light ? "text-white" : "text-foreground"
           )}
         >
@@ -58,8 +59,8 @@ export default function SectionHeading({
           transition={{ duration: 0.6, delay: 0.1 }}
           className={cn(
             "text-lg md:text-xl leading-relaxed max-w-3xl font-medium",
-            light ? "text-muted-foreground" : "text-muted-foreground ",
-            centered ? "mx-auto" : ""
+            light ? "text-muted-foreground" : "text-muted-foreground",
+            centered ? "mx-auto text-center" : "text-left"
           )}
         >
           {subtitle}

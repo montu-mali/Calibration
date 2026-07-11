@@ -47,10 +47,10 @@ export default function CertificatesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background  rounded-[3.5rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+                className="bg-background  rounded-3xl md:rounded-[3.5rem] overflow-hidden shadow-sm border border-border hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
               >
                 <div className="relative h-72 w-full overflow-hidden p-4">
-                  <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
+                  <div className="relative h-full w-full rounded-2xl md:rounded-[2.5rem] overflow-hidden">
                     <Image
                       src={cert.image}
                       alt={cert.title}
@@ -70,19 +70,12 @@ export default function CertificatesPage() {
                   <p className="text-muted-foreground  text-lg mb-10 leading-relaxed flex-grow">
                     {cert.description} Verified adherence to international metrology standards and technical requirements.
                   </p>
-                  <Button className="w-full h-16 rounded-2xl group/btn font-bold text-xl relative overflow-hidden">
-                    <span className="relative z-10 flex items-center">
-                      <Download className="mr-3 h-6 w-6 group-hover/btn:animate-bounce" />
-                      Download PDF
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Button>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="max-w-6xl mx-auto bg-secondary rounded-[4rem] p-12 md:p-32 text-white relative overflow-hidden shadow-2xl">
+          <div className="max-w-6xl mx-auto bg-secondary rounded-3xl md:rounded-[4rem] p-8 md:p-32 text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 p-32 opacity-5 rotate-12">
               <ShieldCheck className="h-96 w-96 text-primary" />
             </div>

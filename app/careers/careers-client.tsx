@@ -60,7 +60,7 @@ export default function CareersClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-12 rounded-[3.5rem] bg-muted border border-border hover:bg-card hover:border-primary transition-all duration-500"
+                className="group p-8 md:p-12 rounded-3xl md:rounded-[3.5rem] bg-muted border border-border hover:bg-card hover:border-primary transition-all duration-500"
               >
                 <div className="w-16 h-16 rounded-2xl bg-background shadow-sm flex items-center justify-center mb-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <perk.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -85,7 +85,7 @@ export default function CareersClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group p-10 md:p-14 rounded-[3.5rem] bg-background  border border-border shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
+                  className="group p-8 md:p-14 rounded-3xl md:rounded-[3.5rem] bg-background  border border-border shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:border-primary transition-all duration-500"
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
                     <div className="space-y-6">

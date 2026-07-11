@@ -56,7 +56,7 @@ export default function ContactPage() {
                   { icon: MapPin, label: "Visit Lab", value: "Vatva GIDC", sub: "Ahmedabad, India" },
                   { icon: Globe, label: "Global Presence", value: "Across India", sub: "12+ Service Centers" },
                 ].map((item) => (
-                  <div key={item.label} className="p-8 rounded-[2.5rem] bg-muted border border-border hover:bg-card hover:border-primary transition-all duration-300 group">
+                  <div key={item.label} className="p-8 rounded-3xl md:rounded-[2.5rem] bg-muted border border-border hover:bg-card hover:border-primary transition-all duration-300 group">
                     <div className="w-14 h-14 rounded-2xl bg-background shadow-sm flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                       <item.icon className="text-primary h-6 w-6 group-hover:text-white transition-colors" />
                     </div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="rounded-[2.5rem] overflow-hidden border border-border bg-muted h-[300px] relative group"
+                className="rounded-3xl md:rounded-[2.5rem] overflow-hidden border border-border bg-muted h-[300px] relative group"
               >
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 grayscale group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -100,7 +100,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-background p-10 md:p-16 rounded-[3.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)]  border border-border relative overflow-hidden"
+              className="bg-background p-8 md:p-16 rounded-3xl md:rounded-[3.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)]  border border-border relative overflow-hidden"
             >
               <h3 className="text-3xl font-bold text-foreground mb-10">Request a Consultation</h3>
               <form className="space-y-8 relative z-10">
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     <Input placeholder="Acme Corp" className="rounded-2xl h-14 bg-muted border-transparent focus:bg-background focus:border-primary transition-all text-lg" />
                   </div>
                 </div>
-                <Button className="w-full h-20 rounded-[2rem] text-xl font-bold shadow-2xl shadow-primary/30 group relative overflow-hidden">
+                <Button className="w-full h-16 md:h-20 rounded-2xl md:rounded-[2rem] text-lg md:text-xl font-bold shadow-2xl shadow-primary/30 group relative overflow-hidden">
                   <span className="relative z-10 flex items-center justify-center">
                     Send Inquiry
                     <Send className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
